@@ -42,6 +42,9 @@ function removeSmallest(numbers) {
   return output;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Remove the Minimum | 7kyu', function() {
   describe('base case empty list input: []', function() {
     it('should return empty list: []', done => {
