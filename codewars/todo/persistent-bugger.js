@@ -20,6 +20,16 @@ For example:
 */
 
 function persistence(num) {
+  var multiple = 1;
+  var newnum;
+
+  if (num < 10) {
+    return 0;
+  }
+
+  for (let i = 0; i < num.toString().length; i++) {
+    
+  }
 }
 
 describe('Persistent Bugger | Code Wars | 6 kyu', function() {
