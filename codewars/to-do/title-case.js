@@ -23,7 +23,47 @@ titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 */
 
 function titleCase(title, minorWords) {
-  
+  var result = '';
+  var output = '';
+
+  if (!title) {
+    return output;
+  }
+
+  var titleArray = title.split(' ');
+
+  for (let i = 0; i < titleArray.length; i++) {
+    for (let j = 0; j < titleArray[i].length; j++) {
+      if (j === 0) {
+        result += ' ' + titleArray[i][j].toUpperCase();
+      }
+      else {
+        result += titleArray[i][j].toLowerCase();
+      }
+    }
+  }
+
+  if (!minorWords) {
+    return result;
+  }
+
+  var minorWordsArray = minorWords.split(' ');
+  result = result.split(' ');
+
+  for (let x = 1; x < result.length; x++) {
+    for (let y = 0; y < minorWordsArray.length; y++) {
+      if (x != 1 && result[x].toLowerCase() === minorWordsArray[y].toLowerCase()) {
+        output += result[x].toLowerCase() + ' ';
+        break;
+      }
+      else {
+        output += result[x] + ' ';
+        break;
+      }
+    }
+  }
+
+  return output;
 }
 
 describe('Title Case | Code Wars', function() {
