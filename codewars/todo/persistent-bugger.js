@@ -20,16 +20,31 @@ For example:
 */
 
 function persistence(num) {
-  var multiple = 1;
-  var newnum;
-
   if (num < 10) {
     return 0;
   }
 
+  var count = 0;
+  var newNum = 1;
+
   for (let i = 0; i < num.toString().length; i++) {
-    
+    if (i === num.toString().length - 1) {
+      newNum *= parseInt(num.toString()[i]);
+      count++;
+    }
+    else {
+      newNum *= parseInt(num.toString()[i]);
+    }
   }
+
+  persistence(newNum);
+
+  console.log(newNum);
+  console.log(count);
+}
+
+function newNumNomNom(num) {
+
 }
 
 describe('Persistent Bugger | Code Wars | 6 kyu', function() {
