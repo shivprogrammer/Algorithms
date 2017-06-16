@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 IQ Test
 
@@ -14,7 +16,35 @@ iqTest("2 4 7 8 10") => 3 // Third number is odd, while the rest of the numbers 
 iqTest("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
 */
 
-function iqTest(numbers){
+function iqTest(numbers) {
+  var numsOnly = numbers.replace(/\s+/g, '');
+  var evens = 0;
+  var odds = 0;
+
+  for (let i = 0; i < 3; i++) {
+    if (parseInt(numsOnly.charAt(i)) % 2 === 0) {
+      evens++;
+    }
+    else {
+      odds++;
+    }
+  }
+
+  if (evens > odds) {
+    for (let x = 0; x < numsOnly.length; x++) {
+      if (parseInt(numsOnly.charAt(x)) % 2 === 1) {
+        return x + 1;
+      }
+    }
+  }
+
+  else {
+    for (let y = 0; y < numsOnly.length; y++) {
+      if (parseInt(numsOnly.charAt(y)) % 2 === 0) {
+        return y + 1;
+      }
+    }
+  }
 }
 
 describe('IQ Test | Code Wars | 6kyu', function() {
