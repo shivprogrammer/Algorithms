@@ -13,34 +13,45 @@ Note: array may be empty, in this case return 0.
 */
 
 function positiveSum(arr) {
+  var output = 0;
 
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      output += arr[i];
+    }
+  }
+
+  return output;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(1)
 
 describe('Sum of Positive | Code Wars | 8kyu', function() {
   describe('with empty array', function() {
     it('return 0', done => {
-      expect(positiveSum([]).to.equal(0);
+      expect(positiveSum([])).to.equal(0);
       done();
     })
   })
 
   describe('with input [1,2,3,4,5]', function() {
     it('should return 15', done => {
-      expect(positiveSum([1,2,3,4,5]).to.equal(15);
+      expect(positiveSum([1,2,3,4,5])).to.equal(15);
       done();
     })
   })
 
   describe('with input [1,-2,3,4,5]', function() {
     it('should return 13', done => {
-      expect(positiveSum([1,-2,3,4,5]).to.equal(13);
+      expect(positiveSum([1,-2,3,4,5])).to.equal(13);
       done();
     })
   })
 
   describe('with all negatives', function() {
     it('return 0', done => {
-      expect(positiveSum([-1,-2,-3,-4,-5]).to.equal(0);
+      expect(positiveSum([-1,-2,-3,-4,-5])).to.equal(0);
       done();
     })
   })
