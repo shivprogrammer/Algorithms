@@ -31,16 +31,16 @@ function descendingOrder(n) {
   nArray = mergeSort(nArray);
 
   for (let x = 0; x < nArray.length; x++) {
-    output += nArray[i];
+    output += nArray[x];
   }
 
   return parseInt(output);
 }
 
-function mergeSort(arr) {
-  if (arr.length < 2) {
+function mergeSort(arr)
+{
+  if (arr.length < 2)
     return arr;
-  }
 
   var middle = parseInt(arr.length / 2);
   var left = arr.slice(0, middle);
@@ -49,29 +49,27 @@ function mergeSort(arr) {
   return merge(mergeSort(left), mergeSort(right));
 }
 
-function mergeSort(left, right) {
+function merge(left, right)
+{
   var result = [];
 
   while (left.length && right.length) {
-    if (left[0] <= right[0]) {
-      result.push(left.slice());
+    if (left[0] >= right[0]) {
+      result.push(left.shift());
     }
     else {
-      result.push(right.slice());
+      result.push(right.shift());
     }
   }
 
-  while (left.length) {
-    result.push(left.slice());
-  }
+  while (left.length)
+    result.push(left.shift());
 
-  while (right.length) {
-    result.push(right.slice());
-  }
+  while (right.length)
+    result.push(right.shift());
 
   return result;
 }
-
 
 describe('Descending Order | Code Wars | 7kyu', function() {
   describe('Input: 0', function() {

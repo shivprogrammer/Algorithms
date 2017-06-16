@@ -24,7 +24,7 @@ function persistence(num) {
 
   if (num > 10) {
     numArray.push(num);
-    
+
   }
 
   return numArray.length;
