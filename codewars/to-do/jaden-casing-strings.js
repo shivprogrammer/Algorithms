@@ -17,9 +17,27 @@ Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 */
 
 String.prototype.toJadenCase = function () {
+  var output = '';
+
+  for (let i = 0; i < this.length; i++) {
+    if (i === 0) {
+      output += this[i].toUpperCase();
+    }
+    else {
+      if (this[i - 1] === ' ') {
+        output += this[i].toUpperCase();
+      }
+      else {
+        output += this[i].toLowerCase();
+      }
+    }
+  }
+
+  return output;
 }
 
-Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real");
+// Time Complexity: O(N)
+// Space Complexity: O(1)
 
 describe('Jaden Casing Strings | Code Wars | 7kyu', function() {
   describe('with input How can mirrors be real if our eyes aren\'t real', function() {
