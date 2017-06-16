@@ -31,26 +31,49 @@ All paths can't be made simpler. The path ["NORTH", "WEST", "SOUTH", "EAST"] is 
 */
 
 function dirReduc(arr){
+  var directionsMap = new Map();
+  directionsMap.set('WEST', 'EAST');
+  directionsMap.set('EAST', 'WEST');
+  directionsMap.set('NORTH', 'SOUTH');
+  directionsMap.set('SOUTH', 'NORTH');
+
+  var result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i === 0) {
+      result.push(arr[0]);
+    }
+    else {
+      if (result[result.length - 1] === directionsMap.get(arr[i])) {
+        result.pop();
+      }
+      else {
+        result.push(arr[i]);
+      }
+    }
+  }
+
+  return result;
 }
 
 describe('Directions Reduction | Code Wars | 5kyu', function() {
   describe('Input: ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]', function() {
     it('should return ["WEST"]', done => {
-      expect(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])).to.equal(["WEST"]);
+      expect(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])).to.deep.equal(["WEST"]);
       done();
     })
   })
 
   describe('Input: ["NORTH", "WEST", "SOUTH", "EAST"]', function() {
     it('should return ["NORTH", "WEST", "SOUTH", "EAST"]', done => {
-      expect(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])).to.equal(["NORTH", "WEST", "SOUTH", "EAST"]);
+      expect(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])).to.deep.equal(["NORTH", "WEST", "SOUTH", "EAST"]);
       done();
     })
   })
 
   describe('Input: ["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]', function() {
     it('should return []', done => {
-      expect(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"])).to.equal([]);
+      expect(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"])).to.deep.equal([]);
       done();
     })
   })
