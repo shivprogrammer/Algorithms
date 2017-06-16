@@ -21,26 +21,20 @@ function descendingOrder(n) {
   }
 
   var nString = n.toString();
+  var nArray = nString.split('');
   var output = '';
-  var nArray = [];
-
-  for (let i = 0; i < nString.length; i++) {
-    nArray.push(nString.charAt(i));
-  }
 
   nArray = mergeSort(nArray);
 
-  for (let x = 0; x < nArray.length; x++) {
-    output += nArray[x];
-  }
+  output = nArray.join('');
 
   return parseInt(output);
 }
 
-function mergeSort(arr)
-{
-  if (arr.length < 2)
+function mergeSort(arr) {
+  if (arr.length < 2) {
     return arr;
+  }
 
   var middle = parseInt(arr.length / 2);
   var left = arr.slice(0, middle);
@@ -49,8 +43,7 @@ function mergeSort(arr)
   return merge(mergeSort(left), mergeSort(right));
 }
 
-function merge(left, right)
-{
+function merge(left, right) {
   var result = [];
 
   while (left.length && right.length) {
@@ -62,14 +55,19 @@ function merge(left, right)
     }
   }
 
-  while (left.length)
+  while (left.length) {
     result.push(left.shift());
+  }
 
-  while (right.length)
+  while (right.length) {
     result.push(right.shift());
+  }
 
   return result;
 }
+
+// Time Complexity: O(N * log(N))
+// Space Complexity: O(N)
 
 describe('Descending Order | Code Wars | 7kyu', function() {
   describe('Input: 0', function() {
