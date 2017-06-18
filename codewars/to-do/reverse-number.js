@@ -17,4 +17,11 @@ Example:
 function digitize(n) {
 }
 
-Test.assertSimilar(digitize(35231),[1,3,2,5,3]);
+describe('Convert Number to Reversed Array of Digits | Code Wars | 8kyu', function() {
+  describe('Input: 35231', function() {
+    it('should return [1,3,2,5,3]', done => {
+      expect(digitize(35231)).to.equal([1,3,2,5,3]);
+      done();
+    })
+  })
+})
