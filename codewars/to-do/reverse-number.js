@@ -15,12 +15,19 @@ Example:
 */
 
 function digitize(n) {
+  var output = [];
+
+  for (let i = n.toString().length - 1; i >= 0; i--) {
+    output.push(parseInt(n.toString().charAt(i)));
+  }
+
+  return output;
 }
 
 describe('Convert Number to Reversed Array of Digits | Code Wars | 8kyu', function() {
   describe('Input: 35231', function() {
     it('should return [1,3,2,5,3]', done => {
-      expect(digitize(35231)).to.equal([1,3,2,5,3]);
+      expect(digitize(35231)).to.deep.equal([1,3,2,5,3]);
       done();
     })
   })
