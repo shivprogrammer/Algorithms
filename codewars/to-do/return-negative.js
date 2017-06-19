@@ -21,6 +21,7 @@ Zero (0) can't be negative, see examples above.
 */
 
 function makeNegative(num) {
+  return num > 0 ? -num : num;
 }
 
 describe('Return Negative | Code Wars | 8kyu', function() {
