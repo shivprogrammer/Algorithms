@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Count Number of Zeroes from 1 to N
 
@@ -21,6 +23,26 @@ countZeros(200); // returns 31
 function countZeros(n) {
 }
 
-Test.assertEquals(countZeros(10), 1);
-Test.assertEquals(countZeros(100), 11);
-Test.assertEquals(countZeros(200), 31);
+describe('Count Number of Zeroes from 1 to N | Code Wars | 7kyu', function() {
+  describe('with input of 10', function() {
+    it('should return 1', done => {
+      expect(countZeros(10)).to.equal(1);
+      done();
+    })
+  })
+
+
+  describe('with input of 100', function() {
+    it('should return 11', done => {
+      expect(countZeros(100)).to.equal(11);
+      done();
+    })
+  })
+
+  describe('with input of 200', function() {
+    it('should return 31', done => {
+      expect(countZeros(200)).to.equal(31);
+      done();
+    })
+  })
+})
