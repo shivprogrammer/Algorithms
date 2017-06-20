@@ -3,6 +3,10 @@
 const expect = require('chai').expect;
 
 /*
+noobCode 01: SUPERSIZE ME.... or rather, this integer!
+
+8kyu
+
 Write a function that rearranges an integer into its largest possible value.
 
 superSize(123456) //654321
@@ -12,14 +16,42 @@ If the argument passed through is single digit or is already the maximum possibl
 */
 
 function superSize(num){
+
 }
 
-Test.assertEquals(superSize(69),96)
-Test.assertEquals(superSize(513),531)
-Test.assertEquals(superSize(2017),7210)
-Test.assertEquals(superSize(414),441)
-Test.assertEquals(superSize(608719),987610)
-Test.assertEquals(superSize(123456789),987654321)
-Test.assertEquals(superSize(700000000001),710000000000)
-Test.assertEquals(superSize(666666),666666)
-Test.assertEquals(superSize(2),2)
+describe('SuperSize Me | Code Wars | 8kyu', function() {
+  describe('Input 69', function() {
+    it('expect 96', done => {
+      expect(superSize(69)).to.equal(96);
+      done();
+    })
+  })
+
+  describe('Input 513', function() {
+    it('expect 531', done => {
+      expect(superSize(513)).to.equal(531);
+      done();
+    })
+  })
+
+  describe('Input 2017', function() {
+    it('expect 7210', done => {
+      expect(superSize(2017)).to.equal(7210);
+      done();
+    })
+  })
+
+  describe('Input 608719', function() {
+    it('expect 987610', done => {
+      expect(superSize(608719)).to.equal(987610);
+      done();
+    })
+  })
+
+  describe('Input 666666', function() {
+    it('expect 666666', done => {
+      expect(superSize(666666)).to.equal(666666);
+      done();
+    })
+  })
+})
