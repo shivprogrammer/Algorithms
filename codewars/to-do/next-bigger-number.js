@@ -20,6 +20,18 @@ nextBigger(531)==-1
 */
 
 function nextBigger(n){
+  var charChange = '';
+  var x = n.toString();
+
+  for (let i = x.length - 1; i >= 0; i--) {
+    if (n % 10 > (((n - (n % 10)) / 10) % 10)) {
+      charChange += parseInt(x.charAt(i - 1));
+      charChange += parseInt(x.charAt(i));
+      break;
+    }
+  }
+
+  return parseInt(parseInt(x.slice(0, x.length - 2)) + charChange);
 }
 
 describe('Next Bigger Number with the Same Digits | Code Wars | 4kyu', function() {
