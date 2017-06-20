@@ -14,6 +14,7 @@ nextBigger(513)==531
 nextBigger(2017)==2071
 If no bigger number can be composed using those digits, return -1:
 
+
 nextBigger(9)==-1
 nextBigger(111)==-1
 nextBigger(531)==-1
