@@ -16,7 +16,21 @@ If the argument passed through is single digit or is already the maximum possibl
 */
 
 function superSize(num){
+  var numArray = [];
+  var output = '';
 
+  for (let i = 0; i < num.toString().length; i++) {
+    numArray.push(parseInt(num.toString().charAt(i)));
+  }
+
+  var sorted = numArray.sort();
+  console.log(sorted)
+
+  for (let x = sorted.length - 1; x >= 0; x--) {
+    output += sorted[x];
+  }
+
+  return parseInt(output);
 }
 
 describe('SuperSize Me | Code Wars | 8kyu', function() {
