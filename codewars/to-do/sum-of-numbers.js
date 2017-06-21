@@ -21,8 +21,28 @@ GetSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
 */
 
 function GetSum(a,b) { // capitalization not indiciative of constructor function, just code wars notation for this particular problem
+  var sum = 0;
+  var start;
+  var end;
 
+  if (a < b) {
+    start = a;
+    end = b;
+  }
+  else {
+    start = b;
+    end = a;
+  }
+
+  for (let i = start; i <= end; i++) {
+    sum += i;
+  }
+
+  return sum;
 }
+
+// Time Complexity: O(N) [distance from a -> b]
+// Space Complexity: O(1) [sum, start, end. Since all primitive values, only O(1)]
 
 describe('Sum of Numbers | Code Wars | 7kyu', function() {
   describe('Input 0 -1', function() {
@@ -41,7 +61,7 @@ describe('Sum of Numbers | Code Wars | 7kyu', function() {
 
   describe('Input -1 2', function() {
     it('should return 2', done => {
-      expect(GetSum(-1, 2)).to.equal(1);
+      expect(GetSum(-1, 2)).to.equal(2);
       done();
     })
   })
