@@ -23,7 +23,7 @@ Your function must return:
 */
 
 function pointVsVector(point, vector) {
-  var slope = 
+  var pointSlope
 }
 
 describe('Locate Point in Relation to Vector', function() {
