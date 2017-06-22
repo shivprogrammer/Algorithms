@@ -22,7 +22,8 @@ Your function must return:
 1 if the point is to the right of the vector.
 */
 
-function pointVsVector( point, vector ){
+function pointVsVector(point, vector) {
+  var slope = 
 }
 
 describe('Locate Point in Relation to Vector', function() {
