@@ -48,19 +48,21 @@ function high(x) {
   alphabetMap.set('z', 26);
 
   for (let i = 0; i < x.length; i++) {
-    if (x.charAt(i) === ' ') {
+    if (x.charAt(i) === ' ' || !x.charAt(i + 1)) {
       if (tempScore > topScore) {
+        console.log(tempScore);
         topScore = tempScore;
         tempScore = 0;
       }
       else {
+        console.log(tempScore);
         tempScore = 0;
         topWord = '';
       }
     }
 
     else {
-      tempScore += alphabetMap.get(x.charAt(i));
+      tempScore += alphabetMap.get(x.charAt(i).toLowerCase());
       topWord += x.charAt(i);
     }
   }
