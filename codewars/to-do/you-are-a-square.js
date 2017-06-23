@@ -1,6 +1,10 @@
 'use strict';
 
 /*
+You're a Square!
+
+7kyu
+
 A square of squares
 
 You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
@@ -24,5 +28,42 @@ isSquare(26) // => false
 */
 
 function isSquare(n) {
-  
+
 }
+
+describe('You\'re a Square! | Code Wars | 7kyu', function() {
+  describe('Input -1', function() {
+    it('should return false', done => {
+      expect(isSquare(-1)).to.equal(false);
+      done();
+    })
+  })
+
+  describe('Input 3', function() {
+    it('should return false', done => {
+      expect(isSquare(3)).to.equal(false);
+      done();
+    })
+  })
+
+  describe('Input 4', function() {
+    it('should return true', done => {
+      expect(isSquare(4)).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input 25', function() {
+    it('should return true', done => {
+      expect(isSquare(25)).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input 26', function() {
+    it('should return false', done => {
+      expect(isSquare(26)).to.equal(false);
+      done();
+    })
+  })
+})
