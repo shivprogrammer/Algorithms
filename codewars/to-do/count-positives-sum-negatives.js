@@ -15,6 +15,25 @@ If the input array is empty or null, return an empty array:
 */
 
 function countPositivesSumNegatives(input) {
+  if (!input) {
+    return [];
+  }
+
+  var posCount = 0;
+  var sumNeg = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    if (!isNaN(input[i])) {
+      if (input[i] > 0) {
+        posCount++;
+      }
+      if (input[i] < 0) {
+        sumNeg += input[i];
+      }
+    }
+  }
+
+  return [posCount, sumNeg];
 }
 
 describe('Count of Positives / Sum of Negatives | Code Wars | 8kyu', function() {
