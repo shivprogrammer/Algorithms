@@ -21,7 +21,7 @@ function humanReadable(seconds) {
   var sec = '00';
 
   hr = Math.floor(seconds / 3600);
-  min = Math.floor(seconds / 60);
+  min = Math.floor((seconds % 3600)/60);
   sec = seconds % 60;
 
   if (hr < 10) {
