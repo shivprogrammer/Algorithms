@@ -3,6 +3,10 @@
 const expect = require('chai').expect;
 
 /*
+Robby, the Robot
+
+2kyu
+
 Robby, the robot, wants to find his way back home. Unfortunately his power is pretty low, so he needs to find the shortest way from his Start point (S) to the Target cell (T).
 
 When Robby starts, he always looks into north direction. He has a limited command set and each command costs him 1 unit of power. The commands are:
@@ -48,7 +52,32 @@ Each test case has exactly one solution (= only one shortest command list)
 function getCommands(field, power) {
 }
 
-Test.expect(getCommands('T.S.', 10).join('') == 'f');
-Test.expect(getCommands('S.......T', 10).join('') == 'rffrff');
-Test.expect(getCommands('S.......T', 5).join('') == '');
-Test.expect(getCommands('S#.##...T', 20).join('') == '');
+describe('Robby, the Robot | Code Wars | 2kyu', function() {
+  describe('Input: "T.S.", 10', function() {
+    it('Expected: "f"', done => {
+      expect(getCommands('T.S.', 10)).to.equal('f');
+      done();
+    })
+  })
+
+  describe('Input: "S.......T", 10', function() {
+    it('Expected: "rffrff"', done => {
+      expect(getCommands('S.......T', 10)).to.equal('rffrff');
+      done();
+    })
+  })
+
+  describe('Input: "S.......T", 5', function() {
+    it('Expected: "rffrff"', done => {
+      expect(getCommands('S.......T', 5)).to.equal('');
+      done();
+    })
+  })
+
+  describe('Input: "S#.##...T", 20', function() {
+    it('Expected: ""', done => {
+      expect(getCommands('S#.##...T', 20)).to.equal('');
+      done();
+    })
+  })
+})
