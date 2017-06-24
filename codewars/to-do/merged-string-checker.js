@@ -23,27 +23,52 @@ part2:    o   e   a r s   = oears
 */
 
 function isMerge(s, part1, part2) {
+  while(part1.length > 0 && part2.length > 0) {
+
+    if (s.charAt(0) === part1.charAt(0)) {
+      if (part1.length === 1) {
+        return s.slice(1, s.length) === part2;
+      }
+      else {
+        s = s.slice(1, s.length);
+        part1 = part1.slice(1, part1.length);
+        isMerge(s, part1, part2);
+      }
+    }
+
+    if (s.charAt(0) === part2.charAt(0)) {
+      if (part2.length === 1) {
+        return s.slice(1, s.length) === part1;
+      }
+      else {
+        s = s.slice(1, s.length);
+        part2 = part2.slice(1, part2.length);
+        isMerge(s, part1, part2);
+      }
+    }
+  }
+
   return false;
 }
 
 describe('Merged String Checker | Code Wars | 5kyu', function() {
-  describe('with input s = codewars, part1 = code, part2 = wars', function() {
-    it('should return true', done => {
+  describe('if s = "codewars", part1 = "code", part2 = "wars"', function() {
+    it('return true', done => {
       expect(isMerge('codewars', 'code', 'wars')).to.equal(true);
       done();
     })
   })
 
-  describe('with input s = codewars, part1 = cdw, part2 = oears', function() {
-    it('should return true', done => {
+  describe('if s = "codewars", part1 = "cdw", part2 = "oears"', function() {
+    it('return true', done => {
       expect(isMerge('codewars', 'cdw', 'oears')).to.equal(true);
       done();
     })
   })
 
-  describe('with input s = codewars, part1 = cod, part2 = wars', function() {
-    it('should return false', done => {
-      expect(isMerge('codewars', 'cod', 'wars')).to.equal(true);
+  describe('if s = "codewars", part1 = "cod", part2 = "wars"', function() {
+    it('return false', done => {
+      expect(isMerge('codewars', 'cod', 'wars')).to.equal(false);
       done();
     })
   })
