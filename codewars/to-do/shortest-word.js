@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Shortest Word
 
@@ -10,7 +12,27 @@ Simple, given a string of words, return the length of the shortest word(s).
 String will never be empty and you do not need to account for different data types.
 */
 
-function findShort(s){
+function findShort(s) {
+  var shortWord = Infinity;
+  var tempWord = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s.charAt(i) === ' ') {
+      if (tempWord < shortWord) {
+        shortWord = tempWord;
+        tempWord = 0;
+      }
+      else {
+        tempWord = 0;
+      }
+    }
+
+    else {
+      tempWord++;
+    }
+  }
+
+  return shortWord;
 }
 
 describe('Shorted Word | Code Wars | 7kyu', function() {
