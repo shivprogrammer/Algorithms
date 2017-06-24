@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Human Readable Time
 
@@ -16,8 +18,39 @@ The maximum time never exceeds 359999 (99:59:59)
 function humanReadable(seconds) {
 }
 
-Test.assertEquals(humanReadable(0), '00:00:00', 'humanReadable(0)');
-Test.assertEquals(humanReadable(5), '00:00:05', 'humanReadable(5)');
-Test.assertEquals(humanReadable(60), '00:01:00', 'humanReadable(60)');
-Test.assertEquals(humanReadable(86399), '23:59:59', 'humanReadable(86399)');
-Test.assertEquals(humanReadable(359999), '99:59:59', 'humanReadable(359999)');
+describe('Human Readble Time | Code Wars | 5kyu', function() {
+  describe('Input: 0', function() {
+    it('should return "00:00:00"', done => {
+      expect(humanReadable(0)).to.equal('00:00:00');
+      done();
+    })
+  })
+
+  describe('Input: 5', function() {
+    it('should return "00:00:05"', done => {
+      expect(humanReadable(5)).to.equal('00:00:05');
+      done();
+    })
+  })
+
+  describe('Input: 60', function() {
+    it('should return "00:01:00"', done => {
+      expect(humanReadable(60)).to.equal('00:01:00');
+      done();
+    })
+  })
+
+  describe('Input: 86399', function() {
+    it('should return "23:59:59"', done => {
+      expect(humanReadable(86399)).to.equal('23:59:59');
+      done();
+    })
+  })
+
+  describe('Input: 359999', function() {
+    it('should return "99:59:59"', done => {
+      expect(humanReadable(359999)).to.equal('99:59:59');
+      done();
+    })
+  })
+})
