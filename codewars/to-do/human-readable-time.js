@@ -20,9 +20,21 @@ function humanReadable(seconds) {
   var min = '00';
   var sec = '00';
 
-  sec = seconds % 60;
   hr = Math.floor(seconds / 3600);
   min = Math.floor(seconds / 60);
+  sec = seconds % 60;
+
+  if (hr < 10) {
+    hr = '0' + hr;
+  }
+
+  if (min < 10) {
+    min = '0' + min;
+  }
+
+  if (sec < 10) {
+    sec = '0' + sec;
+  }
 
   return hr + ':' + min + ':' + sec;
 }
