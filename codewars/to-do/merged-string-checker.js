@@ -1,3 +1,5 @@
+// ALL TESTS PASSING LOCALLY AND ON CODE WARS, BUT TIMING OUT ON CODE WARS
+
 'use strict';
 
 const expect = require('chai').expect;
@@ -76,6 +78,20 @@ function isMerge(s, part1, part2) {
 // }
 
 describe('Merged String Checker | Code Wars | 5kyu', function() {
+  describe('part1 is an empty string, and s === part2', function() {
+    it('return true', done => {
+      expect(isMerge('wars', '', 'wars')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('part2 is an empty string, but s != part1', function() {
+    it('return false', done => {
+      expect(isMerge('code', 'codes', '')).to.equal(false);
+      done();
+    })
+  })
+
   describe('if s = "codewars", part1 = "code", part2 = "wars"', function() {
     it('return true', done => {
       expect(isMerge('codewars', 'code', 'wars')).to.equal(true);
