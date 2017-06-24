@@ -23,6 +23,14 @@ part2:    o   e   a r s   = oears
 */
 
 function isMerge(s, part1, part2) {
+  if (!part1.length) {
+    return s === part2;
+  }
+
+  if (!part2.length) {
+    return s === part1;
+  }
+
   while(part1.length > 0 && part2.length > 0) {
 
     if (s.charAt(0) === part1.charAt(0)) {
@@ -50,6 +58,22 @@ function isMerge(s, part1, part2) {
 
   return false;
 }
+
+// function isMerge(s, part1, part2) {
+//   var p1 = 0;
+//   var p2 = 0;
+//
+//   for (let i = 0; i < s.length; i++) {
+//     if (s.charAt(i) === part1.charAt(p1)) {
+//       p1++;
+//     }
+//     if (s.charAt(i) === part2.charAt(p2)) {
+//       p2++;
+//     }
+//   }
+//
+//   return ((p1 === part1.length - 1) && (p2 === part2.length - 1));
+// }
 
 describe('Merged String Checker | Code Wars | 5kyu', function() {
   describe('if s = "codewars", part1 = "code", part2 = "wars"', function() {
