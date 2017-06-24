@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Create a function taking a positive integer as its parameter and returning a string containing the Roman Numeral representation of that integer.
 
@@ -23,11 +25,41 @@ Remember that there can't be more than 3 identical symbols in a row.
 */
 
 function solution(number){
-  // convert the number to a roman numeral
 }
 
-Test.expect(solution(1) == 'I', '1 should == "I"')
-Test.expect(solution(4) == 'IV', '4 should == "IV"')
-Test.expect(solution(1000) == 'M', '1000 should == "M"')
-Test.expect(solution(1990) == 'MCMXC', '1990 should == "MCMXC"')
-Test.expect(solution(2007) == 'MMVII', '2007 should == "MMVII"')
+describe('Roman Numerals Encoder', function() {
+  describe('Input: 1', function() {
+    it('Expect: "I"', done => {
+      expect(solution(1)).to.equal('I');
+      done();
+    })
+  })
+
+  describe('Input: 4', function() {
+    it('Expect: "IV"', done => {
+      expect(solution(4)).to.equal('IV');
+      done();
+    })
+  })
+
+  describe('Input: 1000', function() {
+    it('Expect: "M"', done => {
+      expect(solution(1000)).to.equal('M');
+      done();
+    })
+  })
+
+  describe('Input: 1990', function() {
+    it('Expect: "MCMXC"', done => {
+      expect(solution(1990)).to.equal('MCMXC');
+      done();
+    })
+  })
+
+  describe('Input: 2007', function() {
+    it('Expect: "MMVII"', done => {
+      expect(solution(2007)).to.equal('MMVII');
+      done();
+    })
+  })
+})
