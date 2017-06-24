@@ -1,3 +1,5 @@
+// 178 PASSING TESTS AND 1 FAILED TEST ON CODE WARS
+
 'use strict';
 
 const expect = require('chai').expect;
@@ -15,23 +17,14 @@ If the input array is empty or null, return an empty array:
 */
 
 function countPositivesSumNegatives(input) {
-  if (!input) {
+  if (!input || input === [''] || input === undefined) {
     return [];
   }
 
   var posCount = 0;
   var sumNeg = 0;
 
-  for (let i = 0; i < input.length; i++) {
-    if (!isNaN(input[i])) {
-      if (input[i] > 0) {
-        posCount++;
-      }
-      if (input[i] < 0) {
-        sumNeg += input[i];
-      }
-    }
-  }
+  input.forEach((x) => x > 0 ? posCount++ : sumNeg += x);
 
   return [posCount, sumNeg];
 }
