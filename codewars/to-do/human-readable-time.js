@@ -16,6 +16,11 @@ The maximum time never exceeds 359999 (99:59:59)
 */
 
 function humanReadable(seconds) {
+  var hours = '00';
+  var minutes = '00';
+  var seconds = '00';
+
+  return hours + ':' + minutes + ':' + seconds;
 }
 
 describe('Human Readble Time | Code Wars | 5kyu', function() {
