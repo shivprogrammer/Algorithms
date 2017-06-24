@@ -17,6 +17,13 @@ function findShort(s) {
   var tempWord = 0;
 
   for (let i = 0; i < s.length; i++) {
+    if (i === s.length - 1) {
+      tempWord++;
+      if (tempWord < shortWord) {
+        shortWord = tempWord;
+      }
+    }
+
     if (s.charAt(i) === ' ') {
       if (tempWord < shortWord) {
         shortWord = tempWord;
@@ -34,6 +41,9 @@ function findShort(s) {
 
   return shortWord;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(1) [Amazing use of space, nearly all answers on code wars used an array and I am using only primitive data]
 
 describe('Shorted Word | Code Wars | 7kyu', function() {
   describe('Input: "bitcoin take over the world maybe who knows perhaps"', function() {
