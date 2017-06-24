@@ -16,28 +16,19 @@ The maximum time never exceeds 359999 (99:59:59)
 */
 
 function humanReadable(seconds) {
-  var hr = '00';
-  var min = '00';
-  var sec = '00';
+  var hr = Math.floor(seconds / 3600);
+  var min = Math.floor((seconds % 3600)/60);
+  var sec = seconds % 60;
 
-  hr = Math.floor(seconds / 3600);
-  min = Math.floor((seconds % 3600)/60);
-  sec = seconds % 60;
-
-  if (hr < 10) {
-    hr = '0' + hr;
+  var clock = function(num) {
+    return num < 10 ? '0' + num : num;
   }
 
-  if (min < 10) {
-    min = '0' + min;
-  }
-
-  if (sec < 10) {
-    sec = '0' + sec;
-  }
-
-  return hr + ':' + min + ':' + sec;
+  return clock(hr) + ':' + clock(min) + ':' + clock(sec);
 }
+
+// Time Complexity: O(1)
+// Space Complexity: O(1)
 
 describe('Human Readble Time | Code Wars | 5kyu', function() {
   describe('Input: 0', function() {
