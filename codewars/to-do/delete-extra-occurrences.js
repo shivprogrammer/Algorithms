@@ -1,6 +1,12 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
+Delete occurrences of an element if it occurs more than n times
+
+6kyu
+
 Enough is enough!
 
 Alice and Bob were on a holiday. Both of them took many pictures of the places they've been, and now they want to show Charlie their entire collection. However, Charlie doesn't like this sessions, since the motive usually repeats. He isn't fond of seeing the Eiffel tower 40 times. He tells them that he will only sit during the session if they show the same motive at most N times. Luckily, Alice and Bob are able to encode the motive as a number. Can you help them to remove numbers such that their list contains each number only up to N times, without changing the order?
@@ -19,5 +25,18 @@ deleteNth ([20,37,20,21],1) // return [20,37,21]
 function deleteNth(arr, x) {
 }
 
-Test.assertSimilar(deleteNth([20,37,20,21], 1), [20,37,21])
-Test.assertSimilar(deleteNth([1,1,3,3,7,2,2,2,2], 3), [1, 1, 3, 3, 7, 2, 2, 2])
+describe('Delete Occurrences of an Lement if it Occurs More than N Times | 6kyu', function() {
+  describe('Input: [20,37,20,21], 1', function() {
+    it('Expected: [20,37,21]', done => {
+      expect(deleteNth([20,37,20,21], 1)).to.equal([20,37,21]);
+      done();
+    })
+  })
+
+  describe('Input: [1,1,3,3,7,2,2,2,2], 3', function() {
+    it('Expected: [1, 1, 3, 3, 7, 2, 2, 2]', done => {
+      expect(deleteNth([1,1,3,3,7,2,2,2,2], 3)).to.equal([1, 1, 3, 3, 7, 2, 2, 2]);
+      done();
+    })
+  })
+})
