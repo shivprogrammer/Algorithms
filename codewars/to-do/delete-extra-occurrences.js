@@ -23,19 +23,35 @@ deleteNth ([20,37,20,21],1) // return [20,37,21]
 */
 
 function deleteNth(arr, x) {
+  var output = [];
+  var inputMap = new Map();
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!inputMap.has(arr[i])) {
+      inputMap.set(arr[i], 1);
+      output.push(arr[i]);
+    }
+    if (inputMap.has(arr[i])) {
+      inputMap.set(arr[i], inputMap.get(arr[i]) + 1);
+      if (inputMap.get(arr[i]) <= x) {
+        output.push(arr[i]);
+      }
+    }
+  }
+  return output;
 }
 
 describe('Delete Occurrences of an Lement if it Occurs More than N Times | 6kyu', function() {
   describe('Input: [20,37,20,21], 1', function() {
     it('Expected: [20,37,21]', done => {
-      expect(deleteNth([20,37,20,21], 1)).to.equal([20,37,21]);
+      expect(deleteNth([20,37,20,21], 1)).to.deep.equal([20,37,21]);
       done();
     })
   })
 
   describe('Input: [1,1,3,3,7,2,2,2,2], 3', function() {
     it('Expected: [1, 1, 3, 3, 7, 2, 2, 2]', done => {
-      expect(deleteNth([1,1,3,3,7,2,2,2,2], 3)).to.equal([1, 1, 3, 3, 7, 2, 2, 2]);
+      expect(deleteNth([1,1,3,3,7,2,2,2,2], 3)).to.deep.equal([1, 1, 3, 3, 7, 2, 2, 2]);
       done();
     })
   })
