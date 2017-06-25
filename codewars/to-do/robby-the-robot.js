@@ -74,6 +74,7 @@ function getCommands(field, power) {
       gameField[startPosition] = 'S';
       gameField[temp] = '.';
     }
+    if (startPosition)
   }
 
   if (!gameField.includes('T')) {
