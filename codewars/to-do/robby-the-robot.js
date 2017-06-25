@@ -52,12 +52,37 @@ Each test case has exactly one solution (= only one shortest command list)
 function getCommands(field, power) {
   var moves = '';
   var sideLength = Math.sqrt(field.length);
+  var startPosition;
+  var targetPosition;
+  var temp;
+  let gameField = field.split('');
 
-  if (moves.length <= power) {
-    return moves;
+  for (let i = 0; i < field.length; i++) {
+    if (field.charAt(i) === 'S') {
+      startPosition = i;
+    }
+    if (field.charAt(i) === 'T') {
+      targetPosition = i;
+    }
   }
-  else {
-    return '';
+
+  if (startPosition != targetPosition) {
+    if (startPosition > targetPosition) {
+      moves += 'f';
+      temp = startPosition;
+      startPosition = startPosition - sideLength;
+      gameField[startPosition] = 'S';
+      gameField[temp] = '.';
+    }
+  }
+
+  if (!gameField.includes('T')) {
+    if (moves.length <= power) {
+      return moves;
+    }
+    else {
+      return '';
+    }
   }
 }
 
