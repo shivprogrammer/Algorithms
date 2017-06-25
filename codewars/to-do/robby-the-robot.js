@@ -50,6 +50,15 @@ Each test case has exactly one solution (= only one shortest command list)
 */
 
 function getCommands(field, power) {
+  var moves = '';
+  var sideLength = Math.sqrt(field.length);
+
+  if (moves.length <= power) {
+    return moves;
+  }
+  else {
+    return '';
+  }
 }
 
 describe('Robby, the Robot | Code Wars | 2kyu', function() {
