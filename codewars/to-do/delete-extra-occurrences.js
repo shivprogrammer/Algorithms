@@ -30,11 +30,13 @@ function deleteNth(arr, x) {
     if (!inputMap.has(arr[i])) {
       inputMap.set(arr[i], 1);
       output.push(arr[i]);
+      console.log(output);
     }
     if (inputMap.has(arr[i])) {
       inputMap.set(arr[i], inputMap.get(arr[i]) + 1);
       if (inputMap.get(arr[i]) <= x) {
         output.push(arr[i]);
+        console.log(output);
       }
     }
   }
