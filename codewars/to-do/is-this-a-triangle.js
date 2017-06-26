@@ -13,33 +13,11 @@ Implement a method that accepts 3 integer values a, b, c. The method should retu
 */
 
 function isTriangle(a,b,c) {
-  var high = Math.max(a,b,c);
-
-  if (high === a) {
-    if (Math.pow(b, 2) + Math.pow(c, 2) >= Math.pow(high, 2)) {
-      return true;
-    }
-    else {
-      return false;
-    }
+  if ((a + b > c) && (a + c > b) && (b + c > a)) {
+    return true;
   }
-
-  if (high === b) {
-    if (Math.pow(a, 2) + Math.pow(c, 2) >= Math.pow(high, 2)) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
-  if (high === c) {
-    if (Math.pow(a, 2) + Math.pow(b, 2) >= Math.pow(high, 2)) {
-      return true;
-    }
-    else {
-      return false;
-    }
+  else {
+    return false;
   }
 }
 
