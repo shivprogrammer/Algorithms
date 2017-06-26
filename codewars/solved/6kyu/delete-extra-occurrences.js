@@ -27,21 +27,24 @@ function deleteNth(arr, x) {
   var inputMap = new Map();
 
   for (let i = 0; i < arr.length; i++) {
-    if (!inputMap.has(arr[i])) {
-      inputMap.set(arr[i], 1);
-      output.push(arr[i]);
-      console.log(output);
-    }
     if (inputMap.has(arr[i])) {
       inputMap.set(arr[i], inputMap.get(arr[i]) + 1);
       if (inputMap.get(arr[i]) <= x) {
         output.push(arr[i]);
-        console.log(output);
       }
     }
+
+    if (!inputMap.has(arr[i])) {
+      inputMap.set(arr[i], 1);
+      output.push(arr[i]);
+    }
   }
+
   return output;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N) [output] + O(M) [inputMap]
 
 describe('Delete Occurrences of an Lement if it Occurs More than N Times | 6kyu', function() {
   describe('Input: [20,37,20,21], 1', function() {
