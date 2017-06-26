@@ -29,10 +29,17 @@ function pigIt(str) {
     if (i != 0 && !(str.charAt(i - 1) === ' ')) {
       output += str.charAt(i);
     }
+
+    if (!str.charAt(i + 1)) {
+      output += tempLetter + 'ay';
+    }
   }
 
   return output;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(1)
 
 describe('Pig Latin Question Code Wars', function() {
   describe('Input: Pig Latin is cool', function() {
