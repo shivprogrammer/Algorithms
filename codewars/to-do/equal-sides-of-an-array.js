@@ -39,7 +39,30 @@ An empty array should be treated like a 0 in this problem.
 */
 
 function findEvenIndex(arr) {
+  var leftSum = 0;
+  var rightSum = arr.reduce(function(a, b) {
+    return a + b;
+  }, 0);
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (i === 0) {
+      rightSum -= arr[i];
+    }
+    if (i != 0) {
+      leftSum += arr[i - 1];
+      rightSum -= arr[i];
+    }
+
+    if (leftSum === rightSum) {
+      return i;
+    }
+  }
+
+  return -1;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(1)
 
 describe('Equal Sides of An Array | 6kyu', function() {
   describe('Input: [1,2,3,4,3,2,1]', function() {
