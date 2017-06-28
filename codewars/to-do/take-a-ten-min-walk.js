@@ -13,33 +13,59 @@ Note: you will always receive a valid array containing a random assortment of di
 */
 
 function isValidWalk(walk) {
+  if (walk.length != 10) {
+    return false;
+  }
+
+  var stack = [walk[0]];
+  var directionsMap = new Map();
+  directionsMap.set('w', 'e');
+  directionsMap.set('e', 'w');
+  directionsMap.set('n', 's');
+  directionsMap.set('s', 'n');
+
+  for (let i = 1; i < walk.length; i++) {
+    if (directionsMap.get(walk[i]) === stack[stack.length - 1]) {
+      stack.pop();
+    }
+    else  {
+      stack.push(walk[i]);
+    }
+  }
+
+  if (stack.length === 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 describe('Take a Ten Minute Walk | 6kyu', function() {
-  describe('Input: ['n','s','n','s','n','s','n','s','n','s']', function() {
+  describe('Input: ["n","s","n","s","n","s","n","s","n","s"]', function() {
     it('should return true', done => {
-      expect(isValidWalk(['n','s','n','s','n','s','n','s','n','s']).to.equal(true);
+      expect(isValidWalk(['n','s','n','s','n','s','n','s','n','s'])).to.equal(true);
       done();
     })
   })
 
-  describe('Input: ['w','e','w','e','w','e','w','e','w','e','w','e']', function() {
+  describe('Input: ["w","e","w","e","w","e","w","e","w","e","w","e"]', function() {
     it('should return false', done => {
-      expect(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']).to.equal(false);
+      expect(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e'])).to.equal(false);
       done();
     })
   })
 
-  describe('Input: ['w']', function() {
+  describe('Input: ["w"]', function() {
     it('should return false', done => {
-      expect(isValidWalk(['w']).to.equal(false);
+      expect(isValidWalk(['w'])).to.equal(false);
       done();
     })
   })
 
-  describe('Input: ['n','n','n','s','n','s','n','s','n','s']', function() {
+  describe('Input: ["n","n","n","s","n","s","n","s","n","s"]', function() {
     it('should return false', done => {
-      expect(isValidWalk(['n','n','n','s','n','s','n','s','n','s']).to.equal(false);
+      expect(isValidWalk(['n','n','n','s','n','s','n','s','n','s'])).to.equal(false);
       done();
     })
   })
