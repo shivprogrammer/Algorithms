@@ -1,3 +1,4 @@
+// 20 PASSING TESTS AND 1 FAILING TEST ON CODE WARS WTF
 'use strict';
 
 const expect = require('chai').expect;
@@ -27,6 +28,7 @@ function tickets(peopleInLine) {
   var moneyMap = new Map();
   moneyMap.set(25, 0);
   moneyMap.set(50, 0);
+  moneyMap.set(100, 0);
 
   for (let i = 0; i < peopleInLine.length; i++) {
     if (peopleInLine[i] === 25) {
@@ -35,6 +37,7 @@ function tickets(peopleInLine) {
     if (peopleInLine[i] === 50) {
       if (moneyMap.get(25) >= 1) {
         moneyMap.set(25, moneyMap.get(25) - 1);
+        moneyMap.set(50, moneyMap.get(50) + 1);
       }
       else {
         return 'NO';
@@ -43,10 +46,12 @@ function tickets(peopleInLine) {
     if (peopleInLine[i] === 100) {
       if (moneyMap.get(25) >= 3) {
         moneyMap.set(25, moneyMap.get(25) - 3);
+        moneyMap.set(100, moneyMap.get(100) + 1);
       }
-      if (moneyMap.get(25) >= 1 && moneyMap.get(50) >= 1) {
+      else if (moneyMap.get(25) >= 1 && moneyMap.get(50) >= 1) {
         moneyMap.set(25, moneyMap.get(25) - 1);
         moneyMap.set(50, moneyMap.get(50) - 1);
+        moneyMap.set(100, moneyMap.get(100) + 1);
       }
       else {
         return 'NO';
@@ -68,6 +73,13 @@ describe('Vasya - Clerk | 6kyu', function() {
   describe('Input: [25, 100]', function() {
     it('should return "NO"', done => {
       expect(tickets([25, 100])).to.equal('NO');
+      done();
+    })
+  })
+
+  describe('Input: [25,50,25,100,25,25,25,100,25,25,50,100,25,25,50,100,25,50,25,100]', function() {
+    it('should return "YES"', done => {
+      expect(tickets([25,50,25,100,25,25,25,100,25,25,50,100,25,25,50,100,25,50,25,100])).to.equal('YES');
       done();
     })
   })
