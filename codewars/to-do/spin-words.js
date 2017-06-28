@@ -12,12 +12,30 @@ spinWords( "This is a test") => returns "This is a test"
 spinWords( "This is another test" )=> returns "This is rehtona test"
 */
 
-function spinWords() {
+function spinWords(input) {
+  var words = input.split(' ');
+  var output = '';
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length < 5) {
+      output += words[i] + ' ';
+    }
+    else {
+      output += words[i].split('').reverse().join('') + ' ';
+    }
+  }
+
+  return output.slice(0, output.length - 1);
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 describe('Stop Spinning my Words', function() {
   describe('Input: "Hey fellow warriors"', function() {
-    expect(spinWords('Hey fellow warriors')).to.equal('Hey wollef sroirraw');
-    done();
+    it('should return "Hey wollef sroirraw"', done => {
+      expect(spinWords('Hey fellow warriors')).to.equal('Hey wollef sroirraw');
+      done();
+    })
   })
 })
