@@ -34,6 +34,9 @@ function longest(s1, s2) {
   return output.split('').sort().join('');
 }
 
+// Time Complexity: O(N* log(N)) [for sorting function]
+// Space Complexity: 
+
 describe('Two to One | 7kyu', function() {
   describe('with inputs "aretheyhere", "yestheyarehere"', function() {
     it('should return "aehrsty"', done => {
