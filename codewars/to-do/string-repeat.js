@@ -10,7 +10,17 @@ repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
 */
 
 function repeatStr (n, s) {
+  var result = '';
+
+  for (let i = 0; i < n; i++) {
+    result += s;
+  }
+
+  return result;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(1)
 
 describe('String Repeat Code Wars', function() {
   describe('input: 3, *', function() {
