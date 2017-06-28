@@ -15,8 +15,22 @@ isIsogram( "moOse" ) == false // -- ignore letter case
 */
 
 function isIsogram(str) {
+  var characterMap = new Map();
 
+  for (let i = 0; i < str.length; i++) {
+    if (characterMap.has(str.charAt(i).toLowerCase())) {
+      return false;
+    }
+    else {
+      characterMap.set(str.charAt(i).toLowerCase(), 1);
+    }
+  }
+
+  return true;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 describe('Isograms | 7kyu', function() {
   describe('Input: Dermatoglyphics', function() {
