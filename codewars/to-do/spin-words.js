@@ -12,7 +12,12 @@ spinWords( "This is a test") => returns "This is a test"
 spinWords( "This is another test" )=> returns "This is rehtona test"
 */
 
-function spinWords(){
+function spinWords() {
 }
 
-Test.assertEquals(spinWords("Hey fellow warriors"), "Hey wollef sroirraw");
+describe('Stop Spinning my Words', function() {
+  describe('Input: "Hey fellow warriors"', function() {
+    expect(spinWords('Hey fellow warriors')).to.equal('Hey wollef sroirraw');
+    done();
+  })
+})
