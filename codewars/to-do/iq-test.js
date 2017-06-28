@@ -17,12 +17,12 @@ iqTest("1 2 1 1") => 2 // Second number is even, while the rest of the numbers a
 */
 
 function iqTest(numbers) {
-  var numsOnly = numbers.replace(/\s+/g, '');
+  var numsOnly = numbers.split(' ');
   var evens = 0;
   var odds = 0;
 
   for (let i = 0; i < 3; i++) {
-    if (parseInt(numsOnly.charAt(i)) % 2 === 0) {
+    if (parseInt(numsOnly[i]) % 2 === 0) {
       evens++;
     }
     else {
@@ -32,7 +32,7 @@ function iqTest(numbers) {
 
   if (evens > odds) {
     for (let x = 0; x < numsOnly.length; x++) {
-      if (parseInt(numsOnly.charAt(x)) % 2 === 1) {
+      if (parseInt(numsOnly[x]) % 2 === 1) {
         return x + 1;
       }
     }
@@ -40,7 +40,7 @@ function iqTest(numbers) {
 
   else {
     for (let y = 0; y < numsOnly.length; y++) {
-      if (parseInt(numsOnly.charAt(y)) % 2 === 0) {
+      if (parseInt(numsOnly[y]) % 2 === 0) {
         return y + 1;
       }
     }
