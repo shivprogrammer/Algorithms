@@ -21,7 +21,21 @@ countZeros(200); // returns 31
 */
 
 function countZeros(n) {
+  var zeros = 0;
+
+  for (let i = 1; i <= n; i++) {
+    for (let j = 0; j < i.toString().length; j++) {
+      if (i.toString().charAt(j) === '0') {
+        zeros++;
+      }
+    }
+  }
+
+  return zeros;
 }
+
+// Time Complexity: O(N squared)
+// Space Complexity: O(1)
 
 describe('Count Number of Zeroes from 1 to N | Code Wars | 7kyu', function() {
   describe('with input of 10', function() {
