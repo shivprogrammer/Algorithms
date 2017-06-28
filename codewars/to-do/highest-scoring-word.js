@@ -47,28 +47,27 @@ function high(x) {
   alphabetMap.set('y', 25);
   alphabetMap.set('z', 26);
 
-  for (let i = 0; i < x.length; i++) {
-    if (x.charAt(i) === ' ' || !x.charAt(i + 1)) {
-      if (tempScore > topScore) {
-        console.log(tempScore);
-        topScore = tempScore;
-        tempScore = 0;
-      }
-      else {
-        console.log(tempScore);
-        tempScore = 0;
-        topWord = '';
-      }
-    }
+  var words = x.split(' ');
 
+  for (let i = 0; i < words.length; i++) {
+    for(let j = 0; j < words[i].length; j++) {
+      tempScore += alphabetMap.get(words[i][j]);
+    }
+    if (tempScore > topScore) {
+      topScore = tempScore;
+      topWord = words[i];
+      tempScore = 0;
+    }
     else {
-      tempScore += alphabetMap.get(x.charAt(i).toLowerCase());
-      topWord += x.charAt(i);
+      tempScore = 0;
     }
   }
 
   return topWord;
 }
+
+// Time Complexity: O(N squared)
+// Space Complexity: O(N) [words] + O[M] [alphabetMap]
 
 describe('Highest Scoring Word | Code Wars | 6kyu', function() {
   describe('Input: "man I need a taxi up to ubud"', function() {
