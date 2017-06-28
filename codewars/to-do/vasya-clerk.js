@@ -24,6 +24,37 @@ tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 
 */
 
 function tickets(peopleInLine) {
+  var moneyMap = new Map();
+  moneyMap.set(25, 0);
+  moneyMap.set(50, 0);
+
+  for (let i = 0; i < peopleInLine.length; i++) {
+    if (peopleInLine[i] === 25) {
+      moneyMap.set(25, moneyMap.get(25) + 1);
+    }
+    if (peopleInLine[i] === 50) {
+      if (moneyMap.get(25) >= 1) {
+        moneyMap.set(25, moneyMap.get(25) - 1);
+      }
+      else {
+        return 'NO';
+      }
+    }
+    if (peopleInLine[i] === 100) {
+      if (moneyMap.get(25) >= 3) {
+        moneyMap.set(25, moneyMap.get(25) - 3);
+      }
+      if (moneyMap.get(25) >= 1 && moneyMap.get(50) >= 1) {
+        moneyMap.set(25, moneyMap.get(25) - 1);
+        moneyMap.set(50, moneyMap.get(50) - 1);
+      }
+      else {
+        return 'NO';
+      }
+    }
+  }
+
+  return 'YES';
 }
 
 describe('Vasya - Clerk | 6kyu', function() {
