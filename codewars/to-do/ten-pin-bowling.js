@@ -30,6 +30,11 @@ function bowling(string) {
           frameTotals[i] = tempScore;
           tempScore = 0;
         }
+        if (frames[i].charAt(0) === 'X') {
+          tempScore = 10 + parseInt(frames[i + 1].charAt(0)) + parseInt(frames[i + 1].charAt(1));
+          frameTotals[i] = tempScore;
+          tempScore = 0;
+        }
       }
     }
   }
@@ -53,6 +58,13 @@ describe('Bowling | 4kyu', function() {
   describe('Input: "54 45 54 45 54 45 45 54 5/ 62"', function() {
     it('should return 96', done => {
       expect(bowling("54 45 54 45 54 45 45 54 5/ 62")).to.equal(96);
+      done();
+    })
+  })
+
+  describe('Input: "54 45 54 45 54 45 45 X 54 62"', function() {
+    it('should return 99', done => {
+      expect(bowling("54 45 54 45 54 45 45 X 54 62")).to.equal(99);
       done();
     })
   })
