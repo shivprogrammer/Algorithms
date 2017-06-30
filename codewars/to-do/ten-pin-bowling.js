@@ -24,22 +24,27 @@ function bowling(string) {
         frameTotals[i] = tempScore;
         tempScore = 0;
       }
+
       else {
+
         if (Number.isInteger(parseInt(frames[i].charAt(0))) && Number.isInteger(parseInt(frames[i].charAt(1)))) {
           tempScore = parseInt(frames[i].charAt(0)) + parseInt(frames[i].charAt(1));
           frameTotals[i] = tempScore;
           tempScore = 0;
         }
+
         if (frames[i].charAt(1) === '/') {
           tempScore = 10 + parseInt(frames[i + 1].charAt(0));
           frameTotals[i] = tempScore;
           tempScore = 0;
         }
+
         if (frames[i].charAt(0) === 'X') {
           tempScore = 10 + parseInt(frames[i + 1].charAt(0)) + parseInt(frames[i + 1].charAt(1));
           frameTotals[i] = tempScore;
           tempScore = 0;
         }
+
       }
     }
   }
@@ -53,24 +58,38 @@ function bowling(string) {
 
 
 describe('Bowling | 4kyu', function() {
-  describe('Input: "54 45 54 45 54 45 45 54 54 621"', function() {
+  describe('Input of just numbers: "54 45 54 45 54 45 45 54 54 621"', function() {
     it('should return 90', done => {
       expect(bowling("54 45 54 45 54 45 45 54 54 621")).to.equal(90);
       done();
     })
   })
 
-  describe('Input: "54 45 54 45 54 45 45 54 5/ 621"', function() {
+  describe('Input has a spare: "54 45 54 45 54 45 45 54 5/ 621"', function() {
     it('should return 97', done => {
       expect(bowling("54 45 54 45 54 45 45 54 5/ 621")).to.equal(97);
       done();
     })
   })
 
-  describe('Input: "54 45 54 45 54 45 45 X 54 621"', function() {
+  describe('Input has a strike: "54 45 54 45 54 45 45 X 54 621"', function() {
     it('should return 100', done => {
       expect(bowling("54 45 54 45 54 45 45 X 54 621")).to.equal(100);
-      done();1
+      done();
+    })
+  })
+
+  describe('Input has two strikes: "54 X 54 45 54 45 45 X 54 621"', function() {
+    it('should return 110', done => {
+      expect(bowling("54 X 54 45 54 45 45 X 54 621")).to.equal(110);
+      done();
+    })
+  })
+
+  describe('Input has a spare and a strike: "54 45 54 4/ 54 45 45 X 54 621"', function() {
+    it('should return 106', done => {
+      expect(bowling("54 45 54 4/ 54 45 45 X 54 621")).to.equal(106);
+      done();
     })
   })
 })
