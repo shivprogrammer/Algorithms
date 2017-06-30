@@ -25,10 +25,15 @@ function bowling(string) {
           frameTotals[i] = tempScore;
           tempScore = 0;
         }
+        if (frames[i].charAt(1) === '/') {
+          tempScore = 10 + parseInt(frames[i + 1].charAt(0));
+          frameTotals[i] = tempScore;
+          tempScore = 0;
+        }
       }
     }
   }
-  
+
   for (let x = 0; x < frameTotals.length; x++) {
     score += frameTotals[x];
   }
