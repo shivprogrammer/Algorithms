@@ -8,7 +8,16 @@ Given a string, calculate the score of a bowling game.
 */
 
 function bowling(string) {
+  var score = 0;
+  var frames = string.split('');
 
+  for (let i = 0; i < frames.length; i++) {
+    if (frames[i] != ' ') {
+      score += parseInt(frames[i]);
+    }
+  }
+
+  return score;
 }
 
 describe('Bowling | 4kyu', function() {
