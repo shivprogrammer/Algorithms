@@ -19,7 +19,12 @@ function bowling(string) {
 
   for (let i = 0; i < frames.length; i++) {
     for (let j = 0; j < 1; j++) {
-      if (!frames[i].charAt[2]) {
+      if (i === frames.length - 1) {
+        tempScore = parseInt(frames[i].charAt(0)) + parseInt(frames[i].charAt(1)) + parseInt(frames[i].charAt(2));
+        frameTotals[i] = tempScore;
+        tempScore = 0;
+      }
+      else {
         if (Number.isInteger(parseInt(frames[i].charAt(0))) && Number.isInteger(parseInt(frames[i].charAt(1)))) {
           tempScore = parseInt(frames[i].charAt(0)) + parseInt(frames[i].charAt(1));
           frameTotals[i] = tempScore;
@@ -48,24 +53,24 @@ function bowling(string) {
 
 
 describe('Bowling | 4kyu', function() {
-  describe('Input: "54 45 54 45 54 45 45 54 54 62"', function() {
-    it('should return 89', done => {
-      expect(bowling("54 45 54 45 54 45 45 54 54 62")).to.equal(89);
+  describe('Input: "54 45 54 45 54 45 45 54 54 621"', function() {
+    it('should return 90', done => {
+      expect(bowling("54 45 54 45 54 45 45 54 54 621")).to.equal(90);
       done();
     })
   })
 
-  describe('Input: "54 45 54 45 54 45 45 54 5/ 62"', function() {
-    it('should return 96', done => {
-      expect(bowling("54 45 54 45 54 45 45 54 5/ 62")).to.equal(96);
+  describe('Input: "54 45 54 45 54 45 45 54 5/ 621"', function() {
+    it('should return 97', done => {
+      expect(bowling("54 45 54 45 54 45 45 54 5/ 621")).to.equal(97);
       done();
     })
   })
 
-  describe('Input: "54 45 54 45 54 45 45 X 54 62"', function() {
-    it('should return 99', done => {
-      expect(bowling("54 45 54 45 54 45 45 X 54 62")).to.equal(99);
-      done();
+  describe('Input: "54 45 54 45 54 45 45 X 54 621"', function() {
+    it('should return 100', done => {
+      expect(bowling("54 45 54 45 54 45 45 X 54 621")).to.equal(100);
+      done();1
     })
   })
 })
