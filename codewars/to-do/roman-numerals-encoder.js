@@ -25,6 +25,61 @@ Remember that there can't be more than 3 identical symbols in a row.
 */
 
 function solution(number){
+  var x = number;
+
+  var output = [];
+
+  var romanValues = new Map();
+  romanValues.set('I', 1);
+  romanValues.set('V', 5);
+  romanValues.set('X', 10);
+  romanValues.set('L', 50);
+  romanValues.set('C', 100);
+  romanValues.set('D', 500);
+  romanValues.set('M', 1000);
+
+  var romanCount = new Map();
+  romanValues.set('I', 0);
+  romanValues.set('V', 0);
+  romanValues.set('X', 0);
+  romanValues.set('L', 0);
+  romanValues.set('C', 0);
+  romanValues.set('D', 0);
+  romanValues.set('M', 0);
+
+  while (x >= 0) {
+    if (x >= 1000) {
+      x -= 1000;
+      output.push('M');
+    }
+    if (x >= 500) {
+      x -= 500;
+      output.push('D');
+    }
+    if (x >= 100) {
+      x -= 100;
+      output.push('C');
+    }
+    if (x >= 50) {
+      x -= 50;
+      output.push('L');
+    }
+    if (x >= 10) {
+      x -= 10;
+      output.push('X');
+    }
+    if (x >= 5) {
+      x -= 5;
+      output.push('V');
+    }
+    if (x >= 1) {
+      x -= 1;
+      output.push('I');
+    }
+
+    return output.join('');
+  }
+
 }
 
 describe('Roman Numerals Encoder', function() {
