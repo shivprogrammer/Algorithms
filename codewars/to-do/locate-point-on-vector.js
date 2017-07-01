@@ -43,7 +43,7 @@ function pointVsVector(point, vector) {
   if (vector[1][0] < vector[0][0]  && vector[1][1] > vector[0][1]) {
     topLtoBottomR = true;
 
-    // if (pointSlope <)
+    return pointSlope < vectorSlope ? 1: -1;
   }
 
   if (vector[1][0] < vector[0][0]  && vector[1][1] < vector[0][1]) {
@@ -71,13 +71,13 @@ describe('Locate Point in Relation to Vector', function() {
   //     done();
   //   })
   // })
-  //
-  // describe('with point [2,0] and vector [[0, 0], [1, 1]]', done => {
-  //   it('should return -1', done => {
-  //     expect(pointVsVector([2,0], [[0, 0], [1, 1]])).to.equal(1);
-  //     done();
-  //   })
-  // })
+  
+  describe('with point [2,0] and vector [[0, 0], [1, 1]]', done => {
+    it('should return -1', done => {
+      expect(pointVsVector([2,0], [[0, 0], [1, 1]])).to.equal(1);
+      done();
+    })
+  })
   //
   // describe('with point [2,0] and vector [[0, 0], [3, 2]]', done => {
   //   it('should return -1', done => {
