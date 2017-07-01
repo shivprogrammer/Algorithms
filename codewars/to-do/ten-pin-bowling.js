@@ -40,11 +40,15 @@ function bowling(string) {
         }
 
         if (frames[i].charAt(0) === 'X') {
-          tempScore = 10 + parseInt(frames[i + 1].charAt(0)) + parseInt(frames[i + 1].charAt(1));
-          frameTotals[i] = tempScore;
-          tempScore = 0;
+          if (frames[i + 1].charAt(0) === 'X' || frames[i + 1].charAt(1) === '/') {
+            frameTotals[i] = 20;
+          }
+          else {
+            tempScore = 10 + parseInt(frames[i + 1].charAt(0)) + parseInt(frames[i + 1].charAt(1));
+            frameTotals[i] = tempScore;
+            tempScore = 0;
+          }
         }
-
       }
     }
   }
