@@ -17,26 +17,35 @@ filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
 
 function filter_list(l) {
+  var output = [];
+
+  for (let i = 0; i < l.length; i++) {
+    if (Number.isInteger(l[i])) {
+      output.push(l[i]);
+    }
+  }
+
+  return output;
 }
 
 describe('List Filtering | 7kyu', function() {
-  describe('Input: [1,2,'a','b']', function() {
+  describe('Input: [1,2,"a","b"]', function() {
     it('Expected Output: [1,2]', done => {
-      expect(filter_list([1,2,'a','b'])).to.equal([1,2]);
+      expect(filter_list([1,2,'a','b'])).to.deep.equal([1,2]);
       done();
     })
   })
 
-  describe('Input: [1,'a','b',0,15]', function() {
+  describe('Input: [1,"a","b",0,15]', function() {
     it('Expected Output: [1,0,15]', done => {
-      expect(filter_list([1,'a','b',0,15])).to.equal([1,0,15]);
+      expect(filter_list([1,'a','b',0,15])).to.deep.equal([1,0,15]);
       done();
     })
   })
 
-  describe('Input: [1,2,'aasf','1','123',123]', function() {
+  describe('Input: [1,2,"aasf","1","123",123]', function() {
     it('Expected Output: [1,2,123]', done => {
-      expect(filter_list([1,2,'aasf','1','123',123])).to.equal([1,2,123]);
+      expect(filter_list([1,2,'aasf','1','123',123])).to.deep.equal([1,2,123]);
       done();
     })
   })
