@@ -1,8 +1,11 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Given a string and 3 ints, return the new string that you receive for the airport transition ticket
 */
+
 var tickets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 
 function airport(str, a, b, c) {
@@ -44,9 +47,21 @@ function airport(str, a, b, c) {
   alphabetMap.set('9', 34);
   alphabetMap.set('0', 35);
 
-  var output = '';
+  var letterIndex = [alphabetMap.get(str.charAt(0)), alphabetMap.get(str.charAt(1)), alphabetMap.get(str.charAt(2))];
 
-  output += tickets.charAt(str.charAt(0))
+  for (let i = 0; i < letterIndex.length; i++) {
+    letterIndex[i] += a;
+  }
+
+  for (let j = 1; j < letterIndex.length; j++) {
+    letterIndex[j] += b;
+  }
+
+  letterIndex[2] += c;
+
+  var output = tickets.charAt(letterIndex[0]) + tickets.charAt(letterIndex[1]) + tickets.charAt(letterIndex[2]);
+
+  return output;
 }
 
 describe('Airport problem', function() {
@@ -58,8 +73,8 @@ describe('Airport problem', function() {
   })
 
   describe('Input: ABC, 1, 5, 10', function() {
-    it('should return BGR', done => {
-      expect(airport('ABC', 1, 5, 10)).to.equal('BGR');
+    it('should return BHS', done => {
+      expect(airport('ABC', 1, 5, 10)).to.equal('BHS');
       done();
     })
   })
