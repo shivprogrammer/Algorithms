@@ -19,18 +19,21 @@ For an input: "is2 Thi1s T4est 3a" the function should return "Thi1s is2 3a T4es
 function order(words) {
   var x = 1;
   var wordsArray = words.split(' ');
-  var output = [];
+  var output = '';
 
   for (let i = 0; i < wordsArray.length; i++) {
     for (let j = 0; j < wordsArray[i].length; j++) {
       if (parseInt(wordsArray[i][j]) === x) {
-        output.push(wordsArray[i] + ' ');
+        output += wordsArray[i] + ' ';
         x++;
+        wordsArray[i] = '';
+        i = 0;
+        j = 0;
       }
     }
   }
 
-  return output.join('');
+  return output.slice(0, output.length - 1);
 }
 
 describe('Your Order, Please | 6kyu', function() {
