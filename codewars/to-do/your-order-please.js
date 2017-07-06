@@ -23,10 +23,13 @@ function order(words) {
 
   for (let i = 0; i < wordsArray.length; i++) {
     for (let j = 0; j < wordsArray[i].length; j++) {
-      if (parseInt(wordsArray[i][j]) === x) {
+      if (wordsArray[i].length > 1 && parseInt(wordsArray[i][j]) === x) {
         output += wordsArray[i] + ' ';
-        x++;
+        console.log(output);
         wordsArray[i] = '';
+        console.log(wordsArray);
+        x++;
+        console.log(x)
         i = 0;
         j = 0;
       }
