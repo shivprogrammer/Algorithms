@@ -20,7 +20,7 @@ likes ["Alex", "Jacob", "Mark", "Max"] // must be "Alex, Jacob and 2 others like
 
 function likes(names) {
   var extras = names.length - 2;
-  
+
   if (names.length === 0) {
     return 'no one likes this';
   }
@@ -41,6 +41,9 @@ function likes(names) {
     return names[0] + ', ' + names[1] + ' and ' + extras + ' others like this';
   }
 }
+
+// Time Complexity: O(1)
+// Space Complexity: O(1)
 
 describe('Who Likes It? | 6kyu', function() {
   describe('Input: []', function() {
