@@ -25,6 +25,22 @@ Note that brackets may be round, square or curly and can also be nested. Index a
 */
 
 function conversion(str)
+  var chemicalMap = new Map();
+
+  var bracesStack = [];
+  var bracesMap = new Map();
+  bracesMap.set('[', ']');
+  bracesMap.set('(', ')');
+
+  for (let i = 0; i < str.length; i++) {
+    if (!chemicalMap.has(str.charAt(i))) {
+      chemicalMap.set(str.charAt(i), 1);
+
+      if (parseInt(str.charAt(i + 1))) {
+        chemicalMap.set(str.charAt(i), parseInt(str.charAt(i + 1)) - 1);
+      }
+    }
+  }
 }
 
 describe('Molecules and Atoms | 3kyu', function() {
