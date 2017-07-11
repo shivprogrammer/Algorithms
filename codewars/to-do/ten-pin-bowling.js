@@ -30,8 +30,6 @@ function bowling(string) {
           if (frames[i].charAt(1) === 'X') {
             if (frames[i].charAt(2) === 'X') {
               frameTotals[i] = 60;
-              console.log(frameTotals[i]);
-              console.log(frameTotals);
             }
             else {
               tempScore = 20 + parseInt(frames[i].charAt(2));
@@ -39,7 +37,8 @@ function bowling(string) {
               frameTotals[i] = tempScore + temp2 + parseInt(frames[i].charAt(2));
             }
           }
-          if (frames[i].charAt(2) === '/') {
+
+          else if (frames[i].charAt(2) === '/') {
             tempScore = 10 + parseInt(frames[i].charAt(1)) + 10;
             frameTotals[i] = tempScore + parseInt(frames[i].charAt(1)) + 10;
           }
@@ -98,8 +97,6 @@ function bowling(string) {
       }
     }
   }
-
-  console.log(frameTotals);
 
   for (let x = 0; x < frameTotals.length; x++) {
     score += frameTotals[x];
