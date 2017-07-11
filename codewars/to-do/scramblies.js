@@ -30,20 +30,6 @@ function scramble(str1, str2) {
     }
   }
 
-  var entries = string1Map.entries();
-
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-  // console.log(entries.next());
-
   for (let x = 0; x < str2.length; x++) {
     if (string1Map.has(str2.charAt(x))) {
       string1Map.set(str2.charAt(x), string1Map.get(str2.charAt(x)) - 1);
@@ -55,6 +41,9 @@ function scramble(str1, str2) {
 
   return true;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 describe('Scramblies | 5kyu', function() {
   describe('str1: "rkqodlw", str2: "world"', function() {
