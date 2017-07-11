@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Whose Move
 
@@ -21,6 +23,28 @@ For lastPlayer = "black" and win = false, the output should be "white".
 For lastPlayer = "white" and win = true, the output should be "white".
 */
 
+function whoseMove(lastPlayer, win) {
+  if (lastPlayer === 'black' && win === true) {
+    return 'black';
+  }
+
+  if (lastPlayer === 'black' && win === false) {
+    return 'white';
+  }
+
+  if (lastPlayer === 'white' && win === true) {
+    return 'white';
+  }
+
+  if (lastPlayer === 'white' && win === false) {
+    return 'black';
+  }
+
+  else {
+    return false;
+  }
+}
+
 describe('Whose Move Code Wars', function() {
   describe('Input: black, true', function() {
     it('Expect: black', done => {
@@ -37,7 +61,7 @@ describe('Whose Move Code Wars', function() {
   })
 
   describe('Input: white, true', function() {
-    it('Expect: ', done => {
+    it('Expect: white', done => {
     expect(whoseMove('white', true)).to.equal('white');
     done();
     })
