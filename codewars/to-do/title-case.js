@@ -3,6 +3,10 @@
 const expect = require('chai').expect
 
 /*
+Title Case
+
+4kyu
+
 A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first letter of the word is in upper case) or (b) considered to be an exception and put entirely into lower case unless it is the first word, which is always capitalised.
 
 Write a function that will convert a string into title case, given an optional list of exceptions (minor words). The list of minor words will be given as a string with each word separated by a space. Your function should ignore the case of the minor words string -- it should behave in the same way even if the case of the minor word string is changed.
@@ -19,47 +23,59 @@ titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 */
 
 function titleCase(title, minorWords) {
-  var result = '';
   var output = '';
+  var lowerTitle = '';
+  var lowerMinor = '';
 
   if (!title) {
     return output;
   }
 
-  var titleArray = title.split(' ');
-
-  for (let i = 0; i < titleArray.length; i++) {
-    for (let j = 0; j < titleArray[i].length; j++) {
-      if (j === 0) {
-        result += ' ' + titleArray[i][j].toUpperCase();
-      }
-      else {
-        result += titleArray[i][j].toLowerCase();
-      }
-    }
+  for (let x = 0; x < title.length; x++) {
+    lowerTitle += title.charAt(x).toLowerCase();
   }
 
   if (!minorWords) {
-    return result;
-  }
-
-  var minorWordsArray = minorWords.split(' ');
-  result = result.split(' ');
-
-  for (let x = 1; x < result.length; x++) {
-    for (let y = 0; y < minorWordsArray.length; y++) {
-      if (x != 1 && result[x].toLowerCase() === minorWordsArray[y].toLowerCase()) {
-        output += result[x].toLowerCase() + ' ';
-        break;
+    for (let z = 0; z < title.length; z++) {
+      if (z === 0) {
+        output += title.charAt(0).toUpperCase();
       }
+      else if (title.charAt(z - 1) === ' ') {
+          output += title.charAt(z).toUpperCase();
+        }
       else {
-        output += result[x] + ' ';
-        break;
+        output += title.charAt(z).toLowerCase();
       }
     }
+
+    return output;
   }
 
-  return output;
+  for (let y = 0; y < minorWords.length; y++) {
+    lowerMinor += minorWords.charAt(y).toLowerCase();
+  }
+
+  var titleArray = lowerTitle.split(' ');
+  var minorWordsArray = lowerMinor.split(' ');
+
+  for (let i = 0; i < titleArray.length; i++) {
+    if (i === 0) {
+      output += titleArray[i].charAt(0).toUpperCase() + titleArray[i].slice(1, titleArray[i].length);
+      titleArray[0] = '';
+    }
+
+    for (let j = 0; j < minorWordsArray.length; j++) {
+      if (titleArray[i] === minorWordsArray[j]) {
+        console.log('do we hit this condition')
+        output += titleArray[i].toLowerCase();
+        titleArray[i] = '';
+      }
+    }
+    output += titleArray[i].charAt(0).toUpperCase() + titleArray[i].slice(1, titleArray[i].length) + ' ';
+    titleArray[i] = '';
+  }
+
+  return output.slice(0, output.length - 1);
 }
 
 describe('Title Case | Code Wars', function() {
