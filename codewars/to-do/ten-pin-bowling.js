@@ -162,4 +162,25 @@ describe('Bowling | 4kyu', function() {
       done();
     })
   })
+
+  describe('last frame is strike, number, & spare: "00 00 00 00 00 00 00 00 00 X7/"', function() {
+    it('Return 44', done => {
+      expect(bowling("00 00 00 00 00 00 00 00 00 X7/")).to.equal(44);
+      done();
+    })
+  })
+
+  describe('last frame is 2 strikes then a number: "00 00 00 00 00 00 00 00 00 XX8"', function() {
+    it('Return 54', done => {
+      expect(bowling("00 00 00 00 00 00 00 00 00 XX8")).to.equal(54);
+      done();
+    })
+  })
+
+  describe('last frame is a number, spare, then strike: "00 00 00 00 00 00 00 00 00 8/X"', function() {
+    it('Return 38', done => {
+      expect(bowling("00 00 00 00 00 00 00 00 00 8/X")).to.equal(38);
+      done();
+    })
+  })
 })
