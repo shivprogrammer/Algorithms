@@ -20,7 +20,6 @@ Performance needs to be considered
 
 function scramble(str1, str2) {
   var string1Map = new Map();
-  var string2Map = new Map();
 
   for (let i = 0; i < str1.length; i++) {
     if (string1Map.has(str1.charAt(i))) {
@@ -33,27 +32,28 @@ function scramble(str1, str2) {
 
   var entries = string1Map.entries();
 
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
-  console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
+  // console.log(entries.next());
 
-  for (let j = 0; j < str2.length; j++) {
-    if (string2Map.has(str2.charAt(j))) {
-      // console.log('now we are in the second for loop')
-      string2Map.set(str2.charAt(j), string2Map.get(str2.charAt(j)) + 1);
+  for (let x = 0; x < str2.length; x++) {
+    if (string1Map.has(str2.charAt(x))) {
+      string1Map.set(str2.charAt(x), string1Map.get(str2.charAt(x)) - 1);
     }
     else {
-      string2Map.set(str2.charAt(j), 1);
+      return false;
     }
   }
+
+  return true;
 }
 
 describe('Scramblies | 5kyu', function() {
@@ -72,8 +72,8 @@ describe('Scramblies | 5kyu', function() {
   })
 
   describe('str1: "katas", str2: "steak"', function() {
-    it('should return true', done => {
-      expect(scramble('katas', 'steak')).to.equal(true);
+    it('should return false', done => {
+      expect(scramble('katas', 'steak')).to.equal(false);
       done();
     })
   })
