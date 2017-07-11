@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Scramblies
 
@@ -22,19 +24,34 @@ function scramble(str1, str2) {
 
   for (let i = 0; i < str1.length; i++) {
     if (string1Map.has(str1.charAt(i))) {
-      string1Map.set(str1.charAt(i), string1Map.get(str1.charAt(i)));
+      string1Map.set(str1.charAt(i), string1Map.get(str1.charAt(i)) + 1);
     }
     else {
       string1Map.set(str1.charAt(i), 1);
     }
   }
 
+  var entries = string1Map.entries();
+
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+  console.log(entries.next());
+
   for (let j = 0; j < str2.length; j++) {
     if (string2Map.has(str2.charAt(j))) {
-      string2Map.set(str2.charAt(j), string2Map.get(str2.charAt(j)));
+      // console.log('now we are in the second for loop')
+      string2Map.set(str2.charAt(j), string2Map.get(str2.charAt(j)) + 1);
     }
     else {
-
+      string2Map.set(str2.charAt(j), 1);
     }
   }
 }
