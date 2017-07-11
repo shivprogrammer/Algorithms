@@ -23,15 +23,13 @@ function order(words) {
 
   for (let i = 0; i < wordsArray.length; i++) {
     for (let j = 0; j < wordsArray[i].length; j++) {
-      if (wordsArray[i].length > 1 && parseInt(wordsArray[i][j]) === x) {
+      if (parseInt(wordsArray[i][j]) === x) {
         output += wordsArray[i] + ' ';
-        console.log(output);
         wordsArray[i] = '';
-        console.log(wordsArray);
         x++;
-        console.log(x)
         i = 0;
         j = 0;
+        console.log(wordsArray);
       }
     }
   }
@@ -57,6 +55,14 @@ describe('Your Order, Please | 6kyu', function() {
   describe('Input: "4of Fo1r pe6ople g3ood th5e the2"', function() {
     it('Should return "Fo1r the2 g3ood 4of th5e pe6ople"', done => {
       expect(order('4of Fo1r pe6ople g3ood th5e the2')).to.equal('Fo1r the2 g3ood 4of th5e pe6ople');
+      done();
+    })
+  })
+
+
+  describe('Input: "stop6ping this5 the2 fuc3k 1why 4is"', function() {
+    it('Should return "1why the2 fuc3k 4is this5 stop6ping"', done => {
+      expect(order('stop6ping this5 the2 fuc3k 1why 4is')).to.equal('1why the2 fuc3k 4is this5 stop6ping');
       done();
     })
   })
