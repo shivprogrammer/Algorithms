@@ -1,9 +1,11 @@
 'use strict';
 
-/*
-4kyu
+const expect = require('chai').expect;
 
+/*
 Snail Sort
+
+4kyu
 
 Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.
 
@@ -20,7 +22,24 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 */
 
 function snail(array) {
+  var width = array.length;
+  console.log(width);
+  var height = array[0].length;
+  console.log(height);
+  var output = [];
 
+  for (let j = 0; j < array[0].length; j++) {
+    output.push(array[0][j]);
+    array[0][j] = '';
+  }
+
+  for (let i = 0; i < array.length; i++) {
+    output.push(array[i][array[0].length - 1]);
+    array[i][array[0].length - 1] = '';
+  }
+
+  // console.log(array);
+  // return output;
 }
 
 describe('Snail | Code Wars | 4kyu', function() {
