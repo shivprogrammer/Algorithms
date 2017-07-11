@@ -20,3 +20,33 @@ Example
 For lastPlayer = "black" and win = false, the output should be "white".
 For lastPlayer = "white" and win = true, the output should be "white".
 */
+
+describe('Whose Move Code Wars', function() {
+  describe('Input: black, true', function() {
+    it('Expect: black', done => {
+    expect(whoseMove('black', true)).to.equal('black');
+    done();
+    })
+  })
+
+  describe('Input: black, false', function() {
+    it('Expect: white', done => {
+    expect(whoseMove('black', false)).to.equal('white');
+    done();
+    })
+  })
+
+  describe('Input: white, true', function() {
+    it('Expect: ', done => {
+    expect(whoseMove('white', true)).to.equal('white');
+    done();
+    })
+  })
+
+  describe('Input: white, false', function() {
+    it('Expect: black', done => {
+    expect(whoseMove('white', false)).to.equal('black');
+    done();
+    })
+  })
+})
