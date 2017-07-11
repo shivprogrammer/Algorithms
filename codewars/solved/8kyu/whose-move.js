@@ -59,7 +59,7 @@ describe('Whose Move Code Wars', function() {
   })
 
   describe('Input: white, true', function() {
-    it('Expect: ', done => {
+    it('Expect: white', done => {
     expect(whoseMove('white', true)).to.equal('white');
     done();
     })
