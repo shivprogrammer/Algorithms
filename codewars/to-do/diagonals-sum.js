@@ -40,6 +40,12 @@ function sum(matrix) {
   return sum;
 }
 
+/*
+AYOOOO SOLVED THIS ONE PRETTY QUICKLY ACTUALLY.
+Time complexity: O(2 * sqrt(N)) => O(sqrt(N))
+Space complexity: O(1)
+*/
+
 describe('Matrix Diagonals Sum Question Code Wars', function() {
   describe('Input: no input', function() {
     it('Expected: 0', done => {
