@@ -34,7 +34,7 @@ function scramble(str1, str2) {
       string2Map.set(str2.charAt(j), string2Map.get(str2.charAt(j)));
     }
     else {
-      
+
     }
   }
 }
