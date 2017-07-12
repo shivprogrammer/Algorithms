@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Word count
 
@@ -24,6 +26,19 @@ String with spaces around should be trimmed.
 Non-whitespace (ex. breakspace, unicode chars) should be assumed as delimiter
 Be sure that words with chars like -, ', ` are counted right.
 */
+
+function countWords(str) {
+  var words = str.split(' ');
+  var count = 0;
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] != '') {
+      count++;
+    }
+  }
+
+  return count;
+}
 
 describe('Word Count | 8kyu', function() {
   describe('Input: Hello', function() {
