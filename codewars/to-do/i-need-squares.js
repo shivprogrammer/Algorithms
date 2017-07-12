@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Be Concise II - I Need Squares
 
@@ -16,20 +18,15 @@ Don't you think the array parameter is a bit wordy? ;)
 Good luck! :D
 */
 
-function squaresOnly(array) {
-  var result = [], isSquare;
-  for (let i = 0; i < array.length; i++) {
-    isSquare = !1; // !1 evaluates to false and is therefore a shorthand way of typing 'false'
-    for (let k = 0; k <= 10; k++) {
-      if (k ** 2 === array[i]) {
-        isSquare = true;
-      }
-    }
-    if (isSquare) {
-      result[result.length] = array[i];
+function squaresOnly(x) {
+  var z = [];
+  for (let i = 0; i < x.length; i++) {
+    if (Math.sqrt(x[i]) % 1 === 0) {
+      z.push(x[i]);
     }
   }
-  return result;
+
+  return z;
 }
 
 describe('I Need Squares | 8kyu', function() {
