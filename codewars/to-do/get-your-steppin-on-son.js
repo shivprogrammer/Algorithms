@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Get Your Steppin' On Son
 
@@ -25,6 +27,7 @@ Every word will end with the character that the next word will start with. You w
 */
 
 function wordStep(str) {
+  
 }
 
 describe('Get Your Steppin On Son | 6kyu', function() {
