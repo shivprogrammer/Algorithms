@@ -19,14 +19,9 @@ Good luck! :D
 */
 
 function squaresOnly(x) {
-  var z = [];
-  for (let i = 0; i < x.length; i++) {
-    if (Math.sqrt(x[i]) % 1 === 0) {
-      z.push(x[i]);
-    }
-  }
-
-  return z;
+  return x.filter((a, x) => {
+    Math.sqrt(x[a]) % 1 === 0;
+  })
 }
 
 describe('I Need Squares | 8kyu', function() {
