@@ -45,6 +45,9 @@ function nbYear(p0, percent, aug, p) {
   return count;
 }
 
+// Time Complexity: O(N) [It's a straight shot, but basically close to P/currentPop]
+// Space Complexity: O(1)
+
 describe('Growth of a Population | 7kyu', function() {
   describe('Starting Population: 1500; Percent Increase: 5%; 100 New Inhabitants; 5000 is Population Goal', function() {
     it('should return 15', done => {
