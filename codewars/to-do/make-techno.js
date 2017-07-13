@@ -26,14 +26,14 @@ function perc (0.22) {}
 -> should return "invalid track time"
 */
 
-function perc(num) {
-  if (isNaN(num) && (num < 1 || num > 100)) {
+function perc(mins) {
+  if (isNaN(mins) || (mins < 1 || mins > 100)) {
     return 'invalid track time';
   }
 
-  var kicks = Math.round(num * 120);
-  var hats = Math.round(num * 240);
-  var claps = Math.round(num * 60);
+  var kicks = Math.round(mins * 120);
+  var hats = Math.round(mins * 240);
+  var claps = Math.round(mins * 60);
 
   var output = [kicks + ' kicks', hats + ' hihats', claps + ' claps'];
 
@@ -51,6 +51,20 @@ describe('Make Techno | 7kyu', function() {
   describe('Input: 99.9999', function() {
     it('should return ["12000 kicks", "24000 hihats", "6000 claps"]', done => {
       expect(perc(99.9999)).to.deep.equal(["12000 kicks", "24000 hihats", "6000 claps"]);
+      done();
+    })
+  })
+
+  describe('Input: "a"', function() {
+    it('should return "invalid track time"', done => {
+      expect(perc('a')).to.equal('invalid track time');
+      done();
+    })
+  })
+
+  describe('Input: 0.1', function() {
+    it('should return invalid track time', done => {
+      expect(perc(0.1)).to.equal('invalid track time');
       done();
     })
   })
