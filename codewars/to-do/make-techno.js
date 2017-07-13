@@ -1,6 +1,10 @@
 'use strict';
 
 /*
+Make Techno
+
+7kyu
+
 German music producer Herbert Von Klunkerkunt has been using the same formula to make industrial techno for over twenty years. Producing at 120 beats per minute, each 4-beat bar contains:
 
 4 kick drum hits
@@ -18,3 +22,16 @@ not a number
 function perc (0.22) {}
 -> should return "invalid track time"
 */
+
+function perc(num) {
+
+}
+
+describe('Make Techno | 7kyu', function() {
+  describe('Input: 3', function() {
+    it('should return ["360 kicks", "720 hihats", "180 claps"]', done => {
+      expect(perc(3)).to.deep.equal(["360 kicks", "720 hihats", "180 claps"]);
+      done();
+    })
+  })
+})
