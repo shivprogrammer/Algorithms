@@ -55,12 +55,12 @@ describe('Fill Timesheetp Gaps | 6kyu', function() {
     })
   })
 
-  // describe('Input: [1,null,null,null,1]', function() {
-  //   it('should return [1,1,1,1,1]', done => {
-  //     expect(fill_gaps([1,null,null,null,1])).to.deep.equal([1,1,1,1,1]);
-  //     done();
-  //   })
-  // })
+  describe('Input: [1,null,null,null,1]', function() {
+    it('should return [1,1,1,1,1]', done => {
+      expect(fill_gaps([1,null,null,null,1])).to.deep.equal([1,1,1,1,1]);
+      done();
+    })
+  })
 
   describe('Input: [1,null,2,null,2,null,1]', function() {
     it('should return [1,null,2,2,2,null,1]', done => {
@@ -69,24 +69,24 @@ describe('Fill Timesheetp Gaps | 6kyu', function() {
     })
   })
 
-  // describe('Input: [1,null,2]', function() {
-  //   it('should return [1,null,2]', done => {
-  //     expect(fill_gaps([1,null,2])).to.deep.equal([1,null,2]);
-  //     done();
-  //   })
-  // })
-  //
-  // describe('Input: [null,1,null]', function() {
-  //   it('should return [null,1,null]', done => {
-  //     expect(fill_gaps([null,1,null])).to.deep.equal([null,1,null]);
-  //     done();
-  //   })
-  // })
-  //
-  // describe('Input: ["codewars", null, null, "codewars", "real work", null, null, "real work"]', function() {
-  //   it('should return ["codewars", "codewars", "codewars", "codewars", "real work", "real work", "real work", "real work"]', done => {
-  //     expect(fill_gaps(['codewars', null, null, 'codewars', 'real work', null, null, 'real work'])).to.deep.equal(["codewars", "codewars", "codewars", "codewars", "real work", "real work", "real work", "real work"]);
-  //     done();
-  //   })
-  // })
+  describe('Input: [1,null,2]', function() {
+    it('should return [1,null,2]', done => {
+      expect(fill_gaps([1,null,2])).to.deep.equal([1,null,2]);
+      done();
+    })
+  })
+
+  describe('Input: [null,1,null]', function() {
+    it('should return [null,1,null]', done => {
+      expect(fill_gaps([null,1,null])).to.deep.equal([null,1,null]);
+      done();
+    })
+  })
+
+  describe('Input: ["codewars", null, null, "codewars", "real work", null, null, "real work"]', function() {
+    it('should return ["codewars", "codewars", "codewars", "codewars", "real work", "real work", "real work", "real work"]', done => {
+      expect(fill_gaps(['codewars', null, null, 'codewars', 'real work', null, null, 'real work'])).to.deep.equal(["codewars", "codewars", "codewars", "codewars", "real work", "real work", "real work", "real work"]);
+      done();
+    })
+  })
 })
