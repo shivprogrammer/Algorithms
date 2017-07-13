@@ -33,6 +33,18 @@ nb_year(1500000, 2.5, 10000, 2000000) -> 10
 Note: Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
 */
 
+function nbYear(p0, percent, aug, p) {
+  var count = 0;
+  var currentPop = p0;
+
+  while (currentPop < p) {
+    currentPop = currentPop + currentPop * percent/100 + aug;
+    count++;
+  }
+
+  return count;
+}
+
 describe('Growth of a Population | 7kyu', function() {
   describe('Starting Population: 1500; Percent Increase: 5%; 100 New Inhabitants; 5000 is Population Goal', function() {
     it('should return 15', done => {
@@ -42,15 +54,15 @@ describe('Growth of a Population | 7kyu', function() {
   })
 
   describe('Starting Population: 1500000; Percent Increase: 2.5%; 10000 New Inhabitants; 2000000 is Population Goal', function() {
-    it('should return 15', done => {
+    it('should return 10', done => {
       expect(nbYear(1500000, 2.5, 10000, 2000000)).to.equal(10);
       done();
     })
   })
 
   describe('Starting Population: 1500000; Percent Increase: 0.25%; 1000 New Inhabitants; 2000000 is Population Goal', function() {
-    it('should return 15', done => {
-      expect(nbYear(1500000, 0.25, 1000, 2000000)).to.equal(10);
+    it('should return 94', done => {
+      expect(nbYear(1500000, 0.25, 1000, 2000000)).to.equal(94);
       done();
     })
   })
