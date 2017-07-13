@@ -34,10 +34,18 @@ function fill_gaps(timesheet) {
         output.push(timesheet[i - 1]);
         console.log(output);
       }
+      else if (timesheet[i + 1] === null) {
+        if (timesheet[i - 1] === timesheet[i + 2]) {
+          output.push(timesheet[i - 1]);
+          output.push(timesheet[i + 2]);
+          i++;
+        }
+      }
       else {
         output.push(timesheet[i]);
       }
     }
+
     else {
       output.push(timesheet[i]);
       console.log(output);
