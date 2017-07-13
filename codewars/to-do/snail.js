@@ -23,9 +23,9 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 
 function snail(array) {
   var width = array.length;
-  console.log(width);
+  // console.log(width);
   var height = array[0].length;
-  console.log(height);
+  // console.log(height);
   var output = [];
 
   for (let j = 0; j < array[0].length; j++) {
@@ -38,8 +38,13 @@ function snail(array) {
     array[i][array[0].length - 1] = '';
   }
 
-  // console.log(array);
-  // return output;
+  for (let j = array[array.length - 1].length; j > 0; j--) {
+    output.push(array[array.length - 1][j]);
+    array[array.length - 1][j] = '';
+  }
+
+  console.log(array);
+  return output;
 }
 
 describe('Snail | Code Wars | 4kyu', function() {
