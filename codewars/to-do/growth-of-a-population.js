@@ -1,6 +1,12 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
+Growth of a Population
+
+7kyu
+
 In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
 
 At the end of the first year there will be:
@@ -26,3 +32,26 @@ nb_year(1500, 5, 100, 5000) -> 15
 nb_year(1500000, 2.5, 10000, 2000000) -> 10
 Note: Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
 */
+
+describe('Growth of a Population | 7kyu', function() {
+  describe('Starting Population: 1500; Percent Increase: 5%; 100 New Inhabitants; 5000 is Population Goal', function() {
+    it('should return 15', done => {
+      expect(nbYear(1500, 5, 100, 5000)).to.equal(15);
+      done();
+    })
+  })
+
+  describe('Starting Population: 1500000; Percent Increase: 2.5%; 10000 New Inhabitants; 2000000 is Population Goal', function() {
+    it('should return 15', done => {
+      expect(nbYear(1500000, 2.5, 10000, 2000000)).to.equal(10);
+      done();
+    })
+  })
+
+  describe('Starting Population: 1500000; Percent Increase: 0.25%; 1000 New Inhabitants; 2000000 is Population Goal', function() {
+    it('should return 15', done => {
+      expect(nbYear(1500000, 0.25, 1000, 2000000)).to.equal(10);
+      done();
+    })
+  })
+})
