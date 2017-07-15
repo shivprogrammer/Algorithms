@@ -43,6 +43,24 @@ var contaminatedInCity2 = [
 */
 
 function findZombies(matrix) {
+  var zombie = matrix[0][0];
+  var output = [];
+  var temp = [];
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === zombie) {
+        temp.push(1);
+      }
+      else {
+        temp.push(0);
+      }
+    }
+    output.push(temp);
+    temp = [];
+  }
+
+  return output;
 }
 
 describe('Stop the Zombie Apocalypse! | 5kyu', function() {
