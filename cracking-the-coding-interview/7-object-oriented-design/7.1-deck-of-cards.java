@@ -40,8 +40,28 @@ public abstract class Card { // abstract class is confusing the hell out of me
     suit = s;
   }
 
-  public abstract int value();
-  public Suit suit() { return suit; }
+  public abstract int value(); // ** This is an abstract class because these classes define a generic deck without a game that is specified to assign values to the cards.
+  public Suit suit() { return suit; } // notice that the semi-colon is on the inside
 
-  /* is the card available to be given to someone?*/
+  /* is the card available to be given to someone? */
+  public boolean isAvailable() { return available; }
+  public void markUnavailable() { available = false; } // void needs to be specified when a method returns "nothing"
+  public void markAvailable() { available = true; }
+}
+
+public class Hand<T extends Card> {
+  protected ArrayList<T> cards = new ArrayList<T>();
+
+  public int score() {
+    int score = 0;
+    for (T card : cards) { // notice the notation of a for each loop in java
+      score += card.value();
+    }
+
+    return score;
+  }
+
+  public void addCard(T card) {
+    cards.add(card);
+  }
 }
