@@ -49,7 +49,18 @@ function findZombies(matrix) {
 
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
-      if (matrix[i][j] === zombie) {
+      if (i === 0 && j === 0) {
+        temp.push(1);
+      }
+      else if (i === 0) {
+        if (matrix[i][j - 1] === zombie && matrix[i][j - 1] === matrix[i][j]) {
+          temp.push(1);
+        }
+        else {
+          temp.push(0);
+        }
+      }
+      else if ((matrix[i - 1][j] === zombie && matrix[i - 1][j] === matrix[i][j]) || (matrix[i][j - 1] === zombie && matrix[i][j - 1] === matrix[i][j])) {
         temp.push(1);
       }
       else {
