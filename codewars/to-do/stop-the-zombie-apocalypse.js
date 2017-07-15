@@ -60,7 +60,10 @@ function findZombies(matrix) {
           temp.push(0);
         }
       }
-      else if ((matrix[i - 1][j] === zombie && matrix[i - 1][j] === matrix[i][j]) || (matrix[i][j - 1] === zombie && matrix[i][j - 1] === matrix[i][j])) {
+      else if (output[i - 1][j] === 1 && matrix[i - 1][j] === matrix[i][j]) {
+        temp.push(1);
+      }
+      else if ((matrix[i][j - 1] === zombie && matrix[i][j - 1] === matrix[i][j]) && temp[j - 1] === 1) {
         temp.push(1);
       }
       else {
