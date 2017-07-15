@@ -52,4 +52,18 @@ describe('Stop the Zombie Apocalypse! | 5kyu', function() {
       done();
     })
   })
+
+  describe('Input: [[7, 2, 3],[7, 2, 3],[1, 2, 7]]', function() {
+    it('should return [[1, 0, 0],[1, 0, 0],[0, 0, 0]]', done => {
+      expect(findZombies([[7, 2, 3],[7, 2, 3],[1, 2, 7]])).to.deep.equal([[1, 0, 0],[1, 0, 0],[0, 0, 0]]);
+      done();
+    })
+  })
+
+  describe('Input: [[9, 1, 2],[9, 9, 9],[7, 4, 9],[7, 9, 7]]', function() {
+    it('should return [[1, 0, 0],[1, 1, 1],[0, 0, 1],[0, 0, 0]]', done => {
+      expect(findZombies([[9, 1, 2],[9, 9, 9],[7, 4, 9],[7, 9, 7]])).to.deep.equal([[1, 0, 0],[1, 1, 1],[0, 0, 1],[0, 0, 0]]);
+      done();
+    })
+  })
 })
