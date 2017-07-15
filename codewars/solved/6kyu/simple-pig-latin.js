@@ -3,6 +3,10 @@
 const expect = require('chai').expect;
 
 /*
+Simple Word Pig Latin
+
+6kyu
+
 Move the first letter of each word to the end of it, then add 'ay' to the end of the word.
 pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
 */
@@ -24,6 +28,9 @@ function pigIt(str) {
 
   return output.slice(0, output.length - 1);
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 describe('Simple Pig Latin', function() {
   describe('Input: Pig Latin is cool', function() {
