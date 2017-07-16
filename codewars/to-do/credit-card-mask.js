@@ -1,6 +1,10 @@
 'use strict';
 
 /*
+Credit Card Mask
+
+7kyu
+
 Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
 
 Your task is to write a function maskify, which changes all but the last four characters into '#'.
@@ -16,3 +20,30 @@ maskify(                "") ==                 ""
 maskify("Skippy")                                   == "##ippy"
 maskify("Nananananananananananananananana Batman!") == "####################################man!"
 */
+
+function maskify(cc) {
+
+}
+
+describe('Credit Card Mask | 7kyu', function() {
+  describe('Input: "4556364607935616"', function() {} {
+    it('should return "############5616"', done => {
+      expect(maskify('4556364607935616')).to.equal('############5616');
+      done();
+    })
+  })
+
+  describe('Input: "1"', function() {} {
+    it('should return "1"', done => {
+      expect(maskify('1')).to.equal('1');
+      done();
+    })
+  })
+
+  describe('Input: "11111"', function() {} {
+    it('should return "#1111"', done => {
+      expect(maskify('11111')).to.equal('#1111');
+      done();
+    })
+  })
+})
