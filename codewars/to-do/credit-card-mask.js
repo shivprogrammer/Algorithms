@@ -38,6 +38,9 @@ function maskify(cc) {
   return poundSigns + cc.slice(pounds, cc.length);
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
 describe('Credit Card Mask | 7kyu', function() {
   describe('Input: "4556364607935616"', function() {
     it('should return "############5616"', done => {
