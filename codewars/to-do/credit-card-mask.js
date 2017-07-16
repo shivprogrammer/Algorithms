@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Credit Card Mask
 
@@ -22,25 +24,36 @@ maskify("Nananananananananananananananana Batman!") == "########################
 */
 
 function maskify(cc) {
+  if (cc.length <= 4) {
+    return cc;
+  }
 
+  var pounds = cc.length - 4;
+  var poundSigns = '';
+
+  for (let i = 0; i < pounds; i++) {
+    poundSigns += '#';
+  }
+
+  return poundSigns + cc.slice(pounds, cc.length);
 }
 
 describe('Credit Card Mask | 7kyu', function() {
-  describe('Input: "4556364607935616"', function() {} {
+  describe('Input: "4556364607935616"', function() {
     it('should return "############5616"', done => {
       expect(maskify('4556364607935616')).to.equal('############5616');
       done();
     })
   })
 
-  describe('Input: "1"', function() {} {
+  describe('Input: "1"', function() {
     it('should return "1"', done => {
       expect(maskify('1')).to.equal('1');
       done();
     })
   })
 
-  describe('Input: "11111"', function() {} {
+  describe('Input: "11111"', function() {
     it('should return "#1111"', done => {
       expect(maskify('11111')).to.equal('#1111');
       done();
