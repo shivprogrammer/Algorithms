@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 #'x' marks the spot
 
@@ -61,8 +63,24 @@ Example test cases:
 ]
 */
 
-function xMarksTheSpot(input) {
+function xMarksTheSpot(matrix) {
+  var output = [];
+  var xCount = 0;
 
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 'x') {
+        xCount++;
+        output.push(i);
+        output.push(j);
+      }
+      if (xCount > 1) {
+        output = [];
+      }
+    }
+  }
+
+  return output;
 }
 
 describe('X Marks the Spot | 7kyu', function() {
