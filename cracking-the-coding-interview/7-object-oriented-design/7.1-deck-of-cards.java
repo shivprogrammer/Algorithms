@@ -65,3 +65,29 @@ public class Hand<T extends Card> {
     cards.add(card);
   }
 }
+
+// NOW WE ARE TAKING THE GENERICS FROM A DECK OF CARDS AND TURNING IT INTO BLACKJACK
+
+public class BlackJackHand extends Hand<BlackJackCard> { // HAND is a class that is defined above, which is an extention of the class Card. Which makes sense because a hand is a list that is comprised of cards, and a blackjack hand is just a special type of hand which follows a certain set of rules.
+// This portion is evaluating multiple possibilities for a hand because an ace is worth 1 or 11 depending on what is necessary.
+  public int score() {
+    ArrayList<Integer> scores = possibleScores();
+    int maxUnder = Integer.MIN_VALUE; // this looks like the Math.something function calls that are available in javascript
+    int minOver = Integer.MAX_VALUE;
+    for (int score : scores) {
+      if (score > 21 && score < minOver) {
+        minOver = score;
+      } else if (score <= 21 && score > maxUnder) {
+        maxUnder = score;
+      }
+    }
+    return maxUnder == Integer.MIN_VALUE ? minOver : maxUnder;
+  }
+
+  // the following portion is for returning the scores that a hand could have, with an ace being both 1 and 11.
+  private ArrayList<Integer> possibleScores() { ... }
+
+  public boolean busted() { return score() > 21; }
+  public boolean is21() { return score() == 21; }
+  public boolean isBlackJack() { ... }
+}
