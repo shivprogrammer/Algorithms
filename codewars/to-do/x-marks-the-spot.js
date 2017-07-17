@@ -60,3 +60,30 @@ Example test cases:
   ['d', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
 ]
 */
+
+function xMarksTheSpot(input) {
+
+}
+
+describe('X Marks the Spot | 7kyu', function() {
+  describe('Input with no x: [["o", "o"],["o", "o"]]', function() {
+    it('should return []', done => {
+      expect(xMarksTheSpot([["o", "o"],["o", "o"]])).to.deep.equal([]);
+      done();
+    })
+  })
+
+  describe('Input with multiple x: [["x", "o"],["o", "x"]]', function() {
+    it('should return []', done => {
+      expect(xMarksTheSpot([["x", "o"],["o", "x"]])).to.deep.equal([]);
+      done();
+    })
+  })
+
+  describe('Input with multiple x: [["x", "o"],["o", "o"]]', function() {
+    it('should return [0,0]', done => {
+      expect(xMarksTheSpot([["x", "o"],["o", "o"]])).to.deep.equal([0,0]);
+      done();
+    })
+  })
+})
