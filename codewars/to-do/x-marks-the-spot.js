@@ -83,6 +83,9 @@ function xMarksTheSpot(matrix) {
   return output;
 }
 
+// Time Complexity: O(M * N)
+// Space Complexity: O(X) [Chose X to specific that is it not based on M or N, it's a different variable]
+
 describe('X Marks the Spot | 7kyu', function() {
   describe('Input with no x: [["o", "o"],["o", "o"]]', function() {
     it('should return []', done => {
