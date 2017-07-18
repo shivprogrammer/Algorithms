@@ -15,6 +15,17 @@ If the string is empty or includes a number greater than 9, return "n/a"
 */
 
 function averageString(str) {
+  var numMap = new Map();
+  numMap.set('zero', 0);
+  numMap.set('one', 1);
+  numMap.set('two', 2);
+  numMap.set('three', 3);
+  numMap.set('four', 4);
+  numMap.set('five', 5);
+  numMap.set('six', 6);
+  numMap.set('seven', 7);
+  numMap.set('eight', 8);
+  numMap.set('nine', 9);
 }
 
 describe('String Average | 6kyu', function() {
