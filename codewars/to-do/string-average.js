@@ -15,7 +15,7 @@ If the string is empty or includes a number greater than 9, return "n/a"
 */
 
 function averageString(str) {
-  if (!str) {
+  if (str.length < 1) {
     return 'n/a';
   }
 
@@ -35,25 +35,31 @@ function averageString(str) {
   numMap.set('eight', 8);
   numMap.set('nine', 9);
 
-  numMap.set(0, 'zero');
-  numMap.set(1, 'one');
-  numMap.set(2, 'two');
-  numMap.set(3, 'three');
-  numMap.set(4, 'four');
-  numMap.set(5, 'five');
-  numMap.set(6, 'six');
-  numMap.set(7, 'seven');
-  numMap.set(8, 'eight');
-  numMap.set(9, 'nine');
+  var digitMap = new Map();
+  digitMap.set(0, 'zero');
+  digitMap.set(1, 'one');
+  digitMap.set(2, 'two');
+  digitMap.set(3, 'three');
+  digitMap.set(4, 'four');
+  digitMap.set(5, 'five');
+  digitMap.set(6, 'six');
+  digitMap.set(7, 'seven');
+  digitMap.set(8, 'eight');
+  digitMap.set(9, 'nine');
 
   for (let i = 0; i < numbers.length; i++) {
     if (numMap.has(numbers[i])) {
-      sum += numMap.get(numbers[i]);
-      count++;
+      if (numMap.get(numbers[i]) > 9) {
+        return 'n/a';
+      }
+      else {
+        sum += numMap.get(numbers[i]);
+        count++;
+      }
     }
   }
 
-  return numMap.get(Math.floor(sum / count));
+  return digitMap.get(Math.floor(sum / count));
 }
 
 describe('String Average | 6kyu', function() {
