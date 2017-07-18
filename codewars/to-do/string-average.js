@@ -15,6 +15,10 @@ If the string is empty or includes a number greater than 9, return "n/a"
 */
 
 function averageString(str) {
+  if (!str) {
+    return 'n/a';
+  }
+
   var numbers = str.split(' ');
   var sum = 0;
   var count = 0;
@@ -45,13 +49,11 @@ function averageString(str) {
   for (let i = 0; i < numbers.length; i++) {
     if (numMap.has(numbers[i])) {
       sum += numMap.get(numbers[i]);
-      console.log(sum);
       count++;
-      console.log(count);
     }
   }
 
-  return numMap.get(sum / count);
+  return numMap.get(Math.floor(sum / count));
 }
 
 describe('String Average | 6kyu', function() {
