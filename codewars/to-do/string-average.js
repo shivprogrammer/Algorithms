@@ -15,6 +15,10 @@ If the string is empty or includes a number greater than 9, return "n/a"
 */
 
 function averageString(str) {
+  var numbers = str.split(' ');
+  var sum = 0;
+  var count = 0;
+
   var numMap = new Map();
   numMap.set('zero', 0);
   numMap.set('one', 1);
@@ -26,6 +30,28 @@ function averageString(str) {
   numMap.set('seven', 7);
   numMap.set('eight', 8);
   numMap.set('nine', 9);
+
+  numMap.set(0, 'zero');
+  numMap.set(1, 'one');
+  numMap.set(2, 'two');
+  numMap.set(3, 'three');
+  numMap.set(4, 'four');
+  numMap.set(5, 'five');
+  numMap.set(6, 'six');
+  numMap.set(7, 'seven');
+  numMap.set(8, 'eight');
+  numMap.set(9, 'nine');
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numMap.has(numbers[i])) {
+      sum += numMap.get(numbers[i]);
+      console.log(sum);
+      count++;
+      console.log(count);
+    }
+  }
+
+  return numMap.get(sum / count);
 }
 
 describe('String Average | 6kyu', function() {
@@ -78,11 +104,3 @@ describe('String Average | 6kyu', function() {
     })
   })
 })
-
-Test.assertEquals(averageString("zero nine five two"), "four");
-       Test.assertEquals(averageString("four six two three"), "three");
-       Test.assertEquals(averageString("one two three four five"), "three");
-       Test.assertEquals(averageString("five four"), "four");
-       Test.assertEquals(averageString("zero zero zero zero zero"), "zero");
-       Test.assertEquals(averageString("one one eight one"), "two");
-       Test.assertEquals(averageString(""), "n/a");
