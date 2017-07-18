@@ -59,7 +59,8 @@ SolvePuzzle() returns matrix int[][]. The first indexer is for the row, the seco
 */
 
 function solvePuzzle (clues) {
-  var matrix = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']];
+  var outputMatrix = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']]
+  var optionsMatrix = [[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]];
 
   var clueToMatrix = new Map();
   clueToMatrix.set(clues[0], matrix[0][0]);
