@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 4 By 4 Skyscapers
 
@@ -57,6 +59,17 @@ SolvePuzzle() returns matrix int[][]. The first indexer is for the row, the seco
 */
 
 function solvePuzzle (clues) {
+  var matrix = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']];
+
+  var countMap = new Map();
+  countMap.set(1, 0);
+  countMap.set(2, 0);
+  countMap.set(3, 0);
+  countMap.set(4, 0);
+
+  if (countMap.get(SOMETHING) > 4) {
+    return 'you fucked up buddy';
+  }
 }
 
 describe('Holy fuck balls man this is the big one. 4 x 4 Skyscrapers', function() {
