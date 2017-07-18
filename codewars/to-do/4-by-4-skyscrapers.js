@@ -61,6 +61,24 @@ SolvePuzzle() returns matrix int[][]. The first indexer is for the row, the seco
 function solvePuzzle (clues) {
   var matrix = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']];
 
+  var clueToMatrix = new Map();
+  clueToMatrix.set(clues[0], matrix[0][0]);
+  clueToMatrix.set(clues[1], matrix[0][1]);
+  clueToMatrix.set(clues[2], matrix[0][2]);
+  clueToMatrix.set(clues[3], matrix[0][3]);
+  clueToMatrix.set(clues[4], matrix[0][3]);
+  clueToMatrix.set(clues[5], matrix[1][3]);
+  clueToMatrix.set(clues[6], matrix[2][3]);
+  clueToMatrix.set(clues[7], matrix[3][3]);
+  clueToMatrix.set(clues[8], matrix[3][3]);
+  clueToMatrix.set(clues[9], matrix[3][2]);
+  clueToMatrix.set(clues[10], matrix[3][1]);
+  clueToMatrix.set(clues[11], matrix[3][0]);
+  clueToMatrix.set(clues[12], matrix[3][0]);
+  clueToMatrix.set(clues[13], matrix[2][0]);
+  clueToMatrix.set(clues[14], matrix[1][0]);
+  clueToMatrix.set(clues[15], matrix[0][0]);
+
   var countMap = new Map();
   countMap.set(1, 0);
   countMap.set(2, 0);
