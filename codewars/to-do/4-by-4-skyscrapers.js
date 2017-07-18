@@ -59,37 +59,37 @@ SolvePuzzle() returns matrix int[][]. The first indexer is for the row, the seco
 */
 
 function solvePuzzle (clues) {
-  var outputMatrix = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']]
-  var optionsMatrix = [[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]];
+  var outputMatrix = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']];
+
+  // var optionsMatrix = [[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]], [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]];
 
   var clueToMatrix = new Map();
-  clueToMatrix.set(clues[0], matrix[0][0]);
-  clueToMatrix.set(clues[1], matrix[0][1]);
-  clueToMatrix.set(clues[2], matrix[0][2]);
-  clueToMatrix.set(clues[3], matrix[0][3]);
-  clueToMatrix.set(clues[4], matrix[0][3]);
-  clueToMatrix.set(clues[5], matrix[1][3]);
-  clueToMatrix.set(clues[6], matrix[2][3]);
-  clueToMatrix.set(clues[7], matrix[3][3]);
-  clueToMatrix.set(clues[8], matrix[3][3]);
-  clueToMatrix.set(clues[9], matrix[3][2]);
-  clueToMatrix.set(clues[10], matrix[3][1]);
-  clueToMatrix.set(clues[11], matrix[3][0]);
-  clueToMatrix.set(clues[12], matrix[3][0]);
-  clueToMatrix.set(clues[13], matrix[2][0]);
-  clueToMatrix.set(clues[14], matrix[1][0]);
-  clueToMatrix.set(clues[15], matrix[0][0]);
+  clueToMatrix.set(0, outputMatrix[0][0]);
+  clueToMatrix.set(1, outputMatrix[0][1]);
+  clueToMatrix.set(2, outputMatrix[0][2]);
+  clueToMatrix.set(3, outputMatrix[0][3]);
+  clueToMatrix.set(4, outputMatrix[0][3]);
+  clueToMatrix.set(5, outputMatrix[1][3]);
+  clueToMatrix.set(6, outputMatrix[2][3]);
+  clueToMatrix.set(7, outputMatrix[3][3]);
+  clueToMatrix.set(8, outputMatrix[3][3]);
+  clueToMatrix.set(9, outputMatrix[3][2]);
+  clueToMatrix.set(10, outputMatrix[3][1]);
+  clueToMatrix.set(11, outputMatrix[3][0]);
+  clueToMatrix.set(12, outputMatrix[3][0]);
+  clueToMatrix.set(13, outputMatrix[2][0]);
+  clueToMatrix.set(14, outputMatrix[1][0]);
+  clueToMatrix.set(15, outputMatrix[0][0]);
 
-  var countMap = new Map();
-  countMap.set(1, 0);
-  countMap.set(2, 0);
-  countMap.set(3, 0);
-  countMap.set(4, 0);
-
-  if (countMap.get(SOMETHING) > 4) {
-    return 'you fucked up buddy';
+  for (let i = 0; i < clues.length; i++) {
+    if (clues[i] === 1) {
+      outputMatrix[clueToMatrix.get(clues[i])] = 4;
+    }
   }
+  return outputMatrix;
 }
+
+// right now the difficulty is that I would like to reference the position in the outputMatrix based on the clue array
 
 describe('Holy fuck balls man this is the big one. 4 x 4 Skyscrapers', function() {
   describe('Input: [2, 2, 1, 3, 2, 2, 3, 1, 1, 2, 2, 3, 3, 2, 1, 3]', function() {
