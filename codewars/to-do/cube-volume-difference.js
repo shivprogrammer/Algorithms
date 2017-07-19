@@ -17,6 +17,9 @@ function find_difference(a, b) {
   return Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2]);
 }
 
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
 describe('Cube Volume Difference Problem from Code Wars', function() {
   describe('Input: [3, 2, 5], [1, 4, 4]', function() {
     it('Expected: 14', done => {
