@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Sushi-go-round (Beginner's)
 
@@ -41,4 +43,25 @@ function sushi (str) {
   return output;
 }
 
-describe('')
+describe('Sushi go Round | 7kyu', function() {
+  describe('Input: "rr"', function() {
+    it('should return 4', done => {
+      expect(sushi('rr')).to.equal(4);
+      done();
+    })
+  })
+
+  describe('Input: "rr rrr"', function() {
+    it('should return 8', done => {
+      expect(sushi('rr rrr')).to.equal(8);
+      done();
+    })
+  })
+
+  describe('Input: "rrrrr rrrrr"', function() {
+    it('should return 16', done => {
+      expect(sushi('rrrrr rrrrr')).to.equal(16);
+      done();
+    })
+  })
+})
