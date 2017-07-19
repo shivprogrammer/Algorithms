@@ -41,6 +41,9 @@ return uniqueArray.reduce(
   }, 0)
 }
 
+// Time Complexity: O(N) + O(N) + O(N) + O(N) => O(N)
+// Space Complexity: O(N) + O(N) => O(N)
+
 describe('Code Wars 3 and 5 multiples questions', function() {
   describe('With an input of 10', function() {
     it('should return 23', done => {
