@@ -19,7 +19,37 @@ Arguments consist of only lowercase letters.
 */
 
 function isAlt(word) {
+  var stack = [];
 
+  var vowels = new Map();
+  vowels.set('a', 1);
+  vowels.set('e', 1);
+  vowels.set('i', 1);
+  vowels.set('o', 1);
+  vowels.set('u', 1);
+
+  if (vowels.has(word.charAt(0))) {
+    for (let i = 0; i < word.length; i++) {
+      if (vowels.has(word.charAt(i))) {
+         stack.push('yo');
+      }
+      else {
+        stack.pop;
+      }
+    }
+  }
+  else {
+    for (let i = 0; i < word.length; i++) {
+      if (!vowels.has(word.charAt(i))) {
+         stack.push('yo');
+      }
+      else {
+        stack.pop;
+      }
+    }
+  }
+
+  return stack.length === 0;
 }
 
 describe('Are We Alternate? | 6kyu', function() {
