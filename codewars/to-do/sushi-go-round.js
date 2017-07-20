@@ -27,7 +27,7 @@ Input: 'rr rrr' Output: 8
 Input: 'rrrrr rrrrr' Output: 16
 */
 
-function sushi (str) {
+function totalBill(str) {
   var output = 0;
   var count = 0;
 
@@ -43,24 +43,27 @@ function sushi (str) {
   return output;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
 describe('Sushi go Round | 7kyu', function() {
   describe('Input: "rr"', function() {
     it('should return 4', done => {
-      expect(sushi('rr')).to.equal(4);
+      expect(totalBill('rr')).to.equal(4);
       done();
     })
   })
 
   describe('Input: "rr rrr"', function() {
     it('should return 8', done => {
-      expect(sushi('rr rrr')).to.equal(8);
+      expect(totalBill('rr rrr')).to.equal(8);
       done();
     })
   })
 
   describe('Input: "rrrrr rrrrr"', function() {
     it('should return 16', done => {
-      expect(sushi('rrrrr rrrrr')).to.equal(16);
+      expect(totalBill('rrrrr rrrrr')).to.equal(16);
       done();
     })
   })
