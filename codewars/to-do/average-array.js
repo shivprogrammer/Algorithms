@@ -18,20 +18,16 @@ avgArray([[2, 3, 9, 10, 7], [12, 6, 89, 45, 3], [9, 12, 56, 10, 34], [67, 23, 1,
 */
 
 function avgArray(arr) {
-  var height = arr.length;
-  var width = arr[0].length;
+  var elements = arr.length;
+  var nums = arr[0].length;
   var temp = 0;
   var count = 0;
   var output = [];
 
-  for (let i = 0; i < height; i++) {
-    for (let j = 0; j < width; j++) {
-      temp += arr[j][i];
-      count++;
+  for (let i = 0; i < arr.length; i++) {
+    while (nums >= 0) {
+      temp = 
     }
-    output.push(temp / count);
-    temp = 0;
-    count = 0;
   }
 
   return output;
