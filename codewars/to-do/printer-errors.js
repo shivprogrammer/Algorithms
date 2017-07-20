@@ -27,7 +27,29 @@ error_printer(s) => "8/22"
 */
 
 function printerError(s) {
+  var count = 0;
+  var dicMap = new Map();
+  dicMap.set('a', 1);
+  dicMap.set('b', 1);
+  dicMap.set('c', 1);
+  dicMap.set('d', 1);
+  dicMap.set('e', 1);
+  dicMap.set('f', 1);
+  dicMap.set('g', 1);
+  dicMap.set('h', 1);
+  dicMap.set('i', 1);
+  dicMap.set('j', 1);
+  dicMap.set('k', 1);
+  dicMap.set('l', 1);
+  dicMap.set('m', 1);
 
+  for (let i = 0; i < s.length; i++) {
+    if (!dicMap.has(s.charAt(i))) {
+      count++;
+    }
+  }
+
+  return count + '/' + s.length;
 }
 
 describe('Printer Errors | 7kyu', function() {
