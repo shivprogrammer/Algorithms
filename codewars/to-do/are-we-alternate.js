@@ -19,6 +19,10 @@ Arguments consist of only lowercase letters.
 */
 
 function isAlt(word) {
+  if (word.length === 1) {
+    return true;
+  }
+
   var stack = [];
 
   var vowels = new Map();
@@ -34,7 +38,12 @@ function isAlt(word) {
          stack.push('yo');
       }
       else {
-        stack.pop;
+        if (stack.length != 1) {
+          return false;
+        }
+        else {
+          stack.pop();
+        }
       }
     }
   }
@@ -44,7 +53,12 @@ function isAlt(word) {
          stack.push('yo');
       }
       else {
-        stack.pop;
+        if (stack.length != 1) {
+          return false;
+        }
+        else {
+          stack.pop();
+        }
       }
     }
   }
