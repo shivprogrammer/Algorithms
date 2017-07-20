@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Printer Errors
 
@@ -23,3 +25,16 @@ error_printer(s) => "0/14"
 s="aaaxbbbbyyhwawiwjjjwwm"
 error_printer(s) => "8/22"
 */
+
+function printerError(s) {
+
+}
+
+describe('Printer Errors | 7kyu', function() {
+  describe('Input: "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"', function() {
+    it('should return "3/56"', done => {
+      expect(printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")).to.equal('3/56');
+      done();
+    })
+  })
+})
