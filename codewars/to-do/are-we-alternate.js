@@ -49,7 +49,7 @@ function isAlt(word) {
   }
   else {
     for (let i = 0; i < word.length; i++) {
-      if (!vowels.has(word.charAt(i))) {
+      if (!(vowels.has(word.charAt(i)))) {
          stack.push('yo');
       }
       else {
@@ -63,7 +63,7 @@ function isAlt(word) {
     }
   }
 
-  return stack.length === 0;
+  return stack.length === 0 || stack.length === 1;
 }
 
 describe('Are We Alternate? | 6kyu', function() {
