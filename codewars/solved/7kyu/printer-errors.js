@@ -55,10 +55,25 @@ function printerError(s) {
 // Time Complexity: O(N)
 // Space Complexity: O(N)
 
+function printerError2(s) {
+  return s.match(/[^a-m]/g).length + '/' + s.length;
+}
+
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
+
 describe('Printer Errors | 7kyu', function() {
   describe('Input: "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"', function() {
     it('should return "3/56"', done => {
       expect(printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")).to.equal('3/56');
+      done();
+    })
+  })
+
+  describe('Second Printer Errors Function -- Input: "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"', function() {
+    it('should return "3/56"', done => {
+      expect(printerError2("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")).to.equal('3/56');
       done();
     })
   })
