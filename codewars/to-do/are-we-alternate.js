@@ -66,6 +66,9 @@ function isAlt(word) {
   return stack.length === 0 || stack.length === 1;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N) [vowels] + O(N) [stack]
+
 describe('Are We Alternate? | 6kyu', function() {
   describe('Input: "amazon"', function() {
     it('should return true', done => {
