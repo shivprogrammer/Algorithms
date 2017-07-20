@@ -52,6 +52,9 @@ function printerError(s) {
   return count + '/' + s.length;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Printer Errors | 7kyu', function() {
   describe('Input: "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"', function() {
     it('should return "3/56"', done => {
