@@ -16,8 +16,42 @@ Please, keep in mind, that JavaScript is by default sorting objects alphabetical
 stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javascript-work-well
 */
 
-function flattenAndSort(array) {
+function mergeSort(arr) {
+  if (arr.length < 2) {
+    return arr;
+  }
 
+  var middle = parseInt(arr.length / 2);
+  var left = arr.slice(0, middle);
+  var right = arr.slice(middle, arr.length);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+  var result = [];
+
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      result.push(left.shift());
+    }
+    else {
+      result.push(right.shift());
+    }
+  }
+
+  while (left.length) {
+    result.push(left.shift());
+  }
+  while (right.length) {
+    result.push(right.shift());
+  }
+
+  return result;
+}
+
+function flattenAndSort(array) {
+  return mergeSort([].concat.apply([], array));
 }
 
 describe('Flatten and Sort Problem from Code Wars', function() {
