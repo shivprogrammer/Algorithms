@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Flatten and Sort
 
@@ -17,3 +19,19 @@ stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javascript-w
 function flattenAndSort(array) {
 
 }
+
+describe('Flatten and Sort Problem from Code Wars', function() {
+  describe('Input: [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]', function() {
+    it('Expected: [1, 2, 3, 4, 5, 6, 7, 8, 9]', done => {
+      expect(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]])).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+      done();
+    })
+  })
+
+  describe('Input: [[6, 7, 8, 9], [2, 1, -1, 5], [11, 12, 145]]', function() {
+    it('Expected: [-1, 1, 2, 5, 6, 7, 8, 9, 11, 12, 145]', done => {
+      expect(flattenAndSort([[6, 7, 8, 9], [2, 1, -1, 5], [11, 12, 145]])).to.deep.equal([-1, 1, 2, 5, 6, 7, 8, 9, 11, 12, 145]);
+      done();
+    })
+  })
+})
