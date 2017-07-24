@@ -3,6 +3,8 @@
 const expect = require('chai').expect
 
 /*
+Diagonals Sum
+
 7 kyu
 
 Create a function that receives a (square) matrix and calculates the sum of both diagonals (main and secondary)
@@ -18,6 +20,25 @@ diagonals( [
 
 returns -> 20 // 1 + 5 + 9 + 3 + 5 + 7
 */
+
+function sum(matrix) {
+  var sum = 0;
+
+  if (!matrix || matrix === []) {
+    return 0;
+  }
+
+
+  for (let i = 0; i < matrix.length; i++) {
+    sum += matrix[i][i]
+  }
+
+  for (let j = matrix.length - 1, x = 0; j >= 0, x < matrix.length; j--, x++) {
+    sum += matrix[x][j]
+  }
+
+  return sum;
+}
 
 describe('Matrix Diagonals Sum Question Code Wars', function() {
   describe('Input: no input', function() {
