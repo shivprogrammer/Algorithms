@@ -20,6 +20,9 @@ function findDeletedNumber(arr, mixArr) {
   return 0;
 }
 
+// Time Complexity: O(N * Nlog(N))
+// Space Complexity: O(N)
+
 describe('Lost Number in Number Sequence', function() {
   describe('Input: [1, 2, 3, 4, 5] & [3, 4, 1, 5]', function() {
     it('should return 2', done => {
