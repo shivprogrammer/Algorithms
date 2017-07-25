@@ -8,8 +8,16 @@ Lost Number in Number Sequence
 7kyu
 */
 
-function findDeletedNumber(arr, mixArry) {
+function findDeletedNumber(arr, mixArr) {
+  var sorted = mixArr.sort();
 
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] != sorted[i]) {
+      return arr[i];
+    }
+  }
+
+  return 0;
 }
 
 describe('Lost Number in Number Sequence', function() {
