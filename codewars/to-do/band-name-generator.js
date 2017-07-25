@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Band Name Generator
 
@@ -19,6 +21,12 @@ Can you write a function that takes in a noun as a string, and returns her prefe
 */
 
 function bandNameGenerator(str) {
+  if (str.charAt(0) === str.charAt(str.length - 1)) {
+    return str.charAt(0).toUpperCase() + str.slice(1, str.length) + str.slice(1, str.length);
+  }
+  else {
+    return 'The ' + str.charAt(0).toUpperCase() + str.slice(1, str.length);
+  }
 }
 
 describe('Band Name Generator | 7kyu', function() {
