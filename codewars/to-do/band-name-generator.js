@@ -29,6 +29,9 @@ function bandNameGenerator(str) {
   }
 }
 
+// Time Complexity: 0(1)
+// Space Complexity: 0(1)
+
 describe('Band Name Generator | 7kyu', function() {
   describe('Input: "knife"', function() {
     it('should return "The Knife"', done => {
