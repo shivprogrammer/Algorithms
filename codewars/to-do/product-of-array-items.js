@@ -25,6 +25,9 @@ function product(values) {
   }
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
 describe('Product of Array Items | 7kyu', function() {
   describe('Input: [5, 4, 1, 3, 9]', function() {
     it('should return 540', done => {
