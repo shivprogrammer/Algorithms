@@ -15,7 +15,14 @@ As a challenge, try writing your method in just one line of code. It's possible 
 */
 
 function product(values) {
-  return values[~~(Math.random() * values.length)];
+  if (!values || values.length < 1) {
+    return null;
+  }
+  else {
+    return values.reduce(function(elem, prod) {
+      return elem * prod;
+    })
+  }
 }
 
 describe('Product of Array Items | 7kyu', function() {
