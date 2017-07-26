@@ -29,6 +29,9 @@ function solution(string) {
   return result.join('').toString();
 }
 
+// Time Complexity is O(N)
+// Space Complexity is O(N)
+
 describe('Break Camel Case Code Wars', function() {
   describe('if input is camelCase', function() {
     it('output to be camel Case', done => {
