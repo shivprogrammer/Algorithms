@@ -23,6 +23,17 @@ function checkPerm(str1, str2) {
       permMap.set(str1.charAt(i), 1);
     }
   }
+
+  for (let j = 0; j < str2.length; j++) {
+    if (permMap.get(str2.charAt(j)) > 0) {
+      permMap.set(str2.charAt(j), permMap.get(str2.charAt(j) - 1));
+    }
+    else {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 describe('1.2 Check Permutation | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
@@ -35,7 +46,7 @@ describe('1.2 Check Permutation | Cracking the Coding Interview | Chapter 1 - Ar
 
   describe('Input: str1: "abcde", str2: "edcbf"', function() {
     it('should return false', done => {
-      expect(checkPerm('abcde', 'edcba')).to.equal(false);
+      expect(checkPerm('abcde', 'edcbf')).to.equal(false);
       done();
     })
   })
