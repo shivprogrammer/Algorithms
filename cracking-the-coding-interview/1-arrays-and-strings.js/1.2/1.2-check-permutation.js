@@ -36,6 +36,9 @@ function checkPerm(str1, str2) {
   return true;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('1.2 Check Permutation | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
   describe('Input: str1: "abcde", str2: "edcba"', function() {
     it('should return true', done => {
