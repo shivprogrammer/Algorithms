@@ -66,6 +66,9 @@ function wordFreq(book, word) {
   }
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N) [letterMap] + O(N) [bookMap]
+
 var aBook = 'So this is the tale of a land that was far, far away, where a crazy young gentlemen was working his ass off to be the best programmer that he could be. Despite the trials and tribulations, he knew that there was a shitload of money involved, and he grew to enjoy this meticulous art the more time he spent on it.';
 
 describe('16.2 Word Frequences | Cracking the Coding Interview | Chapter 16 - Moderate', function() {
