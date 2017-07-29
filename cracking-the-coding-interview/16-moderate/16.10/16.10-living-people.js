@@ -17,10 +17,6 @@ function Person(born, die) {
   this.death = die;
 }
 
-var person1 = new Person(1997, 1998);
-var person2 = new Person(1998, 2000);
-var person3 = new Person(1998, 2000);
-
 function findMin(people) {
   var minYear = Infinity;
 
@@ -33,10 +29,38 @@ function findMin(people) {
   return minYear;
 }
 
+function findMax(people) {
+  var maxYear = 0;
+
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].death > maxYear) {
+      maxYear = people[i].death;
+    }
+  }
+
+  return maxYear;
+}
+
+
+var person1 = new Person(1997, 1998);
+var person2 = new Person(1998, 2000);
+var person3 = new Person(1998, 2000);
+
+// TESTING FINDMIN
 describe('16.10 Living People Helper Function findMin', function() {
   describe('Input: [person1, person2, person3]', function() {
     it('should return 1997', done => {
       expect(findMin([person1, person2, person3])).to.equal(1997);
+      done();
+    })
+  })
+})
+
+// TESTING FINDMAX
+describe('16.10 Living People Helper Function findMax', function() {
+  describe('Input: [person1, person2, person3]', function() {
+    it('should return 2000', done => {
+      expect(findMax([person1, person2, person3])).to.equal(2000);
       done();
     })
   })
