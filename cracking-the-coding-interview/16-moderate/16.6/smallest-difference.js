@@ -9,6 +9,19 @@ Givene two arrays of integers, compute the pair of values (one value in each arr
 */
 
 function smallDif(arr1, arr2) {
+  var smallest = Infinity;
+  var output = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (Math.abs(arr1[i] - arr2[j]) < smallest) {
+        smallest = Math.abs(arr1[i] - arr2[j]);
+        output = [arr1[i], arr2[j]];
+      }
+    }
+  }
+
+  return output;
 }
 
 describe('16.6 Smallest Difference | Cracking the Coding Interview | Chapter 16 -- Moderate', function() {
