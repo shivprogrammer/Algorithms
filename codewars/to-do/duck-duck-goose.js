@@ -28,6 +28,9 @@ function duckDuckGoose(players, goose) {
   }
 }
 
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
 describe('duck duck goose question from code wars', function() {
   describe('with an array and 1', function() {
     it('should return a', done => {
