@@ -19,6 +19,13 @@ duck_duck_goose([a, b, c, d], 4) should return d.name
 */
 
 function duckDuckGoose(players, goose) {
+  var x = goose % players.length;
+  if (x === 0) {
+    return players[players.length - 1];
+  }
+  else {
+    return players[x - 1];
+  }
 }
 
 describe('duck duck goose question from code wars', function() {
