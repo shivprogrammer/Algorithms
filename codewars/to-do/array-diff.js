@@ -20,6 +20,9 @@ function array_diff(a, b) {
   })
 }
 
+// Time Complexity: O(N squared)
+// Space Complexity: O(N)
+
 describe('Array Diff Question from Code Wars', function() {
   describe('Input: [1, 2, 2, 4, 4, 3, 5, 6], [3, 5]', function() {
     it('Expected: [1, 2, 2, 4, 4, 6]', done => {
