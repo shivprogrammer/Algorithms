@@ -83,6 +83,9 @@ function peacefulYard(yard, minDistance) {
   }
 }
 
+// Time Complexity: O(N * M);
+// Space Complexity: O(X)
+
 describe('Cat Kata Code Wars', function() {
   describe('with only one cat', function() {
     it('should return true', done => {
