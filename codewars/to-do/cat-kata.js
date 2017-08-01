@@ -38,6 +38,49 @@ In this third example, Lou is at yard[0][11], Raoul is at yard[1][2], and Mustac
 */
 
 function peacefulYard(yard, minDistance) {
+  var catlocations = [];
+
+  for (let x = 0; x < yard.length; x++) {
+    for (let y = 0; y < yard[x].length; y++) {
+      if (yard[x][y] != '-') {
+        catlocations.push([x,y]);
+      }
+    }
+  }
+
+  if (catlocations.length < 2) {
+    return true;
+  }
+
+  if (catlocations.length === 2) {
+    var x = Math.abs(catlocations[1][0] - catlocations[0][0]);
+    var y = Math.abs(catlocations[1][1] - catlocations[0][1]);
+    var distance = Math.sqrt((x * x) + (y * y));
+
+    return distance >= minDistance;
+  }
+
+  if (catlocations.length === 3) {
+
+    var xFirst = Math.abs(catlocations[1][0] - catlocations[0][0]);
+    var yFirst = Math.abs(catlocations[1][1] - catlocations[0][1]);
+    var distance1 = Math.sqrt((xFirst * xFirst) + (yFirst * yFirst));
+
+    var xSecond = catlocations[2][0] - catlocations[1][0];
+    var ySecond = catlocations[2][1] - catlocations[1][1];
+    var distance2 = Math.sqrt((xSecond * xSecond) + (ySecond * ySecond));
+
+    var xThird = catlocations[2][0] - catlocations[0][0];
+    var yThird = catlocations[2][1] - catlocations[0][1];
+    var distance3 = Math.sqrt((xThird * xThird) + (yThird * yThird));
+
+    if (distance1 >= minDistance && distance2 >= minDistance && distance3 >= minDistance) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }
 
 describe('Cat Kata Code Wars', function() {
