@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Cat Kata, Part 1
 
@@ -37,3 +39,33 @@ In this third example, Lou is at yard[0][11], Raoul is at yard[1][2], and Mustac
 
 function peacefulYard(yard, minDistance) {
 }
+
+describe('Cat Kata Code Wars', function() {
+  describe('with only one cat', function() {
+    it('should return true', done => {
+      expect(peacefulYard(["------------", "------------", "------------", "------------", "------------", "------------"], 10)).to.equal(true);
+      done();
+    })
+  })
+
+  describe('with only one cat', function() {
+    it('should return true', done => {
+      expect(peacefulYard(["------------", "------------", "-L----------", "------------", "------------", "------------"], 10)).to.equal(true);
+      done();
+    })
+  })
+
+  describe('2 cats within fighting distance', function() {
+    it('should return false', done => {
+      expect(peacefulYard(["------------", "---M--------", "------------", "------------", "-------R----", "------------"], 6)).to.equal(false);
+      done();
+    })
+  })
+
+  describe('3 cats on peaceful terms', function() {
+    it('should return true', done => {
+      expect(peacefulYard(["-----------L", "--R---------", "------------", "------------", "------------", "--M---------"], 4)).to.equal(true);
+      done();
+    })
+  })
+})
