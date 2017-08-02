@@ -39,6 +39,12 @@ function XO(str) {
   }
 }
 
+/*
+Solved this actually lightening fast. Was pretty easy really this isn't a difficult problem.
+Time Complexity: O(N)
+Space Complexity = O(1) // ** WAS O(N) but I made a quick modification so I'm not storing another full string, but still getting the accurate comparison that I need.
+*/
+
 describe('Exes and Ohs Question from Code Wars', function() {
   describe('Input: xo', function() {
     it('Expected: true', done => {
