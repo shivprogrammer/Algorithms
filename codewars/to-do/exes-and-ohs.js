@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect
+
 /*
 Exes and Ohs
 
@@ -18,3 +20,40 @@ XO("zzoo") => false
 
 function XO(str) {
 }
+
+describe('Exes and Ohs Question from Code Wars', function() {
+  describe('Input: xo', function() {
+    it('Expected: true', done => {
+      expect(XO('xo')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: xxOo', function() {
+    it('Expected: true', done => {
+      expect(XO('xxOo')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: xxxm', function() {
+    it('Expected: false', done => {
+      expect(XO('xxxm')).to.equal(false);
+      done();
+    })
+  })
+
+  describe('Input: Oo', function() {
+    it('Expected: false', done => {
+      expect(XO('Oo')).to.equal(false);
+      done();
+    })
+  })
+
+  describe('Input: ooom', function() {
+    it('Expected: false', done => {
+      expect(XO('ooom')).to.equal(false);
+      done();
+    })
+  })
+})
