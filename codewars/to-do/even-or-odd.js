@@ -11,7 +11,7 @@ Create a function that takes an integer as an argument and returns "Even" for ev
 */
 
 function even_or_odd(number) { // not camelCase because function name from code wars
-
+  return number % 2 === 0 ? 'Even' : 'Odd';
 }
 
 describe('Even Or Odd Code Wars 8kyu', function() {
