@@ -38,6 +38,14 @@ function duplicateCount(text) {
   return result.length;
 }
 
+/*
+Solution works! Had to make sure to change all of the letters to lower case before sorting.
+TIME COMPLEXITY: O(N * log(N) + 2N) first part is for the sort, then the second is for looking through the for loop. Is 2N because each element is getting checked twice.
+FINAL TIME COMPLEXITY: O(N * log(N))
+There are solutions that I need to check out from codewars. The best practice involves regex and then the second best practice is something that involves filter. It seem as if I've come up with a unique solution which is actually pretty cool.
+SPACE COMPLEXITY: O(N)
+*/
+
 describe('Duplicate Count Question -- Code Wars', function() {
   describe('Input: abcde', function() {
     it('Expected: 0', done => {
