@@ -19,7 +19,23 @@ Example:
 "aa11" -> 2 # 'a' and '1'
 */
 
+// The naive solution for this would be an N squared time because you check each varible, see if it exists in your temparary holding array, and then return the length of that holding array.
+// Better solution:
+
 function duplicateCount(text) {
+  console.log(text)
+  var result = '';
+
+  var sorted = text.toLowerCase().split('').sort().join('');
+  console.log(sorted);
+
+  for (let i = 0; i < sorted.length; i++) {
+    if (sorted[i] === sorted[i + 1] && sorted[i] != result.slice(-1)) {
+      result += sorted[i]
+    }
+  }
+  console.log(result)
+  return result.length;
 }
 
 describe('Duplicate Count Question -- Code Wars', function() {
