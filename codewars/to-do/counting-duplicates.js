@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Counting Duplicates
 
@@ -19,3 +21,54 @@ Example:
 
 function duplicateCount(text) {
 }
+
+describe('Duplicate Count Question -- Code Wars', function() {
+  describe('Input: abcde', function() {
+    it('Expected: 0', done => {
+      expect(duplicateCount('abcde')).to.equal(0);
+      done();
+    })
+  })
+
+  describe('Input: aabbcde', function() {
+    it('Expected: 2', done => {
+      expect(duplicateCount('aabbcde')).to.equal(2);
+      done();
+    })
+  })
+
+  describe('Input: aabbcdeB', function() {
+    it('Expected: 2', done => {
+      expect(duplicateCount('aabbcdeB')).to.equal(2);
+      done();
+    })
+  })
+
+  describe('Input: Indivisibilities', function() {
+    it('Expected: 2', done => {
+      expect(duplicateCount('Indivisibilities')).to.equal(2);
+      done();
+    })
+  })
+
+  describe('Input: indivisibility', function() {
+    it('Expected: 1', done => {
+      expect(duplicateCount('indivisibility')).to.equal(1);
+      done();
+    })
+  })
+
+  describe('Input: aa11', function() {
+    it('Expected: 2', done => {
+      expect(duplicateCount('aa11')).to.equal(2);
+      done();
+    })
+  })
+
+  describe('Input: aa11 ?', function() {
+    it('Expected: 2', done => {
+      expect(duplicateCount('aa11 ?')).to.equal(2);
+      done();
+    })
+  })
+})
