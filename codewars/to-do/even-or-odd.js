@@ -14,6 +14,9 @@ function even_or_odd(number) { // not camelCase because function name from code 
   return number % 2 === 0 ? 'Even' : 'Odd';
 }
 
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
 describe('Even Or Odd Code Wars 8kyu', function() {
   describe('with input 2', function() {
     it('should return even', done => {
