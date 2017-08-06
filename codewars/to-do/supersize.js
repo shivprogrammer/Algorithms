@@ -27,6 +27,8 @@ function superSize(num) {
   return parseInt(output);
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 describe('Supersize function Code Wars', function() {
   describe('Input: ', function() {
