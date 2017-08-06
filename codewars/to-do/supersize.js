@@ -11,8 +11,20 @@ superSize(12) // 21
 If the argument passed through is single digit or is already the maximum possible integer, your function should simply return it.
 */
 
-function superSize(num){
+function superSize(num) {
+  var result = [];
+  var output = '';
 
+  while (num >= 1) {
+    result.push(num % 10);
+    num = Math.floor(num / 10);
+    console.log(result);
+  }
+
+  for (let i = result.length - 1; i >= 0; i--) {
+    output += result.sort()[i];
+  }
+  return parseInt(output);
 }
 
 
