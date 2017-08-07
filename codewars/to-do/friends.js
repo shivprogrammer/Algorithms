@@ -22,6 +22,9 @@ function friend(friends) {
   return result;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Friends Problem From Code Wars', function() {
   describe('Input: ["Ryan", "Kieran", "Mark"]', function() {
     it('Expected: ["Ryan", "Mark"]', done => {
