@@ -13,6 +13,13 @@ Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
 */
 
 function friend(friends) {
+  var result = [];
+  for (let i = 0; i < friends.length; i++) {
+    if (friends[i].length === 4) {
+      result.push(friends[i]);
+    }
+  }
+  return result;
 }
 
 describe('Friends Problem From Code Wars', function() {
