@@ -23,7 +23,7 @@ The middle character(s) of the word represented as a string.
 */
 
 function getMiddle(s) {
-
+  return s.length % 2 === 1 ? s[Math.floor(s.length / 2)] : s[s.length / 2 - 1] + s[s.length / 2];
 }
 
 describe('get middle character question from code wars', function() {
