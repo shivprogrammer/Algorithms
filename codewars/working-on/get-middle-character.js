@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Get Middle character
 
@@ -21,5 +23,35 @@ The middle character(s) of the word represented as a string.
 */
 
 function getMiddle(s) {
-  
+
 }
+
+describe('get middle character question from code wars', function() {
+  describe('even string -- input: test', function() {
+    it('Expected: es', done => {
+      expect(getMiddle('test')).to.equal('es');
+      done();
+    })
+  })
+
+  describe('odd string -- input: testing', function() {
+    it('Expected: t', done => {
+      expect(getMiddle('testing')).to.equal('t');
+      done();
+    })
+  })
+
+  describe('Input: middle', function() {
+    it('Expected: dd', done => {
+      expect(getMiddle('middle')).to.equal('dd');
+      done();
+    })
+  })
+
+  describe('Input: A', function() {
+    it('Expected: A', done => {
+      expect(getMiddle('A')).to.equal('A');
+      done();
+    })
+  })
+})
