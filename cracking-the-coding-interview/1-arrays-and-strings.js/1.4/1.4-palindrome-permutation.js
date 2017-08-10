@@ -13,20 +13,25 @@ function isPalindrome(str) {
   var letterMap = new Map();
 
   for (let i = 0; i < str.length; i++) {
-    if (!(letterMap.has(str.charAt(i).toLowerCase()))) {
-      letterMap.set(str.charAt(i).toLowerCase(), 1);
+    var letter = str.charAt(i).toLowerCase();
+
+    if (letter != ' ' && letterMap.has(letter)) {
+      letterMap.set(letter, letterMap.get(letter) + 1);
     }
-    else {
-      letterMap.set(str.charAt(i).toLowerCase(), letterMap.get(str.charAt(i).toLowerCase()) + 1);
+    else if (letter != ' ') {
+      letterMap.set(letter, 1);
     }
   }
 
-  for (var i = 0; i < letterMap.size; i++) {
-    if (letterMap.values().next().value % 2 != 0) {
+  var vals = letterMap.values();
+
+  for (let x = 0; x < letterMap.size; x++) {
+    if (vals.next().value % 2 === 1) {
       oddCount++;
     }
   }
-  return oddCount <= 1;
+
+  return oddCount < 2;
 }
 
 describe('1.4 Palindrome Permutation | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
@@ -51,9 +56,16 @@ describe('1.4 Palindrome Permutation | Cracking the Coding Interview | Chapter 1
     })
   })
 
-  describe('Input: "shivvy"', function() {
+  describe('correct input but with multiple spaces: "bob     ob"', function() {
+    it('should return true', done => {
+      expect(isPalindrome('bob     ob')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: "fuck"', function() {
     it('should return false', done => {
-      expect(isPalindrome('shivvy')).to.equal(false);
+      expect(isPalindrome('fuck')).to.equal(false);
       done();
     })
   })
