@@ -24,6 +24,9 @@ function strCompress(str) {
   return output.length < str.length ? output: str;
 }
 
+// Time Complexity: O(p + k squared) [p is size of original str and k is number of character sequences]
+// Space Complexity: O(1)
+
 describe('1.6 String Comrpession | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
   describe('Input: "aabcccccaaa"', function() {
     it('should return "a2b1c5a3"', done => {
