@@ -28,6 +28,9 @@ function rotate(matrix) {
   return outputMatrix;
 }
 
+// Time Complexity: O(N squared)
+// Space Complexity: O(N)
+
 var matrix1 = [
   [4, 12],
   [8, 5]
@@ -55,6 +58,20 @@ var notSquareMatrix = [
   [4, 5, 6]
 ];
 
+var matrix3 = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+  [13, 14, 15, 16]
+];
+
+var matrix3rotated = [
+  [13, 9, 5, 1],
+  [14, 10, 6, 2],
+  [15, 11, 7, 3],
+  [16, 12, 8, 4]
+];
+
 describe('1.7 Rotate Matrix | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
   describe('Input: empty matrix', function()  {
     it ('Output: "you didn\'t input a square matrix you dunce"', done => {
@@ -80,6 +97,13 @@ describe('1.7 Rotate Matrix | Cracking the Coding Interview | Chapter 1 - Arrays
   describe('3x3 Matrix Input: matrix2', function() {
     it('should return matrix2rotated', done => {
       expect(rotate(matrix2)).to.deep.equal(matrix2rotated);
+      done();
+    })
+  })
+
+  describe('4x4 Matrix Input: matrix3', function() {
+    it('should return matrix3rotated', done => {
+      expect(rotate(matrix3)).to.deep.equal(matrix3rotated);
       done();
     })
   })
