@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 1.6 String Compression
 
@@ -7,7 +9,19 @@ Implement a method to perform basic string compression using the counts of repea
 */
 
 function strCompress(str) {
-  
+  var output = '';
+  var count = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    count++;
+
+    if (i + 1 >= str.length || str.charAt(i) != str.charAt(i + 1)) {
+      output += str.charAt(i) + count;
+      count = 0;
+    }
+  }
+
+  return output.length < str.length ? output: str;
 }
 
 describe('1.6 String Comrpession | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
