@@ -53,13 +53,53 @@ var matrix1 = [
 var matrix1result = [
   [0, 0, 0],
   [5, 10, 0],
-  [32, 11, 0],
+  [32, 11, 0]
+];
+
+var matrix2 = [
+  [0, 1, 12],
+  [15, 18, -32],
+  [111, 4, -1]
+];
+
+var matrix2result = [
+  [0, 0, 0],
+  [0, 18, -32],
+  [0, 4, -1]
+]
+
+var matrix3 = [
+  [0, 1, 12, 18],
+  [15, 18, -32, 22],
+  [111, 4, -1, 7],
+  [1, 1, -1, 8]
+];
+
+var matrix3result = [
+  [0, 0, 0, 0],
+  [0, 18, -32, 22],
+  [0, 4, -1, 7],
+  [0, 1, -1, 8],
 ];
 
 describe('Matrix Cancellation', function() {
-  describe('Input: matrix1', function() {
+  describe('Input 3x3 matrix with 1 zero: matrix1', function() {
     it('should return matrix1result', done => {
       expect(cancel(matrix1)).to.deep.equal(matrix1result);
+      done();
+    })
+  })
+
+  describe('Input another 3x3 matrix with 1 zero: matrix2', function() {
+    it('should return matrix2result', done => {
+      expect(cancel(matrix2)).to.deep.equal(matrix2result);
+      done();
+    })
+  })
+
+  describe('Input 4x4 matrix with 1 zero: matrix3', function() {
+    it('should return matrix3result', done => {
+      expect(cancel(matrix3)).to.deep.equal(matrix3result);
       done();
     })
   })
