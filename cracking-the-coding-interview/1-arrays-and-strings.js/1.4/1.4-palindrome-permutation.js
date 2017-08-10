@@ -13,23 +13,20 @@ function isPalindrome(str) {
   var letterMap = new Map();
 
   for (let i = 0; i < str.length; i++) {
-    if (!letterMap.has(str.charAt(i).toLowerCase())) {
+    if (!(letterMap.has(str.charAt(i).toLowerCase()))) {
       letterMap.set(str.charAt(i).toLowerCase(), 1);
-      console.log(str.charAt(i), letterMap.get(str.charAt(i)));
     }
     else {
       letterMap.set(str.charAt(i).toLowerCase(), letterMap.get(str.charAt(i).toLowerCase()) + 1);
-      console.log(str.charAt(i), letterMap.get(str.charAt(i)));
     }
   }
 
-  for (var x in letterMap) {
-    if ((letterMap.get(x) % 2) != 0) {
+  for (var i = 0; i < letterMap.size; i++) {
+    if (letterMap.values().next().value % 2 != 0) {
       oddCount++;
     }
   }
-
-  return oddCount;
+  return oddCount <= 1;
 }
 
 describe('1.4 Palindrome Permutation | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
@@ -43,6 +40,13 @@ describe('1.4 Palindrome Permutation | Cracking the Coding Interview | Chapter 1
   describe('Input: "aabbeef"', function() {
     it('should return true', done => {
       expect(isPalindrome('aabbeef')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: "shivvy"', function() {
+    it('should return false', done => {
+      expect(isPalindrome('shivvy')).to.equal(false);
       done();
     })
   })
