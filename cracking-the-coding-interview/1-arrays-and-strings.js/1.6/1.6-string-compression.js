@@ -9,3 +9,12 @@ Implement a method to perform basic string compression using the counts of repea
 function strCompress(str) {
   
 }
+
+describe('1.6 String Comrpession | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
+  describe('Input: "aabcccccaaa"', function() {
+    it('should return "a2b1c5a3"', done => {
+      expect(strCompress('aabcccccaaa')).to.equal('a2b1c5a3');
+      done();
+    })
+  })
+})
