@@ -7,7 +7,27 @@ Given matrix, if a cell has a 0, then make sure that all other cells in that row
 */
 
 function cancel(matrix) {
+  var matrixFlags = [];
+  var temp = [];
+  var zeroRow = [];
+  var zeroColumn = [];
 
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 0) {
+        temp.push(1);
+      }
+      else {
+        temp.push(0);
+      }
+      matrixFlags.push(temp);
+      temp = [];
+      console.log(matrixFlags);
+
+    }
+  }
+
+  // return matrixFlags;
 }
 
 var matrix1 = [
@@ -19,7 +39,7 @@ var matrix1 = [
 var matrix1result = [
   [0, 0, 0],
   [5, 10, 0],
-  [32, 11, 0];
+  [32, 11, 0],
 ];
 
 describe('Matrix Cancellation', function() {
