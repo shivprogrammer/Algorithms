@@ -24,8 +24,6 @@ function sortStack(input) {
   }
 
   console.log(low, high);
-
-  
 }
 
 describe('3.5 - Sort Stack', function() {
