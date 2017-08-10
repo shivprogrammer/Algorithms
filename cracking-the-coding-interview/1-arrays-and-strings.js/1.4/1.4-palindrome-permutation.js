@@ -7,7 +7,16 @@ Given a string, write a function to check if it is a permutation of a palindrome
 */
 
 function isPalindrome(str) {
+  var letterMap = new Map();
 
+  for (let i = 0; i < str.length; i++) {
+    if (!letterMap.has(str.charAt(i))) {
+      letterMap.set(str.charAt(i), 1);
+    }
+    else if (letterMap.has(str.charAt(i))) {
+      letterMap.set(str.charAt(i), letterMap.get(str.charAt(i) + 1));
+    }
+  }
 }
 
 describe('1.4 Palindrome Permutation | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
