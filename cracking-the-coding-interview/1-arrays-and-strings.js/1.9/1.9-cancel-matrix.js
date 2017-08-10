@@ -16,6 +16,12 @@ function cancel(matrix) {
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] === 0) {
         temp.push(1);
+        if (!zeroRow || zeroRow[zeroRow.length - 1] != i) {
+          zeroRow.push(i);
+        }
+        if (!zeroColumn || zeroColumn[zeroColumn.length - 1] != j) {
+          zeroColumn.push(j);
+        }
       }
       else {
         temp.push(0);
@@ -23,10 +29,11 @@ function cancel(matrix) {
       matrixFlags.push(temp);
       temp = [];
       console.log(matrixFlags);
-
     }
   }
 
+  console.log(zeroRow);
+  console.log(zeroColumn);
   // return matrixFlags;
 }
 
