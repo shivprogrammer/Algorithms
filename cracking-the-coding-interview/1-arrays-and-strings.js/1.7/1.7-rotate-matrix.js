@@ -10,21 +10,22 @@ Given an image represented by an NxN matrix, where each pixel in the image is 4 
 
 function rotate(matrix) {
   if (matrix.length === 0 || matrix.length != matrix[0].length) {
-    return false;
+    return 'you didn\'t input a square matrix you dunce';
   }
-
-  var topLeft = matrix[matrix.length - 1][0];
-  var topRight = matrix[0][0];
-  var bottomRight = matrix[0][matrix[0].length - 1];
-  var bottomLeft = matrix[matrix.length - 1][matrix[matrix.length - 1].length];
-
-  var dimension = matrix.length;
 
   var outputMatrix = [];
 
+  var dimension = matrix.length;
+  for (var col = 0; col < dimension; col++) {
+    var inner = [];
+    for (var row = 0; row < dimension; row++) {
+      var element = matrix[row][col];
+      inner.unshift(element);
+    }
+    outputMatrix.push(inner);
+  }
 
-
-
+  return outputMatrix;
 }
 
 var matrix1 = [
@@ -47,9 +48,28 @@ var matrix2rotated = [
   [-4, 8, 55],
   [0, 4, 32],
   [2, 96, 1]
-]
+];
+
+var notSquareMatrix = [
+  [1, 2, 3],
+  [4, 5, 6]
+];
 
 describe('1.7 Rotate Matrix | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
+  describe('Input: empty matrix', function()  {
+    it ('Output: "you didn\'t input a square matrix you dunce"', done => {
+      expect(rotate([])).to.equal("you didn\'t input a square matrix you dunce");
+      done();
+    })
+  })
+
+  describe('Input: not square matrix', function()  {
+    it ('Output: "you didn\'t input a square matrix you dunce"', done => {
+      expect(rotate(notSquareMatrix)).to.deep.equal("you didn\'t input a square matrix you dunce");
+      done();
+    })
+  })
+
   describe('2x2 Matrix Input: matrix1', function() {
     it('should return matrix1rotated', done => {
       expect(rotate(matrix1)).to.deep.equal(matrix1rotated);
