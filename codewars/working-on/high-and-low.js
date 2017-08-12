@@ -16,6 +16,20 @@ highAndLow("1 9 3 4 -5"); // return "9 -5"
 */
 
 function highAndLow(nums) {
+  var numArray = nums.split(' ');
+  var high = 0;
+  var low = Infinity;
+
+  for (let i = 0; i < numArray.length; i++) {
+    if (parseInt(numArray[i]) > high) {
+      high = parseInt(numArray[i]);
+    }
+    if (parseInt(numArray[i]) < low) {
+      low = parseInt(numArray[i]);
+    }
+  }
+
+  return high + ' ' + low;
 }
 
 describe('Find Highest and Lowest Int Question Code Wars', function() {
