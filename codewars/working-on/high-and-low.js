@@ -32,6 +32,9 @@ function highAndLow(nums) {
   return high + ' ' + low;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Find Highest and Lowest Int Question Code Wars', function() {
   describe('Input: "1 9 3 4 -5"', function() {
     it('Expected: "9 -5"', done => {
