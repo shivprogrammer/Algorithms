@@ -27,6 +27,9 @@ function incrementer(num) {
   return result;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Incrementer function from Code Wars', function() {
   describe('Input: []', function() {
     it('Expected: []', done => {
