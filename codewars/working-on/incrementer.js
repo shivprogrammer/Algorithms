@@ -20,7 +20,11 @@ Lastly, return [] if your array is empty! Arrays will only contain numbers so do
 */
 
 function incrementer(num) {
-
+  var result = [];
+  for (let i = 0; i < num.length; i++) {
+    result.push((num[i] + i + 1) % 10);
+  }
+  return result;
 }
 
 describe('Incrementer function from Code Wars', function() {
