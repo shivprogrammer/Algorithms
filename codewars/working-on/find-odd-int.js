@@ -12,7 +12,20 @@ There will always be only one integer that appears an odd number of times.
 */
 
 function findOdd(arr) {
+  var numCount = new Map();
 
+  for (let i = 0; i < arr.length; i++) {
+    if (numCount.get(arr[i]) === 1) {
+      numCount.delete(arr[i]);
+      console.log(numCount);
+    }
+    else {
+      numCount.set(arr[i], 1);
+      console.log(numCount);
+    }
+  }
+
+  return numCount.keys().next().value;
 }
 
 describe('Find Odd Int Question Code Wars', function() {
