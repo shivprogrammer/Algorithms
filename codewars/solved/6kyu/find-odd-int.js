@@ -28,6 +28,9 @@ function findOdd(arr) {
   return numCount.keys().next().value;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Find Odd Int Question Code Wars', function() {
   describe('with input [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]', function() {
     it('should return 5', done => {
