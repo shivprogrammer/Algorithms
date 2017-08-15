@@ -18,7 +18,39 @@ Should return: 160
 */
 
 function findOutlier(integers) {
+  var oddCount = 0;
+  var evenCount = 0;
 
+  if ((oddCount < 2) && (evenCount < 2)) {
+    for (let i = 0; i < integers.length; i++) {
+      if (integers[i] % 2 === 0) {
+        evenCount++
+      }
+      else {
+        oddCount++
+      }
+    }
+  }
+
+  console.log(oddCount)
+  console.log(evenCount)
+
+  if (evenCount > oddCount) {
+    for (let x = 0; x < integers.length; x++) {
+      if ((integers[x] % 2 === 1) || (integers[x] % 2 === -1)) {
+        return integers[x]
+      }
+    }
+  }
+
+  else {
+    for (let y = 0; y < integers.length; y++) {
+      if (integers[y] % 2 === 0) {
+        console.log(integers[y])
+        return integers[y]
+      }
+    }
+  }
 }
 
 describe('FIND THE PARITY OUTLIER QUESTION FROM CODE WARS', function() {
