@@ -56,6 +56,9 @@ function findOutlier(integers) {
 // TIME COMPLEXITY: O(N + 3) [first for loop only will go to max 3 ints, and only one out of the following two for loops will occur] => O(N)
 // SPACE COMPLEXITY: O(1)
 
+// *NOTE Turns out that there is a very simple solution in codewars that is like 3 lines of code involving filter. I really need to be more aware of when to use those types of functions, they are very useful.
+
+
 describe('FIND THE PARITY OUTLIER QUESTION FROM CODE WARS', function() {
   describe('for no input passed in', function() {
     it('return undefined', done => {
