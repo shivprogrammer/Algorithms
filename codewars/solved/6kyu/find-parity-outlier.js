@@ -53,6 +53,9 @@ function findOutlier(integers) {
   }
 }
 
+// TIME COMPLEXITY: O(N + 3) [first for loop only will go to max 3 ints, and only one out of the following two for loops will occur] => O(N)
+// SPACE COMPLEXITY: O(1)
+
 describe('FIND THE PARITY OUTLIER QUESTION FROM CODE WARS', function() {
   describe('for no input passed in', function() {
     it('return undefined', done => {
