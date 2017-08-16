@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 5 kyu
 
@@ -19,3 +21,19 @@ It happens that there are several possible (a, b). The function returns an empty
 
 function removeNb (n) {
 }
+
+describe('Remove DB function from Code Wars', function() {
+  describe('Input: 26', function() {
+    it('Expected: [[15,21], [21,15]]', done => {
+      expect(removeNb(26)).to.deep.equal([[15,21], [21,15]]);
+      done();
+    })
+  })
+
+  describe('Input: 100', function() {
+    it('Expected: []', done => {
+      expect(removeNb(100)).to.deep.equal([]);
+      done();
+    })
+  })
+})
