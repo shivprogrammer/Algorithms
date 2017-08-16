@@ -38,6 +38,9 @@ function outputSort(a, b) {
   return (a[0] < b[0]) ? -1 : 1
 }
 
+// Time Complexity: O(N * log(N))
+// Space Complexity: O(N)
+
 describe('Remove DB function from Code Wars', function() {
   describe('Input: 26', function() {
     it('Expected: [[15,21], [21,15]]', done => {
