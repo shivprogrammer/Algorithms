@@ -20,6 +20,22 @@ It happens that there are several possible (a, b). The function returns an empty
 */
 
 function removeNb (n) {
+  var additions = ((n * n + n)/2)
+  var highLimit = Math.floor(Math.sqrt(additions + 1) - 1);
+  var output = []
+
+  for (let i = highLimit; i >= n/2; i--) {
+    var x = Math.floor((additions - i)/(i + 1));
+    if ((i * x + i + x) === additions) {
+        output.push([i, x]);
+        output.push([x, i]);
+    }
+  }
+  return output.sort(outputSort);
+}
+
+function outputSort(a, b) {
+  return (a[0] < b[0]) ? -1 : 1
 }
 
 describe('Remove DB function from Code Wars', function() {
