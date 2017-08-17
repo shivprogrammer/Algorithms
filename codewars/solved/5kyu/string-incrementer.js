@@ -69,6 +69,9 @@ function incrementString (str) {
   return str.slice(0, letterBegin + 1) + leadingZeros + newNumber;
 }
 
+// Time Complexity: O(N) // AT THE VERY WORST CASE, ONLY IF NUMBERS. OTHERWISE TIME IS RELATED TO THE NUMBER OF NUMBERS AT THE END OF THE INPUT STRING SO HOLY GUACAMOLE THIS IS A GOOD TIME
+// Space Complexity: O(1)
+
 describe('String Incrementer from Code Wars', function() {
   describe('base case with empty string', function() {
     it('should return 1', done => {
