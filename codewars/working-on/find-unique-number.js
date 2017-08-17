@@ -1,3 +1,6 @@
+// START 3:09 PM
+// FUCKING SOLVED WITH ALL TESTS PASSING BY 3:31 PM SONNNNNN => 22 MINUTES TOTAL
+
 'use strict';
 
 const expect = require('chai').expect;
@@ -36,6 +39,9 @@ function findUniq(arr) {
     return stack1.shift();
   }
 }
+
+// Time Complexity: O(N) // Worst case if the unique number is literally the last one. Otherwise this is SO fucking fast
+// Space Complexity: O(N) [stack1] + O(N) [stack2]
 
 describe('Find the Unique Number | Code Wars | 6kyu', function() {
   describe('input [0, 1, 0]', function() {
