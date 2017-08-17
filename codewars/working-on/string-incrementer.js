@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 String Incrementer
 
@@ -19,3 +21,54 @@ Attention: If the number has leading zeros the amount of digits should be consid
 
 function incrementString (str) {
 }
+
+describe('String Incrementer from Code Wars', function() {
+  describe('base case with empty string', function() {
+    it('should return 1', done => {
+      expect(incrementString('')).to.equal('1');
+      done();
+    })
+  })
+
+  describe('string with leading 0s', function() {
+    it('should return foobar001', done => {
+      expect(incrementString('foobar000')).to.equal('foobar001');
+      done();
+    })
+  })
+
+  describe('input of foobar010', function() {
+    it('should return foobar011', done => {
+      expect(incrementString('foobar010')).to.equal('foobar011');
+      done();
+    })
+  })
+
+  describe('input of foobar001', function() {
+    it('should return foobar002', done => {
+      expect(incrementString('foobar001')).to.equal('foobar002');
+      done();
+    })
+  })
+
+  describe('input of foobar099', function() {
+    it('should return foobar100', done => {
+      expect(incrementString('foobar099')).to.equal('foobar100');
+      done();
+    })
+  })
+
+  describe('string with no numbers', function() {
+    it('should return foo1', done => {
+      expect(incrementString('foo')).to.equal('foo1');
+      done();
+    })
+  })
+
+  describe('input of just a number', function() {
+    it('should return 2', done => {
+      expect(incrementString('1')).to.equal('2');
+      done();
+    })
+  })
+})
