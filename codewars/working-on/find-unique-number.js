@@ -15,7 +15,26 @@ It’s guaranteed that array contains more than 3 numbers.
 */
 
 function findUniq(arr) {
+  var stack1 = [];
+  var stack2 = [];
 
+  while (stack2.length < 2 && stack1.length < 2) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === arr[0]) {
+        stack1.push(arr[i]);
+      }
+      else {
+        stack2.push(arr[i]);
+      }
+    }
+  }
+
+  if (stack1.length > 1) {
+    return stack2.shift();
+  }
+  else {
+    return stack1.shift();
+  }
 }
 
 describe('Find the Unique Number | Code Wars | 6kyu', function() {
