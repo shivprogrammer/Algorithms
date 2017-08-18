@@ -46,6 +46,9 @@ function matrixAddition(matrix1, matrix2) {
   return outputMatrix;
 }
 
+// Time Complexity: O(N squared)
+// Space Complexity: O(N) [outputmatrix] + O(M) [temp]
+
 var matrix1 = [
   [1, 2],
   [1, 2]
