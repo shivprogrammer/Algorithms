@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Weight for Weight
 
@@ -23,3 +25,33 @@ All numbers in the list are positive numbers and the list can be empty.
 function orderWeight(string) {
 
 }
+
+describe('Weight for weights problem from code wars', function() {
+  describe('Input: none', function() {
+    it ('Expected: empty string', done => {
+      expect(orderWeight()).to.equal('');
+      done();
+    })
+  })
+
+  describe('Input: empty string', function() {
+    it ('Expected: empty string', done => {
+      expect(orderWeight('')).to.equal('');
+      done();
+    })
+  })
+
+  describe('Input: 103 123 4444 99 2000', function() {
+    it ('Expected: 2000 103 123 4444 99', done => {
+      expect(orderWeight('103 123 4444 99 2000')).to.equal('2000 103 123 4444 99');
+      done();
+    })
+  })
+
+  describe('Input: 2000 10003 1234000 44444444 9999 11 11 22 123', function() {
+    it ('Expected: 11 11 2000 10003 22 123 1234000 44444444 9999', done => {
+      expect(orderWeight('2000 10003 1234000 44444444 9999 11 11 22 123')).to.equal('11 11 2000 10003 22 123 1234000 44444444 9999');
+      done();
+    })
+  })
+})
