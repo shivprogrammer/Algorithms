@@ -24,6 +24,50 @@ All numbers in the list are positive numbers and the list can be empty.
 
 function orderWeight(string) {
 
+  if (!string || string === '') {
+    return '';
+  }
+
+  var array = string.split(' ').map(Number);
+  var result = [];
+  var output = '';
+
+
+  for (let i = 0; i < array.length; i++) {
+    var weight = 0;
+    // console.log(array[i], array[i].toString().length)
+
+    for(let x = 0; x < array[i].toString().length; x++) {
+      // console.log(parseInt(array[i].toString().charAt(x)))
+      weight += parseInt(array[i].toString().charAt(x))
+      // console.log(weight)
+    }
+    result.push([weight, parseInt(array[i])])
+    console.log(result)
+  }
+
+  var sorted = result.sort(weightSort);
+
+  for (var z = 0; z < sorted.length; z++) {
+    if (z === 0) {
+      output += sorted[z][1];
+      console.log(output)
+    } else {
+      output += ' ' + sorted[z][1];
+      console.log(output)
+    }
+  }
+  console.log(output)
+  return output;
+}
+
+function weightSort(a, b) {
+  if (a[0] === b[0]) {
+    return (a[1].toString() < b[1].toString()) ? -1 : 1;
+  }
+  else {
+    return (a[0] < b[0]) ? -1 : 1;
+  }
 }
 
 describe('Weight for weights problem from code wars', function() {
