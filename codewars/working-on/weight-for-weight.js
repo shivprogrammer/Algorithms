@@ -61,6 +61,15 @@ function orderWeight(string) {
   return output;
 }
 
+/*
+FUCK THIS WAS A MOTHERFUCKER. But I got it ;)
+Time Complexity - Map: O(N), results for loop: O(N), weightSort: O(N * log(N)), making outputString O(N/(avg word length))
+Time Complexity: O(N) + O(N) + O(N * log(N)) + O(N/(avg word length))
+FINAL TIME COMPLEXITYY: O(N * log(N)) // DAYMNNNN THAT'S PRETTY GOOOOOOD
+Space Complexity - Array: O(N) + Result O(N) + Output: O(1)
+FINAL SPACE COMPLEXITY: O(2N + 1) => O(N)
+*/
+
 function weightSort(a, b) {
   if (a[0] === b[0]) {
     return (a[1].toString() < b[1].toString()) ? -1 : 1;
