@@ -16,8 +16,25 @@ The parameter of accum is a string which includes only letters from a..z and A..
 */
 
 function accum(s) {
+  var output = '';
 
+  for(let i = 0; i < s.length; i++) {
+    let acc = i;
+    output += s[i].toUpperCase();
+
+    while (acc > 0) {
+      output += s[i].toLowerCase();
+      acc--;
+    }
+
+    output += '-';
+  }
+
+  return output.substring(0, output.length - 1);
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(1)
 
 describe('Mumbling function from code wars', function() {
   describe('with input of ZpglnRxqenU', function() {
