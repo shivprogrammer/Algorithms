@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Mumbling
 
@@ -16,3 +18,19 @@ The parameter of accum is a string which includes only letters from a..z and A..
 function accum(s) {
 
 }
+
+describe('Mumbling function from code wars', function() {
+  describe('with input of ZpglnRxqenU', function() {
+    it('return Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu', done => {
+      expect(accum('ZpglnRxqenU')).to.equal('Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu');
+      done();
+    })
+  })
+
+  describe('with input of NyffsGeyylB', function() {
+    it('return Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu', done => {
+      expect(accum('NyffsGeyylB')).to.equal('N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb');
+      done();
+    })
+  })
+})
