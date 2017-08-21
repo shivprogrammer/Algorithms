@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Piano Part 1
 
@@ -20,3 +22,19 @@ Your function will receive an integer between 1 and 10000 (maybe you think that 
 function blackOrWhiteKey(keyPressCount) {
 
 }
+
+describe('piano problem code wars', function() {
+  describe('with input 1', function() {
+    it('should return white', done => {
+      expect(blackOrWhiteKey(1)).to.equal('white');
+      done();
+    })
+  })
+
+  describe('with input 1', function() {
+    it('should return white', done => {
+      expect(blackOrWhiteKey(5)).to.equal('black');
+      done();
+    })
+  })
+})
