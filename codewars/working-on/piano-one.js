@@ -30,6 +30,9 @@ function blackOrWhiteKey(keyPressCount) {
   }
 }
 
+// Space Complexity: O(N)
+// Time Complexity: O(1)
+
 describe('piano problem code wars', function() {
   describe('with input 1', function() {
     it('should return white', done => {
