@@ -18,9 +18,16 @@ Your function will receive an integer between 1 and 10000 (maybe you think that 
 2017  "white"
 */
 
+const piano = ['white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white', 'white'];
 
 function blackOrWhiteKey(keyPressCount) {
-
+  var x = keyPressCount % piano.length;
+  if (x === 0) {
+    return 'white';
+  }
+  else {
+    return piano[x - 1];
+  }
 }
 
 describe('piano problem code wars', function() {
