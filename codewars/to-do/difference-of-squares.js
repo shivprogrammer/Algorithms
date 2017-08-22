@@ -21,6 +21,15 @@ differenceOfSquares(10) // => 2640
 */
 
 function differenceOfSquares(x) {
+  var sumSquare = 0;
+  var squareSum = 0;
+
+  for (let i = 0; i <= x; i++) {
+    sumSquare += i;
+    squareSum += Math.pow(i, 2);
+  }
+
+  return Math.pow(sumSquare, 2) - squareSum;
 }
 
 describe('Difference of Squares | Code Wars | 7kyu', function() {
