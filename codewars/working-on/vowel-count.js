@@ -27,6 +27,9 @@ function getCount(str) {
   return vowelsCount;
 }
 
+// Time Complexity: O(N * M)
+// Space Complexity: O(M)
+
 describe('Vowels Count Code Wars 7kyu', function() {
   describe('with input abracadabra', function() {
     it('should return 5', done => {
