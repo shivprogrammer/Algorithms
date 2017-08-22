@@ -23,6 +23,9 @@ function replaceSpaces(str, trueLength) {
   return output;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
 describe('1.3 URLifiy | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
   describe('Input: "Mr John Smith     ", 13', function() {
     it('should return "Mr%20John%20Smith"', done => {
