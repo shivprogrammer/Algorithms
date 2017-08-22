@@ -44,6 +44,9 @@ function ticTacWin(matrix) {
 // Time Complexity: O(1)
 // Space Complexity: O(1)
 
+// *NOTE: CHALLENGE: What if you needed to design this problem for an NxN Board?
+
+//-----------------TESTS----------------
 var matrix = [
   ['', '', ''],
   ['', '', ''],

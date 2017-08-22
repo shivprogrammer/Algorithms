@@ -8,8 +8,28 @@ const expect = require('chai').expect;
 Given a list of people with their birth and death years, implement a method to compute the year with the mosst number of people alive. You may assume that all people were born between 1900 and 2000 (inclusive). If a person was alive during any portion of that year, they should be included in that year's count. For example, Person (birth = 1908, death = 1909) is included in hte counts for both 1908 and 1909.
 */
 
-function living(people, min, max) {
+function maxLivingYear(people) {
+  var min = findMin(people);
+  var max = findMax(people);
 
+  var maxAlive = 0;
+  var maxAliveYear = min;
+
+  for (let i = min; i <= max; i++) {
+    var alive = 0;
+    for (var person in people) {
+      if (person.birth <= i && i < person.death) {
+        alive++;
+      }
+    }
+
+    if (alive > maxAlive) {
+      maxAlive = alive;
+      maxAliveYear = i;
+    }
+  }
+
+  return maxAliveYear;
 }
 
 function Person(born, die) {
@@ -67,10 +87,10 @@ describe('16.10 Living People Helper Function findMax', function() {
 })
 
 describe('16.10 -- Living People | Cracking the Coding Interview | Chapter 16 -- Moderate', function() {
-  // describe('Input: [person1, person2, person3]', function() {
-  //   it('should return 1998', done => {
-  //     expect(living([person1, person2, person3])).to.equal(1998);
-  //     done();
-  //   })
-  // })
+  describe('Input: [person1, person2, person3]', function() {
+    it('should return 1998', done => {
+      expect(maxLivingYear([person1, person2, person3])).to.equal(1998);
+      done();
+    })
+  })
 })
