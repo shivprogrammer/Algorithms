@@ -32,6 +32,9 @@ function differenceOfSquares(x) {
   return Math.pow(sumSquare, 2) - squareSum;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
 describe('Difference of Squares | Code Wars | 7kyu', function() {
   describe('Input: 5', function() {
     it('should return 170', done => {
