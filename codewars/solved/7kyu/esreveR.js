@@ -20,6 +20,9 @@ function reverse(array) {
   return output;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('esreveR | Code Wars | 7kyu', function() {
   describe('Input: [1, 2, 3, 4, 5]', function() {
     it('should return [5, 4, 3, 2, 1]', done => {
