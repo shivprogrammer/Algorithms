@@ -11,15 +11,11 @@ Write a program to sort a stack such that the smallest items are on top. You can
 function sortStack(input) {
   var stack1 = [];
   var stack2 = [];
-  var high = 0;
   var low = Infinity;
   var temp;
   var popCount = 0;
 
   for (let i = 0; i < input.length; i++) {
-    if (input[i] > high) {
-      high = input[i];
-    }
     if (input[i] < low) {
       low = input[i];
     }
@@ -52,6 +48,9 @@ function sortStack(input) {
 
   return stack1;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N squared)
 
 describe('3.5 - Sort Stack', function() {
   describe('Input: [2, 12, 8, 7, 5, 4, 10]', function() {
