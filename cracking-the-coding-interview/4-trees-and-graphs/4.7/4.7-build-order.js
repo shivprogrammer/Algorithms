@@ -8,8 +8,16 @@ const expect = require('chai').expect;
 You are given a list of properties and a list of dependencies (which is a list of pairs of projects where the second project is dependent on the first project). All of a project's dependencies must be built before the proejct is. Find a build order that will allow the projects to be built. If there is no valid build order, return an error.
 */
 
-function findBuildOrder() {
+function findBuildOrder(projects, dependencies) {
+  var output = [];
 
+  var projectsMap = new Map();
+
+  for (let i = 0; i < projects.length; i++) {
+    if (!projectsMap.has(projects[i])) {
+      projectsMap.set(projects[i], 1);
+    }
+  }
 }
 
 describe('4.7 Build Order | Cracking the Coding Interview | Chapter 4 - Trees and Graphs', function() {
