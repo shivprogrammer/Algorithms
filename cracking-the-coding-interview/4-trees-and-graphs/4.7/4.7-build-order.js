@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 4.7 Build Order
 
@@ -7,5 +9,14 @@ You are given a list of properties and a list of dependencies (which is a list o
 */
 
 function findBuildOrder() {
-  
+
 }
+
+describe('4.7 Build Order | Cracking the Coding Interview | Chapter 4 - Trees and Graphs', function() {
+  describe('Projects: [a, b, c, d, e, f] & Dependencies: [[a, d], [f, b], [b, d], [f, a], [d, c]]', function() {
+    it('should return [f, e, a, b, d, c]', done => {
+      expect(findBuildOrder([a, b, c, d, e, f], [[a, d], [f, b], [b, d], [f, a], [d, c]])).to.deep.equal([f, e, a, b, d, c]);
+      done();
+    })
+  })
+})
