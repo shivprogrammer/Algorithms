@@ -96,6 +96,9 @@ function findZombies(matrix) {
   return round2;
 }
 
+// Time Complexity: O(N Squared)
+// Space Complexity: O(N) + O(N) + O(N)
+
 var city1 = [
   [8, 8, 8],
   [14, 3, 2],
