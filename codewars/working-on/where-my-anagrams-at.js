@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Where my Anagrams At?
 
@@ -21,3 +23,26 @@ anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 function anagrams(word, words) {
 
 }
+
+describe('Where my Anagrams At? | Code Wars | 5kyu', function() {
+  describe('with no anagrams', function() {
+    it('return empty string', done => {
+      expect(anagrams('laser', ['lazing', 'lazy', 'lacer'])).to.deep.equal([]);
+      done();
+    })
+  })
+
+  describe('Input: abba [aabb abcd bbaa dada]', function() {
+    it('should return [aabb bbaa]', done => {
+      expect(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])).to.deep.equal(['aabb', 'bbaa']);
+      done();
+    })
+  })
+
+  describe('Input: racer [crazer carer racar caers]', function() {
+    it('should return [carer racer]', done => {
+      expect(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer'])).to.deep.equal(['carer', 'racer']);
+      done();
+    })
+  })
+})
