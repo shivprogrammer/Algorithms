@@ -2,8 +2,21 @@
 
 require('../linked-list.js');
 
-function removeDups(linkedList) {
+function removeDups(linked) {
   var valMap = new Map();
+  var currentNode = linked.head;
+  var output = [];
 
-  for (let i = 0; i < )
+  while (currentNode.next) {
+    if (!valMap.has(currentNode.value)) {
+      valMap.set(currentNode.value, 1);
+      output.push(currentNode);
+      currentNode = currentNode.next;
+    }
+    else {
+      currentNode = currentNode.next;
+    }
+  }
+
+  return output;
 }
