@@ -62,8 +62,8 @@ function findZombies(matrix) {
     output.push(temp);
     temp = [];
   }
-
-  console.log(output);
+  
+  return output;
 }
 
 var city1 = [
@@ -99,4 +99,11 @@ describe('Stop the Zombie Apocalypse! | 5kyu', function() {
   //     done();
   //   })
   // })
+
+  describe('Input: city1', function() {
+    it('should return city1Contaminated', done => {
+      expect(findZombies(city1)).to.deep.equal(city1Contaminated);
+      done();
+    })
+  })
 })
