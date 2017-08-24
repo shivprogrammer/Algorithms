@@ -27,23 +27,48 @@ Every word will end with the character that the next word will start with. You w
 
 function wordStep(str) {
   var words = str.split(' ');
+
   var height = 0;
   var heightWordCount = 0;
+  var heightWords = [];
+
   var width = 0;
   var widthWordCount = 0;
+  var widthWords = [];
+
+  var temp = [];
+  var completedMatrix = [];
 
   for (let i = 0; i < words.length; i++) {
     for (let j = 0; j < words[i].length; j++) {
-      if (i % 2 === 0) {
-        height += words[i].length;
-        heightWordCount++;
-      }
-      else {
+      if (i % 2 != 0) {
         width += words[i].length;
         widthWordCount++;
+        widthWords.push(words[i]);
       }
-      height - heightWordCount;
-      width - widthWordCount;
+      else {
+        height += words[i].length;
+        heightWordCount++;
+        heightWords.push(words[i]);
+      }
+      width - widthWordCount + 1;
+      height - heightWordCount + 1;
+    }
+  }
+
+  for (let x = 0; x < widthWordCount; x++) {
+    for (let y = 0; y < heightWordCount; y++) {
+      temp.push(' ');
+    }
+    completedMatrix.push(temp);
+    temp = [];
+  }
+
+  console.log(completedMatrix);
+
+  for (let a = 0; a < widthWordCount; a++) {
+    for (let b = 0; b < heightWordcount; b++) {
+
     }
   }
 }
