@@ -54,6 +54,9 @@ function kthToLast(linkedList, kth) {
   }
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('2.2 - Return Kth to Last', function() {
   describe('Input: theList, 1', function() {
     it('should return node5', done => {
