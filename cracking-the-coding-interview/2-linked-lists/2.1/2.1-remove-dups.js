@@ -1,8 +1,12 @@
 'use strict';
 
-// require('../linked-list.js');
-
 const expect = require('chai').expect;
+
+/*
+2.1 Remove Dups
+
+Write code to remove duplicates from an unsorted linked list
+*/
 
 function LinkedList() {
   this.head = null;
@@ -48,6 +52,9 @@ function removeDups(linked) {
 
   return output;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(M) [valMap] +  O(X) [output]
 
 describe('2.1 Remove Dups | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
   describe('Input: theList', function() {
