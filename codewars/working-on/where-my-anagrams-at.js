@@ -21,7 +21,54 @@ anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 */
 
 function anagrams(word, words) {
+  var output = [];
+  var wordMap = new Map();
+  var anagramCheck = new Map();
 
+  for (let i = 0; i < word.length; i++) {
+    if (wordMap.get(word[i])) {
+      wordMap.set(word[i], wordMap.get(word[i]) + 1);
+    }
+    else {
+      wordMap.set(word[i], 1);
+    }
+  }
+
+  for (let x = 0; x < words.length; x++) {
+    for (let y = 0; y < words[x].length; y++) {
+      if (anagramCheck.get(words[x][y])) {
+        anagramCheck.set(words[x][y], anagramCheck.get(words[x][y]) + 1);
+      }
+      else {
+        anagramCheck.set(words[x][y], 1);
+      }
+    }
+
+    if (compareMaps(wordMap, anagramCheck)) {
+      output.push(words[x]);
+    }
+
+    anagramCheck.clear();
+  }
+
+  return output;
+}
+
+function compareMaps(map1, map2) {
+  var tempVal;
+
+  if (map1.size != map2.size) {
+    return false;
+  }
+
+  for (var [key, val] of map1) {
+    tempVal = map2.get(key);
+
+    if (tempVal != val || (!map2.has(key) && tempVal === undefined)) {
+      return false;
+    }
+  }
+  return true;
 }
 
 describe('Where my Anagrams At? | Code Wars | 5kyu', function() {
