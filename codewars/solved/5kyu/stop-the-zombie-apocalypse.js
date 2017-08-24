@@ -45,7 +45,6 @@ var contaminatedInCity2 = [
 function findZombies(matrix) {
   var output = [];
   var temp = [];
-  var round2 = [];
   var contaminated = matrix[0][0];
 
   for (let i = 0; i < matrix.length; i++) {
@@ -91,7 +90,7 @@ function findZombies(matrix) {
 }
 
 // Time Complexity: O(N Squared)
-// Space Complexity: O(N) + O(N) + O(N)
+// Space Complexity: O(N) [output] + O(M) (temp)
 
 var city1 = [
   [8, 8, 8],
