@@ -98,39 +98,60 @@ var city2Contaminated = [
   [0, 0, 0]
 ];
 
-describe('Stop the Zombie Apocalypse! | 5kyu', function() {
-  // describe('Input: [[8, 2, 3],[8, 2, 3],[1, 2, 8]]', function() {
-  //   it('should return [[1, 0, 0],[1, 0, 0],[0, 0, 0]]', done => {
-  //     expect(findZombies([[8, 2, 3],[8, 2, 3],[1, 2, 8]])).to.deep.equal([[1, 0, 0],[1, 0, 0],[0, 0, 0]]);
-  //     done();
-  //   })
-  // })
-  //
-  // describe('Input: [[7, 2, 3],[7, 2, 3],[1, 2, 7]]', function() {
-  //   it('should return [[1, 0, 0],[1, 0, 0],[0, 0, 0]]', done => {
-  //     expect(findZombies([[7, 2, 3],[7, 2, 3],[1, 2, 7]])).to.deep.equal([[1, 0, 0],[1, 0, 0],[0, 0, 0]]);
-  //     done();
-  //   })
-  // })
-  //
-  // describe('Input: [[9, 1, 2],[9, 9, 9],[7, 4, 9],[7, 9, 7]]', function() {
-  //   it('should return [[1, 0, 0],[1, 1, 1],[0, 0, 1],[0, 0, 0]]', done => {
-  //     expect(findZombies([[9, 1, 2],[9, 9, 9],[7, 4, 9],[7, 9, 7]])).to.deep.equal([[1, 0, 0],[1, 1, 1],[0, 0, 1],[0, 0, 0]]);
-  //     done();
-  //   })
-  // })
+var luckyGuy = [
+  [100, 100, 100, 100, 100],
+  [100, 1, 1, 100, 1],
+  [100, -12, 4, 100, 9],
+  [100, 13, 44, 54, 10],
+  [100, 100, 100, 0, 100]
+];
 
-  describe('Input: city1', function() {
+var luckyGuyContaminated = [
+  [1, 1, 1, 1, 1],
+  [1, 0, 0, 1, 0],
+  [1, 0, 0, 1, 0],
+  [1, 0, 0, 0, 0],
+  [1, 1, 1, 0, 0]
+];
+
+var snakeCity = [
+  [0, 1, 0],
+  [0, 0, 0],
+  [18, 5, 4]
+];
+
+var snakeCityContaminated = [
+  [1, 0, 1],
+  [1, 1, 1],
+  [0, 0, 0]
+];
+
+describe('Stop the Zombie Apocalypse! | 5kyu', function() {
+  describe('Input -- contaminated in only top row: city1', function() {
     it('should return city1Contaminated', done => {
       expect(findZombies(city1)).to.deep.equal(city1Contaminated);
       done();
     })
   })
 
-  describe('Input: city2', function() {
+  describe('Input -- contamination in rows and columns: city2', function() {
     it('should return city2Contaminated', done => {
       expect(findZombies(city2)).to.deep.equal(city2Contaminated);
       done();
     })
   })
+
+  describe('Input -- one lucky sap has the contaminate number but nobody is touching him: luckyGuy', function() {
+    it('should return luckyGuyContaminated', done => {
+      expect(findZombies(luckyGuy)).to.deep.equal(luckyGuyContaminated);
+      done();
+    })
+  })
+
+  // describe('Input -- contamination in rows and columns: snakeCity', function() {
+  //   it('should return snakeCityContaminated', done => {
+  //     expect(findZombies(snakeCity)).to.deep.equal(snakeCityContaminated);
+  //     done();
+  //   })
+  // })
 })
