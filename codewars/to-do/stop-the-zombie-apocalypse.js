@@ -55,6 +55,14 @@ function findZombies(matrix) {
       else if (temp[temp.length - 1] === 1 && matrix[i][j] === contaminated) {
         temp.push(1);
       }
+      else if (i != 0) {
+        if (output[i - 1][j] === 1 && matrix[i][j] === contaminated) {
+          temp.push(1);
+        }
+        else {
+          temp.push(0);
+        }
+      }
       else {
         temp.push(0);
       }
@@ -62,7 +70,7 @@ function findZombies(matrix) {
     output.push(temp);
     temp = [];
   }
-  
+
   return output;
 }
 
@@ -75,6 +83,18 @@ var city1 = [
 var city1Contaminated = [
   [1, 1, 1],
   [0, 0, 0],
+  [0, 0, 0]
+];
+
+var city2 = [
+  [10, 10, 1],
+  [10, 4, 8],
+  [112, -44, 1]
+];
+
+var city2Contaminated = [
+  [1, 1, 0],
+  [1, 0, 0],
   [0, 0, 0]
 ];
 
@@ -103,6 +123,13 @@ describe('Stop the Zombie Apocalypse! | 5kyu', function() {
   describe('Input: city1', function() {
     it('should return city1Contaminated', done => {
       expect(findZombies(city1)).to.deep.equal(city1Contaminated);
+      done();
+    })
+  })
+
+  describe('Input: city2', function() {
+    it('should return city2Contaminated', done => {
+      expect(findZombies(city2)).to.deep.equal(city2Contaminated);
       done();
     })
   })
