@@ -72,59 +72,22 @@ function findZombies(matrix) {
     temp = [];
   }
 
-  // for (let x = 0; x < output.length; x++) {
-  //   for (let y = 0; y < output[0].length; y++) {
-  //     if (output[x][y] === 1) {
-  //       temp.push(1);
-  //     }
-  //     else if (x === 0) {
-  //       if (output[x + 1][y] === 1 && matrix[x][y] === contaminated) {
-  //         temp.push(1);
-  //       }
-  //       else {
-  //         temp.push(0);
-  //       }
-  //     }
-  //     else {
-  //       temp.push(0);
-  //     }
-  //   }
-  //   round2.push(temp);
-  //   temp = [];
-  // }
-  //
-  // return round2;
-
   for (let x = output.length - 1; x >= 0; x--) {
     for (let y = output.length - 1; y >= 0; y--) {
-      if (output[x][y] === 1) {
-        temp.unshift(1);
-      }
-      else if (x != 0) {
+      if (x != output.length - 1) {
         if (output[x + 1][y] === 1 && matrix[x][y] === contaminated) {
-          temp.unshift(1);
-        }
-        else {
-          temp.unshift(0);
+          output[x][y] = 1;
         }
       }
-      else if (y != output[0].length - 1) {
+      if (y != output[0].length - 1) {
         if (output[x][y + 1] === 1 && matrix[x][y] === contaminated) {
-          temp.unshift(1);
+          output[x][y] = 1;
         }
-        else {
-          temp.unshift(0);
-        }
-      }
-      else {
-        temp.unshift(0);
       }
     }
-    round2.unshift(temp);
-    temp = [];
   }
 
-  console.log(round2);
+  return output;
 }
 
 // Time Complexity: O(N Squared)
@@ -210,36 +173,37 @@ var current = [
   [1, 1, 1, 1]
 ]
 
-//
+// problem has become that output can no longer be referenced in order to continue the snake
+// reference has be to become temp
 
 describe('Stop the Zombie Apocalypse! | 5kyu', function() {
-  // describe('Input -- contaminated in only top row: city1', function() {
-  //   it('should return city1Contaminated', done => {
-  //     expect(findZombies(city1)).to.deep.equal(city1Contaminated);
-  //     done();
-  //   })
-  // })
-  //
-  // describe('Input -- contamination in rows and columns: city2', function() {
-  //   it('should return city2Contaminated', done => {
-  //     expect(findZombies(city2)).to.deep.equal(city2Contaminated);
-  //     done();
-  //   })
-  // })
-  //
-  // describe('Input -- one lucky sap has the contaminate number but nobody is touching him: luckyGuy', function() {
-  //   it('should return luckyGuyContaminated', done => {
-  //     expect(findZombies(luckyGuy)).to.deep.equal(luckyGuyContaminated);
-  //     done();
-  //   })
-  // })
-  //
-  // describe('Input -- one jackass got contaminated late: unluckyGuy', function() {
-  //   it('should return unluckyGuyContaminated', done => {
-  //     expect(findZombies(unluckyGuy)).to.deep.equal(unluckyGuyContaminated);
-  //     done();
-  //   })
-  // })
+  describe('Input -- contaminated in only top row: city1', function() {
+    it('should return city1Contaminated', done => {
+      expect(findZombies(city1)).to.deep.equal(city1Contaminated);
+      done();
+    })
+  })
+
+  describe('Input -- contamination in rows and columns: city2', function() {
+    it('should return city2Contaminated', done => {
+      expect(findZombies(city2)).to.deep.equal(city2Contaminated);
+      done();
+    })
+  })
+
+  describe('Input -- one lucky sap has the contaminate number but nobody is touching him: luckyGuy', function() {
+    it('should return luckyGuyContaminated', done => {
+      expect(findZombies(luckyGuy)).to.deep.equal(luckyGuyContaminated);
+      done();
+    })
+  })
+
+  describe('Input -- one jackass got contaminated late: unluckyGuy', function() {
+    it('should return unluckyGuyContaminated', done => {
+      expect(findZombies(unluckyGuy)).to.deep.equal(unluckyGuyContaminated);
+      done();
+    })
+  })
 
   describe('Input -- a domino effect of contaminants: snakeCity', function() {
     it('should return snakeCityContaminated', done => {
