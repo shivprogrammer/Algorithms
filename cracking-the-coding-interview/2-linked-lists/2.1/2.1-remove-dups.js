@@ -41,6 +41,7 @@ function removeDups(linked) {
       currentNode = currentNode.next;
     }
     else {
+      currentNode.next = currentNode.next.next;
       currentNode = currentNode.next;
     }
   }
