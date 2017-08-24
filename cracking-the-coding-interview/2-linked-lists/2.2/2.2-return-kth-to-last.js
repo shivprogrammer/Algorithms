@@ -35,7 +35,8 @@ node5.next = node6;
 
 function kthToLast(linkedList, kth) {
   var positionMap = new Map();
-  var listLength = 0;
+  positionMap.set(linkedList.head, 0);
+  var listLength = 1;
   var currentNode = linkedList.head;
 
   while (currentNode.next) {
@@ -44,7 +45,17 @@ function kthToLast(linkedList, kth) {
     currentNode = currentNode.next;
   }
 
-  return positionMap.get(listLength - kth);
+  positionMap.set(listLength, currentNode);
+
+  if (kth === 0) {
+    return positionMap.get(listLength);
+  }
+  else if (kth > 0 && kth <= listLength){
+    return positionMap.get(listLength - kth);
+  }
+  else {
+    return 'element is not in linked list';
+  }
 }
 
 describe('2.2 - Return Kth to Last', function() {
@@ -58,6 +69,20 @@ describe('2.2 - Return Kth to Last', function() {
   describe('Input: theList, 0', function() {
     it('should return node6', done => {
       expect(kthToLast(theList, 0)).to.equal(node6);
+      done();
+    })
+  })
+
+  describe('Input: theList, 5', function() {
+    it('should return node1', done => {
+      expect(kthToLast(theList, 5)).to.equal(node1);
+      done();
+    })
+  })
+
+  describe('Input: theList, 10', function() {
+    it('should return "element is not in linked list"', done => {
+      expect(kthToLast(theList, 10)).to.equal('element is not in linked list');
       done();
     })
   })
