@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 
 /*
-2.2 Return Kth to Last
+2.2 - Return Kth to Last
 
 Implement an algorithm to find the kth to last element of a singly linked list
 */
@@ -57,7 +57,7 @@ function kthToLast(linkedList, kth) {
 // Time Complexity: O(N)
 // Space Complexity: O(N)
 
-describe('2.2 - Return Kth to Last', function() {
+describe('2.2 - Return Kth to Last | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
   describe('Input: theList, 1', function() {
     it('should return node5', done => {
       expect(kthToLast(theList, 1)).to.equal(node5);
