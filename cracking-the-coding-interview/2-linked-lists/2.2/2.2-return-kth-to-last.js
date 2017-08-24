@@ -34,7 +34,17 @@ node4.next = node5;
 node5.next = node6;
 
 function kthToLast(linkedList, kth) {
+  var positionMap = new Map();
+  var listLength = 0;
+  var currentNode = linkedList.head;
 
+  while (currentNode.next) {
+    positionMap.set(listLength, currentNode);
+    listLength++;
+    currentNode = currentNode.next;
+  }
+
+  return positionMap.get(listLength - kth);
 }
 
 describe('2.2 - Return Kth to Last', function() {
@@ -46,7 +56,7 @@ describe('2.2 - Return Kth to Last', function() {
   })
 
   describe('Input: theList, 0', function() {
-    it('should return node5', done => {
+    it('should return node6', done => {
       expect(kthToLast(theList, 0)).to.equal(node6);
       done();
     })
