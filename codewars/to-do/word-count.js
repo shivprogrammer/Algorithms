@@ -27,18 +27,19 @@ Non-whitespace (ex. breakspace, unicode chars) should be assumed as delimiter
 Be sure that words with chars like -, ', ` are counted right.
 */
 
-function countWords(str) {
-  var words = str.split(' ');
-  var count = 0;
+function countWords(s) {
+  var w = s.split(' ');
+  var c = 0;
 
-  for (let i = 0; i < words.length; i++) {
-    if (words[i] != '') {
-      count++;
+  for (let i = 0; i < w.length; i++) {
+    if (w[i] != '') {
+      c++;
     }
   }
 
-  return count;
+  return c;
 }
+
 
 describe('Word Count | 8kyu', function() {
   describe('Input: Hello', function() {
