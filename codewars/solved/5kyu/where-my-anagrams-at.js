@@ -71,6 +71,10 @@ function compareMaps(map1, map2) {
   return true;
 }
 
+// Time Complexity: O(X) [wordMap] + O(M * N) [Each Character in Words Array] + O(Y) [Key Comparison in Each Map] => O(M * N)
+// Space Complexity: O(N) [output] + O(M) [wordMap] + O(N) [anagramCheck] ||| Terrible Space Complexity, neds to be optimized.
+// Happy that I reached this solution, but this should definitely be optimized.
+
 describe('Where my Anagrams At? | Code Wars | 5kyu', function() {
   describe('with no anagrams', function() {
     it('return empty string', done => {
