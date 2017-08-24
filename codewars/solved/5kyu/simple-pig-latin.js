@@ -55,4 +55,11 @@ describe('Pig Latin Question Code Wars', function() {
       done();
     })
   })
+
+  describe('Input: "Max is dope"', function() {
+    it('Expected: axMay siay opeday', done => {
+      expect(pigIt('Max is dope')).to.equal('axMay siay opeday');
+      done();
+    })
+  })
 })
