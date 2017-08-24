@@ -7,8 +7,7 @@ Get Your Steppin' On Son
 
 6kyu
 
-function wordStep(str)
-that takes in a string and creates a step with that word.
+function wordStep(str) -> that takes in a string and creates a step with that word.
 
 E.g
 
@@ -27,27 +26,73 @@ Every word will end with the character that the next word will start with. You w
 */
 
 function wordStep(str) {
-  
+  var words = str.split(' ');
+  var height = 0;
+  var heightWordCount = 0;
+  var width = 0;
+  var widthWordCount = 0;
+
+  for (let i = 0; i < words.length; i++) {
+    for (let j = 0; j < words[i].length; j++) {
+      if (i % 2 === 0) {
+        height += words[i].length;
+        heightWordCount++;
+      }
+      else {
+        width += words[i].length;
+        widthWordCount++;
+      }
+      height - heightWordCount;
+      width - widthWordCount;
+    }
+  }
 }
+
+var test1 = [
+  ['H','E','L','L','O'],
+  [' ',' ',' ',' ','I'],
+  [' ',' ',' ',' ','L']
+];
+
+var test2 = [
+  ['S','N','A','K','E','S',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ','H',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ','O',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ','E','F','F','O','R','T',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','R',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','U',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','M',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','P','O','T','A','T','O']
+];
+
+var test3 = [
+  ['C', 'O', 'D', 'E', 'W', 'A', 'R', 'S', ' ', ' ', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'N', ' ', ' ', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'A', ' ', ' ', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'I', ' ', ' ', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'L', 'A', 'K', 'E'],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'E'],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'K']
+];
 
 describe('Get Your Steppin On Son | 6kyu', function() {
   describe('Input: "HELLO OIL"', function() {
-    it('should return stepped out matrix', done=> {
-      expect(wordStep('HELLO OIL')).to.deep.equal([['H','E','L','L','O'],[' ',' ',' ',' ','I'],[' ',' ',' ',' ','L']]);
+    it('should return test1', done=> {
+      expect(wordStep('HELLO OIL')).to.deep.equal(test1);
       done();
     })
   })
 
   describe('Input: "SNAKES SHOE EFFORT TRUMP POTATO"', function() {
-    it('should return a big ass matrix', done=> {
-      expect(wordStep('SNAKES SHOE EFFORT TRUMP POTATO')).to.deep.equal([['S', 'N', 'A', 'K', 'E', 'S', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', 'H', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', 'E', 'F', 'F', 'O', 'R', 'T', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'R', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'U', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'M', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'P', 'O', 'T', 'A', 'T', 'O']]);
+    it('should return test2', done=> {
+      expect(wordStep('SNAKES SHOE EFFORT TRUMP POTATO')).to.deep.equal(test2);
       done();
     })
   })
 
   describe('Input: "CODEWARS SNAIL LAKE EEK"', function() {
-    it('another large matrix', done=> {
-      expect(wordStep('CODEWARS SNAIL LAKE EEK')).to.deep.equal([['C', 'O', 'D', 'E', 'W', 'A', 'R', 'S', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'N', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'A', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'I', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'L', 'A', 'K', 'E'], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'E'], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'K']]);
+    it('should return test3', done=> {
+      expect(wordStep('CODEWARS SNAIL LAKE EEK')).to.deep.equal(test3);
       done();
     })
   })

@@ -21,10 +21,31 @@ array = [[1,2,3],
 snail(array) #=> [1,2,3,4,5,6,7,8,9]
 */
 
-function snail(array) {
+function snail(matrix) {
   var output = [];
   var completedMatrix = [];
   var temp = [];
+  var row = matrix.length;
+  var col = matrix[0].length;
+
+  for (let a = 0; a < matrix.length; a++) {
+    for (let b = 0; b < matrix[0].length; b++) {
+      temp.push('');
+    }
+    completedMatrix.push(temp);
+    temp = [];
+  }
+
+  for (let x = 0; x < row; x++) {
+    for (let y = 0; y < col; y++) {
+      completedMatrix[x][y] = true;
+      output.push(matrix[x][y]);
+    }
+    row--;
+  }
+
+  console.log(completedMatrix);
+  console.log(output);
 }
 
 var matrix1 = [
