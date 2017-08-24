@@ -35,8 +35,7 @@ node5.next = node6;
 
 function kthToLast(linkedList, kth) {
   var positionMap = new Map();
-  positionMap.set(linkedList.head, 0);
-  var listLength = 1;
+  var listLength = 0;
   var currentNode = linkedList.head;
 
   while (currentNode.next) {
@@ -47,10 +46,7 @@ function kthToLast(linkedList, kth) {
 
   positionMap.set(listLength, currentNode);
 
-  if (kth === 0) {
-    return positionMap.get(listLength);
-  }
-  else if (kth > 0 && kth <= listLength){
+  if (kth >= 0 && kth <= listLength) {
     return positionMap.get(listLength - kth);
   }
   else {
