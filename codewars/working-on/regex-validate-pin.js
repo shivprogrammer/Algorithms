@@ -37,4 +37,25 @@ describe('Regex validatePIN function from code wars -------', function() {
       done();
     })
   })
+
+  describe('valid 6 int pin ===', function() {
+    it('return true', done => {
+      expect(validatePIN('123456')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('invalid -- 6 characters but contains letter', function() {
+    it('return false', done => {
+      expect(validatePIN('5F7410')).to.equal(false);
+      done();
+    })
+  })
+
+  describe('invalid -- 4 characters but contains letter', function() {
+    it('return false', done => {
+      expect(validatePIN('4s62')).to.equal(false);
+      done();
+    })
+  })
 })
