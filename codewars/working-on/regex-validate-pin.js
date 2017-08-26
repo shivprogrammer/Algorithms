@@ -27,6 +27,9 @@ function validatePIN (pin) {
   }
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Regex validatePIN function from code wars -------', function() {
   describe('valid 4 int pin ===', function() {
     it('return true', done => {
