@@ -27,3 +27,5 @@ function partition(linkedList, partition) {
 
   return output.join(bigBoys);
 }
+
+describe('2.4 Partition | Cracking the Coding Interview | Chapter 2 - Linked Lists',)
