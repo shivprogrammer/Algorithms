@@ -14,6 +14,17 @@ validatePIN("a234") === false
 */
 
 function validatePIN (pin) {
+  var nums = pin.match(/\d/g);
+
+  console.log('pin:', pin, '| length ===', pin.length);
+  console.log('nums:', nums, '| length ===', nums.length);
+
+  if((pin.length === 4 || pin.length === 6) && (nums.length === pin.length)) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 describe('Regex validatePIN function from code wars -------', function() {
