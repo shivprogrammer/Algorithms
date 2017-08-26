@@ -15,3 +15,26 @@ validatePIN("a234") === false
 
 function validatePIN (pin) {
 }
+
+describe('Regex validatePIN function from code wars -------', function() {
+  describe('valid 4 int pin ===', function() {
+    it('return true', done => {
+      expect(validatePIN('1234')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('invalid pin -- 5 characters', function() {
+    it('return false', done => {
+      expect(validatePIN('12345')).to.equal(false);
+      done();
+    })
+  })
+
+  describe('invalid pin -- 4 characters but contains letter', function() {
+    it('return false', done => {
+      expect(validatePIN('a234')).to.equal(false);
+      done();
+    })
+  })
+})
