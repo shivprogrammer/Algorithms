@@ -29,3 +29,17 @@ function Node(value) {
 function reversedLinkedListSum(linkedList1, linkedList2) {
 
 }
+
+var node7 = new Node(7);
+var node1 = new Node(1);
+var node6 = new Node(6);
+node7.next = node1;
+node1.next = node6;
+var linkedList1 = new linkedList(node7);
+
+var node5 = new Node(5);
+var node9 = new Node(9);
+var node2 = new Node(2);
+node5.next = node9;
+node9.next = node2;
+var linkedList2 = new linkedList(node5);
