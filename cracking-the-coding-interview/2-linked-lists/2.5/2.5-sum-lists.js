@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 2.5 Sum Lists
 
@@ -43,3 +45,12 @@ var node2 = new Node(2);
 node5.next = node9;
 node9.next = node2;
 var linkedList2 = new linkedList(node5);
+
+describe('2.5 - Sum Lists | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
+  describe('Input: linkedList1, linkedList2', function() {
+    it('should return a linkedList with nodes with values (2 -> 1 -> 9)', done => {
+      expect(reversedLinkedListSum(linkedList1, linkedList2)).to.equal();
+      done();
+    })
+  })
+})
