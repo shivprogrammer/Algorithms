@@ -39,6 +39,9 @@ function loopDetection(linkedList) {
   }
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 var A = new Node('A');
 var B = new Node('B');
 var C = new Node('C');
