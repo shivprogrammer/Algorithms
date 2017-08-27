@@ -17,6 +17,15 @@ Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
 output: 9 -> 1 -> 2. That is, 912.
 */
 
+function LinkedList(node) {
+  this.head = node;
+}
+
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+
 function reversedLinkedListSum(linkedList1, linkedList2) {
-  
+
 }
