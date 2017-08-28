@@ -27,15 +27,20 @@ function partition(linkedList, partition) {
   var bigBoys = [];
   var currentNode = linkedList.head;
 
-  while (currentNode.next) {
-    if (currentNode.value > partition) {
+  while (currentNode) {
+    if (currentNode.value < partition) {
       output.push(currentNode);
+      currentNode = currentNode.next;
+      // console.log(output);
     }
     else {
       bigBoys.push(currentNode);
+      currentNode = currentNode.next;
+      // console.log(bigBoys);
     }
   }
 
+  // console.log(output.concat(bigBoys));
   return output.concat(bigBoys);
 }
 
@@ -59,8 +64,10 @@ sixthNode.next = seventhNode;
 var dopeList = new LinkedList(firstNode);
 
 describe('2.4 Partition | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
-  describe('Input: dopeList', function() {
-    expect(partition(dopeList)).to.equal();
-    done();
+  describe('Input: dopeList, 5', function() {
+    it('should return [3, 2, 1, 5, 8, 5, 10]', done => {
+      expect(partition(dopeList, 5)).to.deep.equal([firstNode, sixthNode, seventhNode, secondNode, thirdNode, fourthNode, fifthNode]);
+      done();
+    })
   })
 })
