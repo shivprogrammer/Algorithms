@@ -57,7 +57,7 @@ function reversedLinkedListSum(linkedList1, linkedList2) {
       linkedListArray.push(nodeName);
       var newList = new LinkedList(nodeName);
     }
-    else if (i < totalSum.toString().length - 1){
+    else {
       var newNodeName = 'node' + i * Math.random();
       var newNodeName = new Node(parseInt(totalSum.toString().charAt(i)));
       linkedListArray.push(newNodeName);
@@ -66,6 +66,9 @@ function reversedLinkedListSum(linkedList1, linkedList2) {
   }
   console.log(linkedListArray);
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 var nodeSeven = new Node(7);
 var nodeOne = new Node(1);
