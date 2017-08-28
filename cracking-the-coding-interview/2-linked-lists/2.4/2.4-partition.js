@@ -11,6 +11,15 @@ Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1
 Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
 */
 
+function LinkedList(node) {
+  this.head = node;
+}
+
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+
 function partition(linkedList, partition) {
   var output = [];
   var bigBoys = [];
@@ -25,7 +34,17 @@ function partition(linkedList, partition) {
     }
   }
 
-  return output.join(bigBoys);
+  return output.concat(bigBoys);
 }
 
-describe('2.4 Partition | Cracking the Coding Interview | Chapter 2 - Linked Lists',)
+// Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1
+
+var firstNode = new Node(3);
+var secondNode = new Node(5);
+var thirdNode = new Node(8);
+var fourthNode = new Node(5);
+var
+
+describe('2.4 Partition | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
+  describe('Input: ')
+})

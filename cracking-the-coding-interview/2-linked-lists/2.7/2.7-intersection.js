@@ -45,6 +45,9 @@ function intersection(linkedList1, linkedList2) {
   }
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 var nodeThree = new Node(3);
 var nodeOne = new Node(1);
 var nodeFive = new Node(5);
