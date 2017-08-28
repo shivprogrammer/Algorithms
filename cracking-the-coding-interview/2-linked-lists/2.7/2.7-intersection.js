@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 2.7 - Intersection:
 
@@ -44,3 +46,12 @@ node2.next = node1;
 
 var list1 = new LinkedList(node3);
 var list2 = new LinkedList(node4);
+
+describe('2.7 - Intersection | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
+  describe('Input: list1 & list2', function() {
+    it('should return node7', done => {
+      expect(intersection(list1, list2)).to.equal(node7);
+      done();
+    })
+  })
+})
