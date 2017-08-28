@@ -18,7 +18,33 @@ function Node(value) {
 }
 
 function intersection(linkedList1, linkedList2) {
+  var nodeMap = new Map();
 
+  var currentNode = linkedList1.head;
+
+  while (currentNode) {
+    nodeMap.set(currentNode, 1);
+    currentNode = currentNode.next;
+  }
+  nodeMap.set(currentNode, 1);
+
+  currentNode = linkedList2.head;
+
+  while (currentNode) {
+    if (nodeMap.has(currentNode)) {
+      return currentNode;
+    }
+    else {
+      currentNode = currentNode.next;
+    }
+  }
+
+  if (nodeMap.has(currentNode)) {
+    return currentNode;
+  }
+  else {
+    return false;
+  }
 }
 
 var node3 = new Node(3);
@@ -35,6 +61,7 @@ var node6 = new Node(6);
 
 node3.next = node1;
 node1.next = node5;
+node5.next = node9;
 node9.next = node7;
 node7.next = node2;
 node2.next = node1;
@@ -50,7 +77,7 @@ var list2 = new LinkedList(node4);
 describe('2.7 - Intersection | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
   describe('Input: list1 & list2', function() {
     it('should return node7', done => {
-      expect(intersection(list1, list2)).to.equal(node7);
+      expect(intersection(list1, list2)).to.deep.equal(node7);
       done();
     })
   })
