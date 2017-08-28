@@ -42,8 +42,11 @@ function partition(linkedList, partition) {
   bigBoys = [];
 
   for (let i = 0; i < output.length; i++) {
-    bigBoys.push(output[i])
-    if (i != 0) {
+    bigBoys.push(output[i]);
+    if (i === output.length - 1) {
+      output[i].next = null;
+    }
+    else if (i != 0) {
       output[i - 1].next = output[i];
     }
   }
@@ -51,6 +54,9 @@ function partition(linkedList, partition) {
   console.log(bigBoys);
   return bigBoys;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N) [output] + O(N) [bigboys]
 
 var firstNode = new Node(3);
 var secondNode = new Node(5);
@@ -76,7 +82,7 @@ describe('2.4 Partition | Cracking the Coding Interview | Chapter 2 - Linked Lis
   Output: 3 -> 2 -> 1 -> 5 -> 8 -> 5 -> 10
   */
   describe('Input: dopeList, 5', function() {
-    it('should return [3, 2, 1, 5, 8, 5, 10]', done => {
+    it('should return an array containing a linked list with node names that have the values [3, 2, 1, 5, 8, 5, 10]', done => {
       expect(partition(dopeList, 5)).to.deep.equal([firstNode, sixthNode, seventhNode, secondNode, thirdNode, fourthNode, fifthNode]);
       done();
     })
