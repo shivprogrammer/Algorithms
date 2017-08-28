@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 2.4 Partition
 
@@ -57,5 +59,8 @@ sixthNode.next = seventhNode;
 var dopeList = new LinkedList(firstNode);
 
 describe('2.4 Partition | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
-  describe('Input: ')
+  describe('Input: dopeList', function() {
+    expect(partition(dopeList)).to.equal();
+    done();
+  })
 })
