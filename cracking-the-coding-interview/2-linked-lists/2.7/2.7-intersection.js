@@ -19,18 +19,16 @@ function Node(value) {
 
 function intersection(linkedList1, linkedList2) {
   var nodeMap = new Map();
-
   var currentNode = linkedList1.head;
 
   while (currentNode) {
-    nodeMap.set(currentNode, 1);
+    nodeMap.set(currentNode, currentNode.value);
     currentNode = currentNode.next;
   }
-  nodeMap.set(currentNode, 1);
 
   currentNode = linkedList2.head;
 
-  while (currentNode) {
+  while (currentNode.next) {
     if (nodeMap.has(currentNode)) {
       return currentNode;
     }
@@ -47,37 +45,37 @@ function intersection(linkedList1, linkedList2) {
   }
 }
 
-var node3 = new Node(3);
-var node4 = new Node(1);
-var node5 = new Node(5);
-var node9 = new Node(9);
+var nodeThree = new Node(3);
+var nodeOne = new Node(1);
+var nodeFive = new Node(5);
+var nodeNine = new Node(9);
 
-var node7 = new Node(7);
-var node2 = new Node(2);
-var node1 = new Node(1);
+var nodeSeven = new Node(7);
+var nodeTwo = new Node(2);
+var lastNode = new Node(1);
 
-var node4 = new Node(4);
-var node6 = new Node(6);
+var nodeFour = new Node(4);
+var nodeSix = new Node(6);
 
-node3.next = node1;
-node1.next = node5;
-node5.next = node9;
-node9.next = node7;
-node7.next = node2;
-node2.next = node1;
+nodeThree.next = nodeOne;
+nodeOne.next = nodeFive;
+nodeFive.next = nodeNine;
+nodeNine.next = nodeSeven;
+nodeSeven.next = nodeTwo;
+nodeTwo.next = lastNode;
 
-node4.next = node6;
-node6.next = node7;
-node7.next = node2;
-node2.next = node1;
+nodeFour.next = nodeSix;
+nodeSix.next = nodeSeven;
+nodeSeven.next = nodeTwo;
+nodeTwo.next = lastNode;
 
-var list1 = new LinkedList(node3);
-var list2 = new LinkedList(node4);
+var list1 = new LinkedList(nodeThree);
+var list2 = new LinkedList(nodeFour);
 
 describe('2.7 - Intersection | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
   describe('Input: list1 & list2', function() {
-    it('should return node7', done => {
-      expect(intersection(list1, list2)).to.deep.equal(node7);
+    it('should return nodeSeven', done => {
+      expect(intersection(list1, list2)).to.equal(nodeSeven);
       done();
     })
   })
