@@ -18,3 +18,14 @@ function Node(name) {
 function routeBetweenNodes(graph) {
 
 }
+
+var ten = new Node(10);
+var seven = new Node(7);
+var twenty = new Node(20);
+var seventeen = new Node(17);
+var twentySeven = new Node(27);
+
+ten.children.push(seven, twenty);
+twenty.children.push(seventeen, twentySeven);
+
+var coolGraph = new Graph(ten);
