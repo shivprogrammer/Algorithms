@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 4.1 Route Between Nodes
 
@@ -15,7 +17,7 @@ function Node(name) {
   this.children = [];
 }
 
-function routeBetweenNodes(graph) {
+function routeBetweenNodes(graph, start, end) {
 
 }
 
@@ -29,3 +31,12 @@ ten.children.push(seven, twenty);
 twenty.children.push(seventeen, twentySeven);
 
 var coolGraph = new Graph(ten);
+
+describe('4.1 - Route Between Nodes | Cracking the Coding Interview | Chapter 4 - Trees and Graphs', function() {
+  describe('If (graph = coolGraph, start = ten, end = seventeen)', function() {
+    it('return true', done => {
+      expect(routeBetweenNodes(coolGraph, ten, seventeen)).to.equal(true);
+      done();
+    })
+  })
+})
