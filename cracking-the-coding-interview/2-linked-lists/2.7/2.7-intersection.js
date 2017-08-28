@@ -18,3 +18,29 @@ function Node(value) {
 function intersection(linkedList1, linkedList2) {
 
 }
+
+var node3 = new Node(3);
+var node4 = new Node(1);
+var node5 = new Node(5);
+var node9 = new Node(9);
+
+var node7 = new Node(7);
+var node2 = new Node(2);
+var node1 = new Node(1);
+
+var node4 = new Node(4);
+var node6 = new Node(6);
+
+node3.next = node1;
+node1.next = node5;
+node9.next = node7;
+node7.next = node2;
+node2.next = node1;
+
+node4.next = node6;
+node6.next = node7;
+node7.next = node2;
+node2.next = node1;
+
+var list1 = new LinkedList(node3);
+var list2 = new LinkedList(node4);
