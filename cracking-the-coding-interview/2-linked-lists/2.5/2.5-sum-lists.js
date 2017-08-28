@@ -33,6 +33,7 @@ function reversedLinkedListSum(linkedList1, linkedList2) {
   var sum2 = '';
   var totalSum = 0;
   var currentNode = linkedList1.head;
+  var linkedListArray = [];
 
   while (currentNode.next) {
     sum1 = currentNode.value + sum1;
@@ -46,22 +47,39 @@ function reversedLinkedListSum(linkedList1, linkedList2) {
     currentNode = currentNode.next;
   }
   sum2 = currentNode.value + sum2;
-  console.log(sum1, sum2);
+
+  totalSum = parseInt(sum1) + parseInt(sum2);
+
+  for (let i = totalSum.toString().length - 1; i >= 0; i--) {
+    if (i === totalSum.toString().length - 1) {
+      var nodeName = 'node' + i * Math.random();
+      var nodeName = new Node(parseInt(totalSum.toString().charAt(i)));
+      linkedListArray.push(nodeName);
+      var newList = new LinkedList(nodeName);
+    }
+    else if (i < totalSum.toString().length - 1){
+      var newNodeName = 'node' + i * Math.random();
+      var newNodeName = new Node(parseInt(totalSum.toString().charAt(i)));
+      linkedListArray.push(newNodeName);
+      linkedListArray[totalSum.toString().length - 2 - i].next = newNodeName;
+    }
+  }
+  console.log(linkedListArray);
 }
 
-var node7 = new Node(7);
-var node1 = new Node(1);
-var node6 = new Node(6);
-node7.next = node1;
-node1.next = node6;
-var linkedList1 = new LinkedList(node7);
+var nodeSeven = new Node(7);
+var nodeOne = new Node(1);
+var nodeSix = new Node(6);
+nodeSeven.next = nodeOne;
+nodeOne.next = nodeSix;
+var linkedList1 = new LinkedList(nodeSeven);
 
-var node5 = new Node(5);
-var node9 = new Node(9);
-var node2 = new Node(2);
-node5.next = node9;
-node9.next = node2;
-var linkedList2 = new LinkedList(node5);
+var nodeFive = new Node(5);
+var nodeNine = new Node(9);
+var nodeTwo = new Node(2);
+nodeFive.next = nodeNine;
+nodeNine.next = nodeTwo;
+var linkedList2 = new LinkedList(nodeFive);
 
 describe('2.5 - Sum Lists | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
   describe('Input: linkedList1 (7 -> 1 -> 6), linkedList2 (5 -> 9 -> 2)', function() {
