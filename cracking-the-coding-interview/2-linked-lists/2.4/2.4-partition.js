@@ -43,7 +43,18 @@ var firstNode = new Node(3);
 var secondNode = new Node(5);
 var thirdNode = new Node(8);
 var fourthNode = new Node(5);
-var
+var fifthNode = new Node(10);
+var sixthNode = new Node(2);
+var seventhNode = new Node(1);
+
+firstNode.next = secondNode;
+secondNode.next = thirdNode;
+thirdNode.next = fourthNode;
+fourthNode.next = fifthNode;
+fifthNode.next = sixthNode;
+sixthNode.next = seventhNode;
+
+var dopeList = new LinkedList(firstNode);
 
 describe('2.4 Partition | Cracking the Coding Interview | Chapter 2 - Linked Lists', function() {
   describe('Input: ')
