@@ -28,7 +28,7 @@ function intersection(linkedList1, linkedList2) {
 
   currentNode = linkedList2.head;
 
-  while (currentNode.next) {
+  while (currentNode) {
     if (nodeMap.has(currentNode)) {
       return currentNode;
     }
@@ -37,12 +37,7 @@ function intersection(linkedList1, linkedList2) {
     }
   }
 
-  if (nodeMap.has(currentNode)) {
-    return currentNode;
-  }
-  else {
-    return false;
-  }
+  return false;
 }
 
 // Time Complexity: O(N)
