@@ -10,8 +10,8 @@ function Graph(node) {
   this.root = node;
 }
 
-function Node(name) {
-  this.name = name;
+function Node(value) {
+  this.value = value;
   this.left = null;
   this.right = null;
 }
@@ -19,7 +19,7 @@ function Node(name) {
 function inOrderTraversal(node) {
   if (node != null) {
     inOrderTraversal(node.left);
-    console.log(node);
+    console.log(node.value);
     inOrderTraversal(node.right);
   }
 }
@@ -40,8 +40,8 @@ var coolGraph = new Graph(ten);
 
 describe('Practice File for Graphs | Cracking the Coding Interview | Chapter 4 - Trees and Graphs', function() {
   describe('Input: coolGraph', function() {
-    it('will return the in ordre traversal of coolGraph', done => {
-      expect(inOrderTraversal(coolGraph)).to.equal();
+    it('will return the in order traversal of coolGraph', done => {
+      expect(inOrderTraversal(coolGraph.root)).to.equal();
       done();
     })
   })
