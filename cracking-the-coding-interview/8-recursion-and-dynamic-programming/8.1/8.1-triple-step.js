@@ -24,6 +24,9 @@ function tripleStep(steps) {
   return output;
 }
 
+// Time Complexity: O(3 ^ N)
+// Space Complexity: O(1)
+
 describe('8.1 - Triple Step | Cracking the Coding Interview | Chapter 8 - Recusion and Dynamic Programming', function() {
   describe('Function: tripleStep | Input: 1', function() {
     it('should return 1', done => {
