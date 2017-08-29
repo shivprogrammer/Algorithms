@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 8.1 - Triple Step
 
@@ -7,5 +9,28 @@ A child is running up a staircase with n steps and can hop either 1 step, 2 step
 */
 
 function tripleStep(steps) {
-  
+
 }
+
+describe('8.1 - Triple Step | Cracking the Coding Interview | Chapter 8 - Recusion and Dynamic Programming', function() {
+  describe('Function: tripleStep | Input: 1', function() {
+    it('should return 1', done => {
+      expect(tripleStep(1)).to.equal(1);
+      done();
+    })
+  })
+
+  describe('Function: tripleStep | Input: 2', function() {
+    it('should return 2', done => {
+      expect(tripleStep(2)).to.equal(2);
+      done();
+    })
+  })
+
+  describe('Function: tripleStep | Input: 3', function() {
+    it('should return 4', done => {
+      expect(tripleStep(3)).to.equal(4);
+      done();
+    })
+  })
+})
