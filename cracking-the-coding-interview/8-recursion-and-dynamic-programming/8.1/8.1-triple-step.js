@@ -9,7 +9,19 @@ A child is running up a staircase with n steps and can hop either 1 step, 2 step
 */
 
 function tripleStep(steps) {
+  var output = 0;
 
+  function recursion(num) {
+    if (num > 0) {
+      recursion(num - 1);
+      recursion(num - 2);
+      recursion(num - 3);
+      output++
+    }
+  }
+
+  recursion(steps);
+  return output;
 }
 
 describe('8.1 - Triple Step | Cracking the Coding Interview | Chapter 8 - Recusion and Dynamic Programming', function() {
@@ -20,16 +32,16 @@ describe('8.1 - Triple Step | Cracking the Coding Interview | Chapter 8 - Recusi
     })
   })
 
-  describe('Function: tripleStep | Input: 2', function() {
-    it('should return 2', done => {
-      expect(tripleStep(2)).to.equal(2);
+  describe('Function: tripleStep | Input: 3', function() {
+    it('should return 4', done => {
+      expect(tripleStep(3)).to.equal(4);
       done();
     })
   })
 
-  describe('Function: tripleStep | Input: 3', function() {
-    it('should return 4', done => {
-      expect(tripleStep(3)).to.equal(4);
+  describe('Function: tripleStep | Input: 5', function() {
+    it('should return 15', done => {
+      expect(tripleStep(5)).to.equal(15);
       done();
     })
   })
