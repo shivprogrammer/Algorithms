@@ -19,20 +19,25 @@ function Node(value) {
 }
 
 function routeBetweenNodes(node, start, end) {
+  var nodeValues = [];
+
   var nodeFinder = 0;
-  if (node) {
-    routeBetweenNodes(node.left, start, end);
-    console.log(node.value);
-    if (node.left === start) {
-      nodeFinder++;
-    }
-    routeBetweenNodes(node.right, start, end);
-    if (node.right === end) {
+
+  for (let i = 0; i < nodeValues.length; i++) {
+    if (nodeValues[i] === start.value || nodeValues[i] === end.value) {
       nodeFinder++;
     }
   }
 
   return nodeFinder === 2 ? true : false;
+}
+
+function inOrderTraversal(node) {
+  if (node) {
+    inOrderTraversal(node.left);
+    console.log(node.value)
+    inOrderTraversal(node.right);
+  }
 }
 
 var ten = new Node(10);
