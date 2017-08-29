@@ -17,9 +17,20 @@ function Node(name) {
   this.children = [];
 }
 
-function routeBetweenNodes(graph, start, end) {
-
-}
+// function routeBetweenNodes(graph, start, end) {
+//   var nodeFinder = 0;
+//
+//   for (let i = 0; i < graph.root.children.length; i++) {
+//     if (graph.root.child)
+//   }
+//
+//   if (nodeFinder === 2) {
+//     return true;
+//   }
+//   else {
+//     return false;
+//   }
+// }
 
 var ten = new Node(10);
 var seven = new Node(7);
