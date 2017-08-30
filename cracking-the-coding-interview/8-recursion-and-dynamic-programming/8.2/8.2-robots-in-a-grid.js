@@ -18,13 +18,11 @@ function robotGrid(matrix) {
       path.push(currPath.concat([[row, col]]));
     }
     else if (row <= lastRow && col <= lastCol) {
-      if (row <= lastRow && row != 0) {
-        path.push(currPath.concat([[row, col]]))
-        checkPath(row + 1, col, currPath)
+      if (row < lastRow && matrix[row + 1][col] != 0) {
+        checkPath(row + 1, col, currPath.concat([[row, col]]));
       }
-      else if (col <= lastCol && col != 0) {
-        path.push(currPath.concat([[row, col]]));
-        checkPath(row, col + 1, currPath);
+      if (col < lastCol && matrix[row][col + 1] != 0) {
+        checkPath(row, col + 1, currPath.concat([[row, col]]));
       }
     }
   }
@@ -59,12 +57,12 @@ describe('8.2 - Robots in a Grid | Cracking the Coding Interview | Chapter 8 - R
     })
   })
 
-  // describe('Input: onePathMatrix', function() {
-  //   it('should return [[[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]', done => {
-  //     expect(robotGrid(onePathMatrix)).to.deep.equal([[[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]);
-  //     done();
-  //   })
-  // })
+  describe('Input: onePathMatrix', function() {
+    it('should return [[[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]', done => {
+      expect(robotGrid(onePathMatrix)).to.deep.equal([[[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]);
+      done();
+    })
+  })
   //
   // describe('Input: twoPathMatrix', function() {
   //   it('should return [[[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]', done => {
