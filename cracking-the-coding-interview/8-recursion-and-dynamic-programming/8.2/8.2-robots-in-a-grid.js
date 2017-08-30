@@ -31,4 +31,11 @@ describe('8.2 - Robots in a Grid | Cracking the Coding Interview | Chapter 8 - R
       done();
     })
   })
+
+  describe('Input: noPathMatrix', function() {
+    it('should return false', done => {
+      expect(robotGrid(noPathMatrix)).to.deep.equal(false);
+      done();
+    })
+  })
 })
