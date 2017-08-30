@@ -63,11 +63,11 @@ describe('8.2 - Robots in a Grid | Cracking the Coding Interview | Chapter 8 - R
       done();
     })
   })
-  //
-  // describe('Input: twoPathMatrix', function() {
-  //   it('should return [[[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]', done => {
-  //     expect(robotGrid(twoPathMatrix)).to.deep.equal([[[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]);
-  //     done();
-  //   })
-  // })
+  
+  describe('Input: twoPathMatrix', function() {
+    it('should return [[[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]', done => {
+      expect(robotGrid(twoPathMatrix)).to.deep.equal([[[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]);
+      done();
+    })
+  })
 })
