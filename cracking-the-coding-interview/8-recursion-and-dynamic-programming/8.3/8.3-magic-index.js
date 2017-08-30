@@ -21,23 +21,25 @@ function magicIndexRecursion(array, start, end) {
   if (!start) {
     start = 0;
   }
+
   if (!end) {
     end = array.length - 1;
   }
-  
-  var mid = Math.floor(start + (end - start) / 2);
 
-  if (mid === start && array[mid] !== mid) {
+  var mid = Math.floor(start + (end - start) / 2);
+  
+  if ((mid === start && array[mid] !== mid) || end < start) {
     return -1;
   }
-  else if (array[mid] === mid) {
+
+  if (array[mid] === mid) {
     return mid;
   }
-  else if (mid < array[mid]) {
-    return magicIndexRecursion(array, start, mid);
+  else if (array[mid] > mid) {
+    return magicIndexRecursion(array, start, mid - 1);
   }
   else {
-    return magicIndexRecursion(array, mid, end);
+    return magicIndexRecursion(array, mid + 1, end);
   }
 }
 
