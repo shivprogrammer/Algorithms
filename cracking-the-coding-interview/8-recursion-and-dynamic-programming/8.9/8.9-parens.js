@@ -12,14 +12,12 @@ Input: 3
 Output: ((())), (()()), (())(), ()(()), ()()()
 */
 
-function parens(int) {
-  var output = '';
+function addParen(list, leftRem, rightRem, str, index) {
 
-  var parenMap = new Map();
-  parenMap.set('(', ')');
+}
 
-
-
+function generateParens(count) {
+  
 }
 
 describe('8.9 - Parens | Cracking the Coding Interview | Chapter 8 - Recursion & Dynamic Programming', function() {
