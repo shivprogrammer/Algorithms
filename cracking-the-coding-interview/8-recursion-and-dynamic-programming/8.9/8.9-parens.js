@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 8.9 - Parens
 
@@ -13,3 +15,19 @@ Output: ((())), (()()), (())(), ()(()), ()()()
 function parens(int) {
 
 }
+
+describe('8.9 - Parens | Cracking the Coding Interview | Chapter 8 - Recursion & Dynamic Programming', function() {
+  describe('Function: parens | Input: 1', function() {
+    it('should return [()]', done = >{
+      expect(parens(1)).to.deep.equal([()]);
+      done();
+    })
+  })
+
+  describe('Function: parens | Input: 3', function() {
+    it('should return [((())), (()()), (())(), ()(()), ()()()]', done = >{
+      expect(parens(3)).to.deep.equal([((())), (()()), (())(), ()(()), ()()()]);
+      done();
+    })
+  })
+})
