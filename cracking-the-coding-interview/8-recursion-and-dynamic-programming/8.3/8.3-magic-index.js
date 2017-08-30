@@ -8,6 +8,7 @@ const expect = require('chai').expect;
 A magic index in an array[0, ..., n - 1] is defined to be an index such that A[i] = i. Given a sorted array of distinct integers, write a method to find a magic index, if one exists, in array A.
 */
 
+// Brute Force Algorithm
 function magicIndex(array) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === i) {
@@ -17,6 +18,11 @@ function magicIndex(array) {
   return -1;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
+
+// Recursive Solution
 function magicIndexRecursion(array, start, end) {
   if (!start) {
     start = 0;
@@ -27,7 +33,7 @@ function magicIndexRecursion(array, start, end) {
   }
 
   var mid = Math.floor(start + (end - start) / 2);
-  
+
   if ((mid === start && array[mid] !== mid) || end < start) {
     return -1;
   }
@@ -43,6 +49,9 @@ function magicIndexRecursion(array, start, end) {
   }
 }
 
+// Time Complexity: O(log N)
+// Space Complexity: O(1)
+
 describe('8.3 - Magic Index | Cracking the Coding Interview | Chapter 8 - Recursion and Dynamic Programming', function() {
   describe('Function: magicIndex | Magic Index is last element: [-1, 0, 1, 2, 3, 5]', function() {
     it('should return 5', done => {
@@ -51,7 +60,6 @@ describe('8.3 - Magic Index | Cracking the Coding Interview | Chapter 8 - Recurs
     })
   })
 
-// when the magic index is the last int, the test fails for recursion
   describe('Function: magicIndexRecursion | Magic Index is last element: [-1, 0, 1, 2, 3, 5]', function() {
     it('should return 5', done => {
       expect(magicIndexRecursion([-1, 0, 1, 2, 3, 5])).to.equal(5);
