@@ -9,14 +9,7 @@ Imagine a robot sitting on the upper left corner of a grid with r rows and c col
 */
 
 function robotGrid(matrix) {
-
 }
-
-var matrix1 = [
-  [1, 1, 1],
-  [1, 0, 1],
-  [1, 0, 1]
-];
 
 var noPathMatrix = [
   [1, 1, 0],
@@ -24,17 +17,36 @@ var noPathMatrix = [
   [1, 0, 1]
 ];
 
+var onePathMatrix = [
+  [1, 1, 1],
+  [1, 0, 1],
+  [1, 0, 1]
+];
+
+var twoPathMatrix = [
+  [1, 1, 1],
+  [1, 0, 1],
+  [1, 1, 1]
+];
+
 describe('8.2 - Robots in a Grid | Cracking the Coding Interview | Chapter 8 - Recursion and Dynamic Programming', function() {
-  describe('Input: matrix1', function() {
-    it('should return [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]', done => {
-      expect(robotGrid(matrix1)).to.deep.equal([[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]);
+  describe('Input: noPathMatrix', function() {
+    it('should return []', done => {
+      expect(robotGrid(noPathMatrix)).to.deep.equal([]);
       done();
     })
   })
 
-  describe('Input: noPathMatrix', function() {
-    it('should return false', done => {
-      expect(robotGrid(noPathMatrix)).to.deep.equal(false);
+  describe('Input: onePathMatrix', function() {
+    it('should return [[[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]', done => {
+      expect(robotGrid(onePathMatrix)).to.deep.equal([[[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]);
+      done();
+    })
+  })
+
+  describe('Input: twoPathMatrix', function() {
+    it('should return [[[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]', done => {
+      expect(robotGrid(twoPathMatrix)).to.deep.equal([[[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], [[0, 0], [0, 1], [0, 2], [1, 2], [2, 2]]]);
       done();
     })
   })
