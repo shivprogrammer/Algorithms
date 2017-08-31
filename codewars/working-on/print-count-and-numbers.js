@@ -16,5 +16,23 @@ Return "" for empty, nil or non numeric strings
 */
 
 function countMe(str) {
+  var temp = '';
+  var count = 0;
+  var output = '';
 
+  for (let i = 0; i < str.length; i++) {
+    if (!count) {
+      temp = str.charAt(i);
+      count++;
+    }
+    if (temp != str.charAt(i)) {
+      output += str.charAt(i);
+      output += count;
+      count = 0;
+    }
+    else {
+      count++;
+    }
+  }
+  return output;
 }
