@@ -1,9 +1,15 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
+Print Count and Numbers
+
+7kyu
+
 Given a string of integers, count how many times that integer repeats itself, then return a string showing the count and the integer.
 
-Example: countMe('1123') (count_me in Ruby)
+Example: countMe('1123')
 
 Here 1 comes twice so <count><integer> will be "21"
 then 2 comes once so <count><integer> will be "12"
@@ -36,3 +42,19 @@ function countMe(str) {
   }
   return output;
 }
+
+describe('Print Count and Numbers | 7kyu', function() {
+  describe('Input: "1123"', function() {
+    it('should return "211213"', done => {
+      expect(countMe('1123')).to.equal('211213');
+      done();
+    })
+  })
+
+  describe('Input: "211213"', function() {
+    it('should return "1221121113"', done => {
+      expect(countMe('211213')).to.equal('1221121113');
+      done();
+    })
+  })
+})
