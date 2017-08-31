@@ -1,6 +1,12 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
+Buying a Car
+
+6kyu
+
 A man has a rather old car being worth $2000. He saw a secondhand car being worth $8000. He wants to keep his old car until he can buy the secondhand one.
 
 He thinks he can save $1000 each month but the prices of his old car and of the new one decrease of 1.5 percent per month. Furthermore the percent of loss increases by a fixed 0.5 percent at the end of every two months.
@@ -30,5 +36,17 @@ nbMonths(8000, 8000, 1000, 1.5) should return [0, 0]
 We don't take care of a deposit of savings in a bank:-)
 */
 
-function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) {
 }
+
+Test.assertSimilar(nbMonths(2000, 8000, 1000, 1.5), [6, 766])
+Test.assertSimilar(nbMonths(12000, 8000, 1000, 1.5) ,[0, 4000])
+
+describe('Buying a Car | Code Wars | 6kyu' function() {
+  describe('startPriceOld: 2000 | startPriceNew: 8000 | savingPersMonth: 1000 | percentLossByMonth: 1.5', function() {
+    it('should return [6, 766]', done => {
+      expect(nbMonths(2000, 8000, 1000, 1.5)).to.deep.equal([6, 766]);
+      done();
+    })
+  })
+})
