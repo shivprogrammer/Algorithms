@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Find the Vowels
 
@@ -18,3 +20,44 @@ NOTE: Vowels in this context refers to English Language Vowels - a e i o u y
 
 NOTE: this is indexed from [1..n] (not zero indexed!)
 */
+
+function vowelIndices(word){
+  //your code here
+}
+
+describe('Find the Vowels | Code Wars - 7kyu', function() {
+  describe('Input: "mmm"', function() {
+    it('should return []', done => {
+      expect(vowelIndices('mmm')).to.deep.equal([]);
+      done();
+    })
+  })
+
+  describe('Input: "apple"', function() {
+    it('should return [1,5]', done => {
+      expect(vowelIndices('apple')).to.deep.equal([1,5]);
+      done();
+    })
+  })
+
+  describe('Input: "super"', function() {
+    it('should return [2,4]', done => {
+      expect(vowelIndices('super')).to.deep.equal([2,4]);
+      done();
+    })
+  })
+
+  describe('Input: "orange"', function() {
+    it('should return [1,3,6]', done => {
+      expect(vowelIndices('orange')).to.deep.equal([1,3,6]);
+      done();
+    })
+  })
+
+  describe('Input: "supercalifragilisticexpialidocious"', function() {
+    it('should return [2,4,7,9,12,14,16,19,21,24,25,27,29,31,32,33]', done => {
+      expect(vowelIndices('supercalifragilisticexpialidocious')).to.deep.equal([2,4,7,9,12,14,16,19,21,24,25,27,29,31,32,33]);
+      done();
+    })
+  })
+})
