@@ -42,23 +42,26 @@ function nbMonths(startPriceOld, startPriceNew, savingsPerMonth, percentLossByMo
   var savings = 0;
 
 
-  var currentTotal = startPriceOld;
+  var currentTotal = 0;
   var currentOldCarPrice = startPriceOld;
   var currentNewCarPrice = startPriceNew;
   var newPercent = percentLossByMonth;
 
-  while (currentTotal < currentNewCarPrice) {
-    if ((months + 1) % 2 === 0) {
+  while ((currentTotal + currentOldCarPrice) < currentNewCarPrice) {
+    if (months % 2 != 0) {
       newPercent + 0.5;
     }
-
     currentTotal += savingsPerMonth;
-    currentOldCarPrice = currentOldCarPrice - (currentOldCarPrice * newPercent);
-    currentNewCarPrice = currentNewCarPrice - (currentNewCarPrice * newPercent);
+    currentOldCarPrice = currentOldCarPrice - (currentOldCarPrice * (newPercent/100));
+    console.log('the current old car price is: ', currentOldCarPrice);
+    currentNewCarPrice = currentNewCarPrice - (currentNewCarPrice * (newPercent/100));
+    console.log('the current new car price is: ', currentNewCarPrice);
     months++;
   }
 
-  savings = Math.floor(currentTotal - currentNewCarPrice);
+  savings = Math.floor((currentTotal + currentOldCarPrice) - currentNewCarPrice);
+  // console.log(months)
+  // console.log(savings)
   output.push(months);
   output.push(savings);
   return output;
@@ -72,10 +75,10 @@ describe('Buying a Car | Code Wars | 6kyu', function() {
     })
   })
 
-  describe('startPriceOld: 12000 | startPriceNew: 8000 | savingsPerMonth: 1000 | percentLossByMonth: 1.5', function() {
-    it('should return [0, 4000]', done => {
-      expect(nbMonths(12000, 8000, 1000, 1.5)).to.deep.equal([0, 4000]);
-      done();
-    })
-  })
+  // describe('startPriceOld: 12000 | startPriceNew: 8000 | savingsPerMonth: 1000 | percentLossByMonth: 1.5', function() {
+  //   it('should return [0, 4000]', done => {
+  //     expect(nbMonths(12000, 8000, 1000, 1.5)).to.deep.equal([0, 4000]);
+  //     done();
+  //   })
+  // })
 })
