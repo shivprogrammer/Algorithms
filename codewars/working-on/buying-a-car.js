@@ -39,13 +39,17 @@ We don't take care of a deposit of savings in a bank:-)
 function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) {
 }
 
-Test.assertSimilar(nbMonths(2000, 8000, 1000, 1.5), [6, 766])
-Test.assertSimilar(nbMonths(12000, 8000, 1000, 1.5) ,[0, 4000])
-
 describe('Buying a Car | Code Wars | 6kyu' function() {
   describe('startPriceOld: 2000 | startPriceNew: 8000 | savingPersMonth: 1000 | percentLossByMonth: 1.5', function() {
     it('should return [6, 766]', done => {
       expect(nbMonths(2000, 8000, 1000, 1.5)).to.deep.equal([6, 766]);
+      done();
+    })
+  })
+
+  describe('startPriceOld: 12000 | startPriceNew: 8000 | savingPersMonth: 1000 | percentLossByMonth: 1.5', function() {
+    it('should return [0, 4000]', done => {
+      expect(nbMonths(12000, 8000, 1000, 1.5)).to.deep.equal([0, 4000]);
       done();
     })
   })
