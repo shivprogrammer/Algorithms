@@ -36,18 +36,43 @@ nbMonths(8000, 8000, 1000, 1.5) should return [0, 0]
 We don't take care of a deposit of savings in a bank:-)
 */
 
-function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) {
+function nbMonths(startPriceOld, startPriceNew, savingsPerMonth, percentLossByMonth) {
+  var output = [];
+  var months = 0;
+  var savings = 0;
+
+
+  var currentTotal = startPriceOld;
+  var currentOldCarPrice = startPriceOld;
+  var currentNewCarPrice = startPriceNew;
+  var newPercent = percentLossByMonth;
+
+  while (currentTotal < currentNewCarPrice) {
+    if ((months + 1) % 2 === 0) {
+      newPercent + 0.5;
+    }
+
+    currentTotal += savingsPerMonth;
+    currentOldCarPrice = currentOldCarPrice - (currentOldCarPrice * newPercent);
+    currentNewCarPrice = currentNewCarPrice - (currentNewCarPrice * newPercent);
+    months++;
+  }
+
+  savings = Math.floor(currentTotal - currentNewCarPrice);
+  output.push(months);
+  output.push(savings);
+  return output;
 }
 
-describe('Buying a Car | Code Wars | 6kyu' function() {
-  describe('startPriceOld: 2000 | startPriceNew: 8000 | savingPersMonth: 1000 | percentLossByMonth: 1.5', function() {
+describe('Buying a Car | Code Wars | 6kyu', function() {
+  describe('startPriceOld: 2000 | startPriceNew: 8000 | savingsPerMonth: 1000 | percentLossByMonth: 1.5', function() {
     it('should return [6, 766]', done => {
       expect(nbMonths(2000, 8000, 1000, 1.5)).to.deep.equal([6, 766]);
       done();
     })
   })
 
-  describe('startPriceOld: 12000 | startPriceNew: 8000 | savingPersMonth: 1000 | percentLossByMonth: 1.5', function() {
+  describe('startPriceOld: 12000 | startPriceNew: 8000 | savingsPerMonth: 1000 | percentLossByMonth: 1.5', function() {
     it('should return [0, 4000]', done => {
       expect(nbMonths(12000, 8000, 1000, 1.5)).to.deep.equal([0, 4000]);
       done();
