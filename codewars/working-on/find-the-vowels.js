@@ -22,7 +22,23 @@ NOTE: this is indexed from [1..n] (not zero indexed!)
 */
 
 function vowelIndices(word){
-  //your code here
+  var vowelsMap = new Map();
+  vowelsMap.set('a', 1);
+  vowelsMap.set('e', 1);
+  vowelsMap.set('i', 1);
+  vowelsMap.set('o', 1);
+  vowelsMap.set('u', 1);
+  vowelsMap.set('y', 1);
+
+  var vowelsArray = [];
+
+  for (let i = 0; i < word.length; i++) {
+    if (vowelsMap.has(word[i])) {
+      vowelsArray.push(i + 1);
+    }
+  }
+
+  return vowelsArray;
 }
 
 describe('Find the Vowels | Code Wars - 7kyu', function() {
