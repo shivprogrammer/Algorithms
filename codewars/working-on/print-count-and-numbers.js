@@ -27,17 +27,18 @@ function countMe(str) {
   var output = '';
 
   for (let i = 0; i < str.length; i++) {
-    if (!count) {
+    count++;
+    if (!temp) {
       temp = str.charAt(i);
-      count++;
     }
-    if (temp != str.charAt(i)) {
-      output += str.charAt(i);
-      output += count;
-      count = 0;
+    if (temp === str.charAt(i)) {
+      count++;
     }
     else {
-      count++;
+      output += count;
+      output += temp;
+      count = 0;
+      temp = '';
     }
   }
   return output;
