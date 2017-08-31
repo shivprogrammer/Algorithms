@@ -41,6 +41,9 @@ function vowelIndices(word){
   return vowelsArray;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(X) [vowewlsMap] + O(Y) [vowelsArray]
+
 describe('Find the Vowels | Code Wars - 7kyu', function() {
   describe('Input: "mmm"', function() {
     it('should return []', done => {
