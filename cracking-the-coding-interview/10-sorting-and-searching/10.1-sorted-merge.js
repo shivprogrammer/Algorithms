@@ -37,4 +37,11 @@ describe('10.1 - Sorted Merge | Cracking the Coding Interview | Chapter 10 - Sor
       done();
     })
   })
+
+  describe('Input: [1, 5, 9, 10, 11, 22, 27], [4, 8, 15, 17]', function() {
+    it('should return [1, 4, 5, 8, 9, 10, 11, 15, 17, 22, 27]', done => {
+      expect(sortedMerge([1, 5, 9, 10, 11, 22, 27], [4, 8, 15, 17])).to.deep.equal([1, 4, 5, 8, 9, 10, 11, 15, 17, 22, 27]);
+      done();
+    })
+  })
 })
