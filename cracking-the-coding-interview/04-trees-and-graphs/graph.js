@@ -17,7 +17,7 @@ function Node(value) {
 }
 
 function inOrderTraversal(node) {
-  if (node != null) {
+  if (node) {
     inOrderTraversal(node.left);
     console.log(node.value);
     inOrderTraversal(node.right);
@@ -40,7 +40,7 @@ var coolGraph = new Graph(ten);
 
 describe('Practice File for Graphs | Cracking the Coding Interview | Chapter 4 - Trees and Graphs', function() {
   describe('Input: coolGraph', function() {
-    it('will return the in order traversal of coolGraph', done => {
+    it('will return 7, 10, 17, 20, 27', done => {
       expect(inOrderTraversal(coolGraph.root)).to.equal();
       done();
     })
