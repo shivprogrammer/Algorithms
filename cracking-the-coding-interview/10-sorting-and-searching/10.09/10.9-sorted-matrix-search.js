@@ -9,8 +9,35 @@ Given an M + N matrix in which each row and each column is sorted in descending 
 */
 
 function sortedMatrixSearch(matrix, target) {
+  var row = 0;
+  var col = 0;
+  var cellValue = -Infinity;
 
-  return target + ' is located at row: ' + row + ', column: ' + column;
+  while (cellValue <= target) {
+    cellValue = matrix[row][col]
+    if (cellValue === target) {
+      return target + ' is located at row: ' + row + ', column: ' + column;
+    }
+    if (cellValue < target) {
+      row++;
+    }
+  }
+
+  if (cellValue > target) {
+    row--;
+  }
+
+  while (cellValue <= target) {
+    cellValue = matrix[row][col];
+    if (cellValue === target) {
+      return target + ' is located at row: ' + row + ', column: ' + column;
+    }
+    if (cellValue < target) {
+      col++;
+    }
+  }
+
+  return 'element is not in matrix';
 }
 
 var matrix1 = [
