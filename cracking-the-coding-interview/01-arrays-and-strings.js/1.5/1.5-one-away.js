@@ -15,9 +15,22 @@ pale, bake -> false
 */
 
 function oneAway(str1, str2) {
-  if (str1 === str2) {
-    return true;
+  if (str1.length === str2.length) {
+    return onlyOneEdit(str1, str2);
   }
+
+
+}
+
+function onlyOneEdit(str1, str2) {
+  var differences = 0;
+  for (let i = 0; i < str1.length; i++) {
+    if (str1.charAt(i) != str2.charAt(i)) {
+      differences++;
+    }
+  }
+
+  return differences <= 1 ? true : false;
 }
 
 describe('1.5 - One Away | Cracking the Coding Interview | Chapter 1 - Arrays & Strings', function() {
