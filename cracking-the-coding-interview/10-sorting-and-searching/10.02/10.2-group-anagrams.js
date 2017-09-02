@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 
 /*
-10.02 - Group Anagrams
+10.2 - Group Anagrams
 
 Write a method to sort an array of strings so that all the anagrams are next to each other.
 */
@@ -34,6 +34,9 @@ function matrixSort(a, b) {
     return a[0] < b[0] ? -1 : 1;
   }
 }
+
+// Time Complexity: O(N * log(N))
+// Space Complexity: O(2 * N) [words matrix] + O(N) [output];
 
 var wordList = ['lookouts', 'nameless', 'notices', 'outlooks', 'ripples', 'salesmen', 'section', 'slipper', 'serves', 'verses'];
 
