@@ -16,17 +16,44 @@ pale, bake -> false
 
 function oneAway(str1, str2) {
   if (str1.length === str2.length) {
-    return onlyOneEdit(str1, str2);
+    return onlyOneReplace(str1, str2);
   }
 
+  else if (Math.abs(str1.length - str2.length) === 1) {
+    return onlyOneAddOrDelete(str1, str2);
+  }
 
+  return false;
 }
 
-function onlyOneEdit(str1, str2) {
+function onlyOneReplace(str1, str2) {
   var differences = 0;
   for (let i = 0; i < str1.length; i++) {
     if (str1.charAt(i) != str2.charAt(i)) {
       differences++;
+    }
+  }
+
+  return differences <= 1 ? true : false;
+}
+
+function onlyOneAddOrDelete(str1, str2) {
+  var pointer1 = 0;
+  var pointer2 = 0;
+  var differences = 0;
+
+  while (pointer1 < str1.length && pointer2 < str2.length) {
+    if (str1.charAt(pointer1) === str2.charAt(pointer2)) {
+      pointer1++;
+      pointer2++;
+    }
+    else if (str1.length > str2.length) {
+      differences++;
+      pointer1++;
+    }
+    else {
+      differences++;
+      pointer2++;
     }
   }
 
