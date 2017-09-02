@@ -15,10 +15,19 @@ pale, bake -> false
 */
 
 function oneAway(str1, str2) {
-
+  if (str1 === str2) {
+    return true;
+  }
 }
 
 describe('1.5 - One Away | Cracking the Coding Interview | Chapter 1 - Arrays & Strings', function() {
+  describe('Input: pale, pale', function() {
+    it('should return true', done => {
+      expect(oneAway('pale', 'pale')).to.equal(true);
+      done();
+    })
+  })
+
   describe('Input: pale, ple', function() {
     it('should return true', done => {
       expect(oneAway('pale', 'ple')).to.equal(true);
