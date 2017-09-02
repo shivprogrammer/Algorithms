@@ -63,6 +63,9 @@ function onlyOneAddOrDelete(str1, str2) {
   return true;
 }
 
+// Time Complexity: O(N) [length of shorter string]
+// Space Complexity: O(1)
+
 describe('1.5 - One Away | Cracking the Coding Interview | Chapter 1 - Arrays & Strings', function() {
   describe('Input: pale, pale', function() {
     it('should return true', done => {
