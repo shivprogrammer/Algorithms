@@ -27,9 +27,12 @@ function sortedMerge(A, B) {
     A.push(B[pointerB])
     pointerB++;
   }
-  
+
   return A;
 }
+
+// Time Complexity: O(A + B)
+// Space Complexity: No additional space required
 
 describe('10.1 - Sorted Merge | Cracking the Coding Interview | Chapter 10 - Sorting and Searching', function() {
   describe('Input: [1, 5, 9, 10, 11, 22, 27], [4, 8, 15, 17]', function() {
