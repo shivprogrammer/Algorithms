@@ -43,6 +43,9 @@ function onlyOneAddOrDelete(str1, str2) {
   var differences = 0;
 
   while (pointer1 < str1.length && pointer2 < str2.length) {
+    if (differences > 1) {
+      return false;
+    }
     if (str1.charAt(pointer1) === str2.charAt(pointer2)) {
       pointer1++;
       pointer2++;
@@ -57,7 +60,7 @@ function onlyOneAddOrDelete(str1, str2) {
     }
   }
 
-  return differences <= 1 ? true : false;
+  return true;
 }
 
 describe('1.5 - One Away | Cracking the Coding Interview | Chapter 1 - Arrays & Strings', function() {
