@@ -11,30 +11,24 @@ You are given two sorted arrays, A and B, where A has a large enough buffer at t
 function sortedMerge(A, B) {
   var pointerA = 0;
   var pointerB = 0;
-  var output = [];
 
   while (pointerA < A.length && pointerB < B.length){
     if (A[pointerA] < B[pointerB]) {
-      output.push(A[pointerA]);
       pointerA++;
     }
     else {
-      output.push(B[pointerB]);
+      A = A.slice(0, pointerA).concat(B[pointerB]).concat(A.slice(pointerA, A.length));
+      pointerA++;
       pointerB++;
     }
   }
 
-  while (pointerA < A.length) {
-    output.push(A[pointerA]);
-    pointerA++;
-  }
-
   while (pointerB < B.length) {
-    output.push(B[pointerB]);
+    A.push(B[pointerB])
     pointerB++;
   }
-  console.log(output);
-  return output;
+  
+  return A;
 }
 
 describe('10.1 - Sorted Merge | Cracking the Coding Interview | Chapter 10 - Sorting and Searching', function() {
