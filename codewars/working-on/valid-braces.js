@@ -3,7 +3,10 @@
 const expect = require('chai').expect;
 
 /*
+Valid Braces
+
 4kyu
+
 Write a function called validBraces that takes a string of braces, and determines if the order of the braces is valid. validBraces should return true if the string is valid, and false if it's invalid.
 
 This Kata is similar to the Valid Parentheses Kata, but introduces four new characters. Open and closed brackets, and open and closed curly braces. Thanks to @arnedag for the idea!
@@ -22,6 +25,12 @@ validBraces( "([{}])" ) => returns true
 */
 
 function validBraces(braces) {
+  var stack = [];
+  var pairs = {
+    '{' : '}',
+    '(' : ')',
+    '[' : ']'
+  }
 }
 
 describe('Valid Braces Code Wars', function() {
