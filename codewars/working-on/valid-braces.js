@@ -23,3 +23,33 @@ validBraces( "([{}])" ) => returns true
 
 function validBraces(braces) {
 }
+
+describe('Valid Braces Code Wars', function() {
+  describe('Input: (){}[]', function() {
+    it('Expected: true', done => {
+      expect(validBraces('(){}[]')).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: (}', function() {
+    it('Expected: false', done => {
+      expect(validBraces('(}')).to.equal(false);
+      done();
+    })
+  })
+
+  describe('Input: [(])', function() {
+    it('Expected: false', done => {
+      expect(validBraces('[(])')).to.equal(false);
+      done();
+    })
+  })
+
+  describe('Input: ([{}])', function() {
+    it('Expected: true', done => {
+      expect(validBraces('([{}])')).to.equal(true);
+      done();
+    })
+  })
+})
