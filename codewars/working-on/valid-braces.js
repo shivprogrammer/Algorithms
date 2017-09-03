@@ -26,6 +26,12 @@ validBraces( "([{}])" ) => returns true
 
 function validBraces(braces) {
   var stack = [];
+
+  var pairMap = new Map();
+  pairMap.set('{', '}');
+  pairMap.set('(', ')');
+  pairMap.set('[', ']');
+
   var pairs = {
     '{' : '}',
     '(' : ')',
@@ -33,7 +39,7 @@ function validBraces(braces) {
   }
 
   for (let i = 0; i < braces.length; i++) {
-    if (braces[i] in pairs) {
+    if (pairMap.has(braces[i])) {
       stack.push(braces[i]);
       console.log(stack);
     }
@@ -50,8 +56,8 @@ function validBraces(braces) {
   return stack.length === 0;
 }
 
-// Time Complexity: O(N * M)
-// Space Complexity: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N) + O(M) + O(X)
 
 describe('Valid Braces Code Wars', function() {
   describe('Input: (){}[]', function() {
