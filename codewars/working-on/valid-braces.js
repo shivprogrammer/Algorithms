@@ -31,6 +31,23 @@ function validBraces(braces) {
     '(' : ')',
     '[' : ']'
   }
+
+  for (let i = 0; i < braces.length; i++) {
+    if (braces[i] in pairs) {
+      stack.push(braces[i]);
+      console.log(stack);
+    }
+
+    else {
+      var top = stack.pop();
+      console.log(top)
+      if (pairs[top] != braces[i]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
 }
 
 describe('Valid Braces Code Wars', function() {
