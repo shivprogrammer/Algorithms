@@ -50,6 +50,9 @@ function validBraces(braces) {
   return stack.length === 0;
 }
 
+// Time Complexity: O(N * M)
+// Space Complexity: O(N)
+
 describe('Valid Braces Code Wars', function() {
   describe('Input: (){}[]', function() {
     it('Expected: true', done => {
