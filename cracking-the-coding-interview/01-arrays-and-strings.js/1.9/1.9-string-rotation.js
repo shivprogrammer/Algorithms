@@ -16,6 +16,9 @@ function isRotation(s1, s2) {
   return false;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
 describe('1.9 - String Rotation | Cracking the Coding Interview | Chapter 1 - Arrays and Strings', function() {
   describe('s1 = "waterbottle", s2 = "erbottlewat"', function() {
     it('should return true', done => {
