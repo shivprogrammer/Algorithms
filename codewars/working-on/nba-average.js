@@ -26,6 +26,9 @@ function pointsPer48(ppg, mpg) {
   return mpg === 0 ? 0 : parseFloat(((ppg * 48) / mpg).toFixed(1));
 }
 
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
 describe('NBA Full 48 Minutes Average | Code Wars | 8kyu', function() {
   describe('function: pointsPer48 | ppg = 12, mpg = 20', function() {
     it('should return 28.8', done => {
