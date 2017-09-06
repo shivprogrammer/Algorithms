@@ -9,29 +9,36 @@ You are given a list of properties and a list of dependencies (which is a list o
 */
 
 function Node(parent, name) {
-  this.parent = parent;
   this.name = name;
+  this.parent = null;
+  this.children = [];
 }
 
 function findBuildOrder(projects, dependencies) {
-  var nodeFamily = [];
+  var output = [];
+  var dependMap = new Map();
 
-  var projectsMap = new Map();
+  for (let i = 0; i < dependencies.length; i++) {
+    dependencies[i][0].children.push(dependencies[i][1]);
+    dependencies[i][1].parent = dependencies[i][0];
+  }
 
-  for (let i = 0; i < projects.length; i++) {
-    if (!projectsMap.has(projects[i])) {
-      projectsMap.set(projects[i], 1);
+  for (let x = 0; x < projects.length; x++) {
+    if (projects[x].parent === null) {
+      output.push(projects[x]);
     }
   }
 
-  for (let x = 0; x < dependencies.length; x++) {
-    var nodeName = x;
-    var nodeName = new Node(dependencies[x][0], dependencies[x][1]);
-    nodeFamily.push(x);
-  }
-
-  console.log(nodeFamily);
+  console.log(output);
+  return output;
 }
+
+var a = new Node('a');
+var b = new Node('b');
+var c = new Node('c');
+var d = new Node('d');
+var e = new Node('e');
+var f = new Node('f');
 
 describe('4.7 Build Order | Cracking the Coding Interview | Chapter 4 - Trees and Graphs', function() {
   describe('Projects: [a, b, c, d, e, f] & Dependencies: [[a, d], [f, b], [b, d], [f, a], [d, c]]', function() {
