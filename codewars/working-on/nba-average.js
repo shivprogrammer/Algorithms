@@ -23,7 +23,7 @@ Follow your dreams!
 */
 
 function pointsPer48(ppg, mpg) {
-  return (ppg * 48) / mpg;
+  return mpg === 0 ? 0 : parseFloat(((ppg * 48) / mpg).toFixed(1));
 }
 
 describe('NBA Full 48 Minutes Average | Code Wars | 8kyu', function() {
