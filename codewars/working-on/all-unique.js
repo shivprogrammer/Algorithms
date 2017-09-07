@@ -26,6 +26,9 @@ function hasUniqueChars(str) {
   return true;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('All Unique | Code Wars | 7kyu', function() {
   describe('Input: "  nAa"', function() {
     it('should return false', done => {
