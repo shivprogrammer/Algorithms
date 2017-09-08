@@ -8,21 +8,6 @@ const expect = require('chai').expect;
 A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs.
 */
 
-function tripleStep(steps) {
-  var output = 0;
-
-  function recursion(num) {
-    if (num > 0) {
-      recursion(num - 1);
-      recursion(num - 2);
-      recursion(num - 3);
-      output++
-    }
-  }
-
-  recursion(steps);
-  return output;
-}
 
 // Time Complexity: O(3 ^ N)
 // Space Complexity: O(1)
