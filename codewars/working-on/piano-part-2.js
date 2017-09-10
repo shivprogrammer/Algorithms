@@ -22,3 +22,33 @@ Your function will receive an integer between 1 and 10000 (maybe you think that 
 
 function whichNote(keyPressCount) {
 }
+
+describe('piano part 2 code wars', function() {
+  describe('with one key pressed', function() {
+    it('should return A', done => {
+      expect(whichNote(1)).to.equal('A');
+      done();
+    })
+  })
+
+  describe('with input 5', function() {
+    it('should return C#', done => {
+      expect(whichNote(5)).to.equal('C#');
+      done();
+    })
+  })
+
+  describe('with input 88', function() {
+    it('should return C', done => {
+      expect(whichNote(88)).to.equal('C');
+      done();
+    })
+  })
+
+  describe('with input 2017', function() {
+    it('should return F', done => {
+      expect(whichNote(2017)).to.equal('F');
+      done();
+    })
+  })
+})
