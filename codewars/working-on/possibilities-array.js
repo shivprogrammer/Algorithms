@@ -28,6 +28,9 @@ function isAllPossibilities(x) {
   return true;
 }
 
+// Time Complexity: O(N * log(N))
+// Space Complexity: O(N)
+
 describe('Possibilities Array | Code Wars - 7kyu', function() {
   describe('Input: [0,1,2,3]', function() {
     it('should return true', done => {
