@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Possibilities Array
 
@@ -14,7 +16,29 @@ a.length-1=3
 a includes [0,3] ,hence the function should return true
 */
 
-function isAllPossibilities(x){
-
+function isAllPossibilities(x) {
 
 }
+
+describe('Possibilities Array | Code Wars - 7kyu', function() {
+  describe('Input: [0,1,2,3]', function() {
+    it('should return true', done => {
+      expect(isAllPossibilities([0,1,2,3])).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: [1,2,0,3]', function() {
+    it('should return true', done => {
+      expect(isAllPossibilities([1,2,0,3])).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: [1,2,3,4]', function() {
+    it('should return false', done => {
+      expect(isAllPossibilities([1,2,3,4])).to.equal(false);
+      done();
+    })
+  })
+})
