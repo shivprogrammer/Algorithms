@@ -17,6 +17,10 @@ a includes [0,3] ,hence the function should return true
 */
 
 function isAllPossibilities(x) {
+  if (!x || x.length < 1) {
+    return false;
+  }
+
   var dope = x.sort();
 
   for (let i = 0; i < dope.length; i++) {
