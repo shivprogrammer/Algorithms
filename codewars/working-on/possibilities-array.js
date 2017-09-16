@@ -17,7 +17,15 @@ a includes [0,3] ,hence the function should return true
 */
 
 function isAllPossibilities(x) {
+  var dope = x.sort();
 
+  for (let i = 0; i < dope.length; i++) {
+    if (dope[i] != i) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 describe('Possibilities Array | Code Wars - 7kyu', function() {
