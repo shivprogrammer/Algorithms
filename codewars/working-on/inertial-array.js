@@ -22,19 +22,12 @@ Write a function called isInertial that accepts an integer array and returns tru
 */
 
 function isInertial(input) {
-  // var hasOdd = false;
   var maxInt = -Infinity;
   var evens = [];
-  // var evens = new Map();
   var odds = [];
   var oddsBiggerThanEvens = false;
 
   for (let i = 0; i < input.length; i++) {
-    // if (!hasOdd) {
-    //   if (input[i] % 2 != 0) {
-    //     hasOdd = true;
-    //   }
-    // }
     if (input[i] > maxInt) {
       maxInt = input[i];
     }
@@ -49,10 +42,22 @@ function isInertial(input) {
   if (odds.length < 1 || maxInt % 2 != 0) {
     return false;
   }
-  
+
   for (let j = 0; j < evens.length; j++) {
-    if (evens[j] ===)
+    if (evens[j] === maxInt) {
+      evens.splice(j, 1);
+    }
   }
+
+  for (let x = 0; x < odds.length; x++) {
+    for (let y = 0; y < evens.length; y++) {
+      if (odds[x] < evens[y]) {
+        return false;
+      }
+    }
+  }
+
+  return true;
 }
 
 describe('Inertial Array | Code Wars = 7kyu', function() {
