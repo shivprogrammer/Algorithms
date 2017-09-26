@@ -22,13 +22,36 @@ Write a function called isInertial that accepts an integer array and returns tru
 */
 
 function isInertial(input) {
-  var hasOdd = false;
+  // var hasOdd = false;
   var maxInt = -Infinity;
   var evens = [];
+  // var evens = new Map();
   var odds = [];
+  var oddsBiggerThanEvens = false;
 
   for (let i = 0; i < input.length; i++) {
-    
+    // if (!hasOdd) {
+    //   if (input[i] % 2 != 0) {
+    //     hasOdd = true;
+    //   }
+    // }
+    if (input[i] > maxInt) {
+      maxInt = input[i];
+    }
+    if (input[i] % 2 != 0) {
+      odds.push(input[i])
+    }
+    if (input[i] % 2 === 0) {
+      evens.push(input[i]);
+    }
+  }
+
+  if (odds.length < 1 || maxInt % 2 != 0) {
+    return false;
+  }
+  
+  for (let j = 0; j < evens.length; j++) {
+    if (evens[j] ===)
   }
 }
 
