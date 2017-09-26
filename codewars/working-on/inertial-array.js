@@ -60,6 +60,9 @@ function isInertial(input) {
   return true;
 }
 
+// Time Complexity: O(N squared) [for the evens and odds nested for loops]
+// Space Complexity: O(X) [evens] + O(Y) [odds]
+
 describe('Inertial Array | Code Wars = 7kyu', function() {
   describe('Input: [11, 4, 20, 9, 2, 8]', function() {
     it('should return true', done => {
