@@ -22,7 +22,14 @@ Write a function called isInertial that accepts an integer array and returns tru
 */
 
 function isInertial(input) {
+  var hasOdd = false;
+  var maxInt = -Infinity;
+  var evens = [];
+  var odds = [];
 
+  for (let i = 0; i < input.length; i++) {
+    
+  }
 }
 
 describe('Inertial Array | Code Wars = 7kyu', function() {
