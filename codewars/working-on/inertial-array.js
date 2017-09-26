@@ -1,6 +1,12 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
+Inertial Array
+
+7kyu
+
 An array is defined to be inertialif the following conditions hold:
 
 a. it contains at least one odd value
@@ -16,5 +22,14 @@ Write a function called isInertial that accepts an integer array and returns tru
 */
 
 function isInertial(input) {
-  
+
 }
+
+describe('Inertial Array | Code Wars = 7kyu', function() {
+  describe('Input: [11, 4, 20, 9, 2, 8]', function() {
+    it('should return true', done => {
+      expect(isInertial([11, 4, 20, 9, 2, 8])).to.equal(true);
+      done();
+    })
+  })
+})
