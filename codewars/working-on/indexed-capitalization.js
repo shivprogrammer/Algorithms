@@ -1,8 +1,9 @@
 'use strict';
 
+const expect = require('chai').expect;
 
 /*
-Indexted Capitalization
+Indexed Capitalization
 
 7kyu
 
@@ -18,3 +19,47 @@ The input will be a lowercase string with no spaces and an array of digits.
 function capitalize(s,arr) {
 
 }
+
+describe('Indexed Capitalization | Code Wars - 7kyu', function() {
+  describe('Input: "abcdef",[1,2,5]', function() {
+    it('should return "aBCdeF"', done => {
+      expect(capitalize('abcdef',[1,2,5])).to.equal('aBCdeF');
+      done();
+    })
+  })
+
+  describe('Input: "abcdef",[1,2,5,100]', function() {
+    it('should return "aBCdeF"', done => {
+      expect(capitalize("abcdef",[1,2,5,100])).to.equal('aBCdeF');
+      done();
+    })
+  })
+
+  describe('Input: "codewars",[1,3,5,50]', function() {
+    it('should return "cOdEwArs"', done => {
+      expect(capitalize("codewars",[1,3,5,50])).to.equal('cOdEwArs');
+      done();
+    })
+  })
+
+  describe('Input: "abracadabra",[2,6,9,10]', function() {
+    it('should return "abRacaDabRA"', done => {
+      expect(capitalize("abracadabra",[2,6,9,10])).to.equal('abRacaDabRA');
+      done();
+    })
+  })
+
+  describe('Input: "codewarriors",[5]', function() {
+    it('should return "codewArriors"', done => {
+      expect(capitalize("codewarriors",[5])).to.equal('codewArriors');
+      done();
+    })
+  })
+
+  describe('Input: "indexinglessons",[0]', function() {
+    it('should return "Indexinglessons"', done => {
+      expect(capitalize("indexinglessons",[0])).to.equal('Indexinglessons');
+      done();
+    })
+  })
+})
