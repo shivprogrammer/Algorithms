@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 String Matchup
 
@@ -22,6 +24,25 @@ Therefore, solve(array1, array2) = [2, 1, 0]
 function solve(a,b) {
 }
 
-// Test.assertDeepEquals(solve(['abc', 'abc','xyz','abcd','cde'], ['abc', 'cde', 'uap']), [2, 1, 0]);
-// Test.assertDeepEquals(solve(['abc', 'xyz','abc', 'xyz','cde'], ['abc', 'cde', 'xyz']), [2, 1, 2]);
-// Test.assertDeepEquals(solve(['quick', 'brown', 'fox', 'is', 'quick'], ['quick', 'abc', 'fox']), [2, 0, 1]);
+describe('String Matchup | Code Wars | 7kyu', function() {
+  describe('Input: ["abc", "abc","xyz","abcd","cde"], ["abc", "cde", "uap"]', function() {
+    it('should return [2, 1, 0]', done => {
+      expect(solve(["abc", "abc","xyz","abcd","cde"], ["abc", "cde", "uap"])).to.equal([2, 1, 0]);
+      done();
+    })
+  })
+
+  describe('Input: ["abc", "xyz","abc", "xyz","cde"], ["abc", "cde", "xyz"]', function() {
+    it('should return [2, 1, 2]', done => {
+      expect(solve(['abc', 'xyz','abc', 'xyz','cde'], ['abc', 'cde', 'xyz'])).to.equal([2, 1, 2]);
+      done();
+    })
+  })
+
+  describe('Input: ["quick", "brown", "fox", "is", "quick"], ["quick", "abc", "fox"]', function() {
+    it('should return [2, 0, 1]', done => {
+      expect(solve(['quick', 'brown', 'fox', 'is', 'quick'], ['quick', 'abc', 'fox'])).to.equal([2, 0, 1]);
+      done();
+    })
+  })
+})
