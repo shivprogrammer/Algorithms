@@ -17,8 +17,15 @@ The input will be a lowercase string with no spaces and an array of digits.
 */
 
 function capitalize(s,arr) {
+  var indexMap = new Map();
 
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < s.length && !indexMap.has(arr[i])) {
+      indexMap.set(arr[i], 1);
+    }
+  }
 }
+
 
 describe('Indexed Capitalization | Code Wars - 7kyu', function() {
   describe('Input: "abcdef",[1,2,5]', function() {
