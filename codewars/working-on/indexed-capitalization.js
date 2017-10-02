@@ -17,6 +17,7 @@ The input will be a lowercase string with no spaces and an array of digits.
 */
 
 function capitalize(s,arr) {
+  var output = '';
   var indexMap = new Map();
 
   for (let i = 0; i < arr.length; i++) {
@@ -24,6 +25,17 @@ function capitalize(s,arr) {
       indexMap.set(arr[i], 1);
     }
   }
+
+  for (let j = 0; j < s.length; j++) {
+    if (indexMap.has(j)) {
+      output += s.charAt(j).toUpperCase();
+    }
+    else {
+      output += s.charAt(j);
+    }
+  }
+
+  return output;
 }
 
 
