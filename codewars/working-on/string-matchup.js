@@ -46,6 +46,9 @@ function solve(a,b) {
   return output;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N) [amountMap] + O(M) [output]
+
 describe('String Matchup | Code Wars | 7kyu', function() {
   describe('Input: ["abc", "abc","xyz","abcd","cde"], ["abc", "cde", "uap"]', function() {
     it('should return [2, 1, 0]', done => {
