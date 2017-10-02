@@ -38,6 +38,8 @@ function capitalize(s,arr) {
   return output;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 describe('Indexed Capitalization | Code Wars - 7kyu', function() {
   describe('Input: "abcdef",[1,2,5]', function() {
