@@ -40,7 +40,7 @@ function moveVowel(input) {
 }
 
 // Time Complexity: O(N)
-// Space Comoplexity: O(N) [vowelMap] + O(M) [vowels] + O(X) [others]
+// Space Comoplexity: O(N) [vowelMap]
 
 describe('Move All Vowels | Code Wars | 7kyu', function() {
   describe('Input: "day"', function() {
