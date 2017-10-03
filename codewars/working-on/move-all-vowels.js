@@ -24,19 +24,19 @@ function moveVowel(input) {
   vowelMap.set('o', 1);
   vowelMap.set('u', 1);
 
-  var vowels = [];
-  var others = [];
+  var vowels = '';
+  var others = '';
 
   for (let i = 0; i < input.length; i++) {
     if (vowelMap.has(input[i])) {
-      vowels.push(input[i]);
+      vowels += input[i];
     }
     else {
-      others.push(input[i]);
+      others += input[i];
     }
   }
 
-  return others.concat(vowels).join('');
+  return others + vowels;
 }
 
 // Time Complexity: O(N)
