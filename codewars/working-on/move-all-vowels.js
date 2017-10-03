@@ -1,6 +1,12 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
+Move All Vowels
+
+7kyu
+
 Given a string as input, move all of its vowel to the end of the string.
 
 Examples:
@@ -13,3 +19,33 @@ Note: All input string are of small letters, and the order of the vowels at the 
 function moveVowel(input) {
 
 }
+
+describe('Move All Vowels | Code Wars | 7kyu', function() {
+  describe('Input: "day"', function() {
+    it('should return "dya"', done => {
+      expect(moveVowel('day')).to.equal('dya');
+      done();
+    })
+  })
+
+  describe('Input: "apple"', function() {
+    it('should return "pplae"', done => {
+      expect(moveVowel('apple')).to.equal('pplae');
+      done();
+    })
+  })
+
+  describe('Input: "peace"', function() {
+    it('should return "pceae"', done => {
+      expect(moveVowel('peace')).to.equal('pceae');
+      done();
+    })
+  })
+
+  describe('Input: "maker"', function() {
+    it('should return "mkrae"', done => {
+      expect(moveVowel('maker')).to.equal('mkrae');
+      done();
+    })
+  })
+})
