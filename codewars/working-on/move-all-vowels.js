@@ -17,7 +17,26 @@ Note: All input string are of small letters, and the order of the vowels at the 
 */
 
 function moveVowel(input) {
+  var vowelMap = new Map();
+  vowelMap.set('a', 1);
+  vowelMap.set('e', 1);
+  vowelMap.set('i', 1);
+  vowelMap.set('o', 1);
+  vowelMap.set('u', 1);
 
+  var vowels = [];
+  var others = [];
+
+  for (let i = 0; i < input.length; i++) {
+    if (vowelMap.has(input[i])) {
+      vowels.push(input[i]);
+    }
+    else {
+      others.push(input[i]);
+    }
+  }
+  
+  return others.concat(vowels).join('');
 }
 
 describe('Move All Vowels | Code Wars | 7kyu', function() {
