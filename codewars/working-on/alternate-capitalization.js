@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Alternate Capitalization
 
@@ -13,4 +15,35 @@ The input will be a lowercase string with no spaces.
 */
 
 function capitalize(s) {
+  
 }
+
+describe('Alternate Capitalization | Code Wars | 7kyu', function() {
+  describe('Input: "abcdef"', function() {
+    it('should return ["AbCdEf", "aBcDeF"]', done => {
+      expect(capitalize('abcdef')).to.equal(['AbCdEf', 'aBcDeF']);
+      done();
+    })
+  })
+
+  describe('Input: "codewars"', function() {
+    it('should return ["CoDeWaRs", "cOdEwArS"]', done => {
+      expect(capitalize('codewars')).to.equal(['CoDeWaRs', 'cOdEwArS']);
+      done();
+    })
+  })
+
+  describe('Input: "abracadabra"', function() {
+    it('should return ["AbRaCaDaBrA", "aBrAcAdAbRa"]', done => {
+      expect(capitalize('abracadabra')).to.equal(['AbRaCaDaBrA', 'aBrAcAdAbRa']);
+      done();
+    })
+  })
+
+  describe('Input: "codewarriors"', function() {
+    it('should return ["CoDeWaRrIoRs", "cOdEwArRiOrS"]', done => {
+      expect(capitalize('codewarriors')).to.equal(['CoDeWaRrIoRs', 'cOdEwArRiOrS']);
+      done();
+    })
+  })
+})
