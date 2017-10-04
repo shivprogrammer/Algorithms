@@ -34,6 +34,9 @@ function capitalize(s) {
   return output;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 describe('Alternate Capitalization | Code Wars | 7kyu', function() {
   describe('Input: "abcdef"', function() {
     it('should return ["AbCdEf", "aBcDeF"]', done => {
