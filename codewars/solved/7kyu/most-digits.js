@@ -26,6 +26,9 @@ function findLongest(array) {
   return longestElem;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
 describe('Most Digits | Code Wars | 7kyu', function() {
   describe('Input: [1, 10, 100]', function() {
     it('should return 100', done => {
