@@ -13,6 +13,17 @@ If two numbers in the argument array have the same number of digits, return the 
 */
 
 function findLongest(array) {
+  var longest = 0;
+  var longestElem;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].toString().length > longest) {
+      longest = array[i].toString().length;
+      longestElem = array[i];
+    }
+  }
+
+  return longestElem;
 }
 
 describe('Most Digits | Code Wars | 7kyu', function() {
