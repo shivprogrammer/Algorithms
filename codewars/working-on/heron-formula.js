@@ -12,7 +12,10 @@ Write function heron which calculates the area of a triangle with sides a, b, an
 Heron's formula: sqrt (s * (s - a) * (s - b) * (s - c)), where s = (a + b + c) / 2
 */
 
-function heron() {
+function heron(a, b, c) {
+  var s = (a + b + c) / 2;
+
+  return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
 describe('Herons Formula | 7kyu', function() {
