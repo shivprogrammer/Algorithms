@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 Heron's Formula
 
@@ -12,3 +14,12 @@ Heron's formula: sqrt (s * (s - a) * (s - b) * (s - c)), where s = (a + b + c) /
 
 function heron() {
 }
+
+describe('Herons Formula | 7kyu', function() {
+  describe('Input: 3, 4, 5', function() {
+    it('should return 6', done => {
+      expect(heron(3, 4, 5)).to.equal(6);
+      done();
+    })
+  })
+})
