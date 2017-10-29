@@ -5,5 +5,18 @@ ArryList<ArrayList<Integer>> getSubsets(arrayList<Integer> set, int index) {
     allsubsets.add(new ArrayList<Integer>()); // Empty set
     allsubsets.add(new ArrayList<Integer>()); // Empty set
   }
-  
+  else {
+    allsubsets = getSubsets(set, index + 1);
+    int item = set.get(index);
+    ArrayList<ArrayList<Integer>> moresubsets =
+      new ArrayList<ArrayList<Integer>>();
+    for (ArrayList<Integer> subset : allsubsets) {
+      ArrayList<Integer> newsubset = new ArrayList<Integer>();
+      newsubset.addAll(subset);
+      newsubset.add(item);
+      moresubsets.add(newsubset);
+    }
+    allsubsets.addAll(moresubsets);
+  }
+  return allsubsets;
 }
