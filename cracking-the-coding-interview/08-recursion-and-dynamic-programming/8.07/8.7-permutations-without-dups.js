@@ -1,7 +1,9 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
-8.7 - Permutation without Dups
+8.7 - Permutations without Dups
 
 Write a method to compute all permutations of a string of unique characters.
 */
@@ -22,3 +24,12 @@ var permuteString = function(string) {
   recurse('', string);
   return answers;
 }
+
+describe('8.7 - Permutations without Dups | Cracking the Coding Interview | Chapter 8 - Recursion and Dynamic Programming', function() {
+  describe('Input: "abcd"', function() {
+    it('should return ["abcd", "abdc", "acbd", "acdb", "adbc", "adcb", "bacd", "badc", "bcad", "bcda", "bdac", "bdca", "cabd", "cadb", "cbad", "cbda", "cdab", "cdba", "dabc", "dacb", "dbac", "dbca", "dcab", "dcba"]', done => {
+      expect(permuteString('abcd')).to.deep.equal(["abcd", "abdc", "acbd", "acdb", "adbc", "adcb", "bacd", "badc", "bcad", "bcda", "bdac", "bdca", "cabd", "cadb", "cbad", "cbda", "cdab", "cdba", "dabc", "dacb", "dbac", "dbca", "dcab", "dcba"]);
+      done();
+    })
+  })
+})
