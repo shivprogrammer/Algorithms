@@ -26,6 +26,13 @@ var permuteString = function(string) {
 }
 
 describe('8.7 - Permutations without Dups | Cracking the Coding Interview | Chapter 8 - Recursion and Dynamic Programming', function() {
+  describe('Input: "abc"', function() {
+    it('should return ["abc", "acb", "bac", "bca", "cab", "cba"]', done => {
+      expect(permuteString('abc')).to.deep.equal(["abc", "acb", "bac", "bca", "cab", "cba"]);
+      done();
+    })
+  })
+
   describe('Input: "abcd"', function() {
     it('should return ["abcd", "abdc", "acbd", "acdb", "adbc", "adcb", "bacd", "badc", "bcad", "bcda", "bdac", "bdca", "cabd", "cadb", "cbad", "cbda", "cdab", "cdba", "dabc", "dacb", "dbac", "dbca", "dcab", "dcba"]', done => {
       expect(permuteString('abcd')).to.deep.equal(["abcd", "abdc", "acbd", "acdb", "adbc", "adcb", "bacd", "badc", "bcad", "bcda", "bdac", "bdca", "cabd", "cadb", "cbad", "cbda", "cdab", "cdba", "dabc", "dacb", "dbac", "dbca", "dcab", "dcba"]);
