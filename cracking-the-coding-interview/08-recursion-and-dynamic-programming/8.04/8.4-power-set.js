@@ -11,9 +11,9 @@ Write a method to return all subsets of a set
 var returnSubsets = function(set) {
   var subsets = [];
   var recurse = function(currSet, remainingSet) {
-    console.log(subsets, 'subsets')
-    console.log(currSet, 'currSet')
-    console.log(remainingSet, 'remainingSet')
+    // console.log(subsets, 'subsets')
+    // console.log(currSet, 'currSet')
+    // console.log(remainingSet, 'remainingSet')
     subsets.push(currSet);
     for (var i = 0; i < remainingSet.length; i++) {
       recurse(currSet.concat([remainingSet[i]]), remainingSet.slice(i + 1));
@@ -22,6 +22,9 @@ var returnSubsets = function(set) {
   recurse([], set);
   return subsets;
 }
+
+// Time Complexity: O(n*2^n)
+// Space Complexity: O(n*2^n)
 
 describe('8.4 - Power Set | Cracking the Coding Interview | Chapter 8 - Recursion and Dynamic Programming', function() {
   describe('Input: [1, 2, 3, 4]', function() {
