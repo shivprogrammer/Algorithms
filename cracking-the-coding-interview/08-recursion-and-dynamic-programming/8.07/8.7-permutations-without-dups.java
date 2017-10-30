@@ -19,3 +19,10 @@ ArrayList<String> getPerms(String str) {
 
   return permutations;
 }
+
+/* Insert char s at index i in word */
+String insertCharAt(String word, char c, int i) {
+  String start = word.subString(0, i);
+  String end = word.subString(i);
+  return start + c + end;
+}
