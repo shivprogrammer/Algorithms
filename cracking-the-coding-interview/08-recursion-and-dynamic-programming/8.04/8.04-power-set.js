@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 8.4 - Power Set
 
@@ -19,3 +21,12 @@ var returnSubsets = function(set) {
 }
 
 console.log(returnSubsets([1, 2, 3, 4]));
+
+describe('8.4 - Power Set | Cracking the Coding Interview | Chapter 8 - Recursion and Dynamic Programming', function() {
+  describe('Input: [1, 2, 3, 4]', function() {
+    it('should return [ [], [1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 4], [1, 3], [1, 3, 4], [1, 4], [2], [2, 3], [2, 3, 4], [2, 4], [3], [3, 4], [4] ]', done => {
+      expect(returnSubsets([1, 2, 3, 4])).to.deep.equal([ [], [1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 4], [1, 3], [1, 3, 4], [1, 4], [2], [2, 3], [2, 3, 4], [2, 4], [3], [3, 4], [4] ]);
+      done();
+    })
+  })
+})
