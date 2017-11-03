@@ -15,3 +15,11 @@ HashMap<Character, Integer> buildFreqTable(String s) {
   }
   return map;
 }
+
+void printPerms(HashMap<Character, Integer> map, String prefix, int remaining, ArrayList<String> result) {
+  /*Base case, the Permutation has been completed. */
+  if (remaining === 0) {
+    result.add(prefix);
+    return;
+  }
+}
