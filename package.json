@@ -19,6 +19,6 @@
   "homepage": "https://github.com/shivprogrammer/Ragnarok#readme",
   "dependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.5.3"
   }
 }
