@@ -11,3 +11,12 @@ In the classic problem of the towers of Hanoi, you have 3 towers and N disks of 
 
 Write a program to move the disks from the first tower to the last using stacks.
 */
+
+var TowersOfHanoi = function() {
+  this.first = [];
+  this.second = [];
+  this.third = [];
+  for (var i = n; i >= 1; i--) {
+    this.first.push();
+  }
+}
