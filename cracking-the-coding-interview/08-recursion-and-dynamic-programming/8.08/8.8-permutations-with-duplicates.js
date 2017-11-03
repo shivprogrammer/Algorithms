@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 8.8 - Permutations with Duplicates
 
@@ -26,3 +28,26 @@ var permNoDups = function(string) {
   recurse('', string);
   return answers;
 }
+
+describe('8.8 - Permutations wiht Dups | Cracking the Coding Interview | Chapter 8 - Recursion and Dynamic Programming', function() {
+  describe('Input: "aaa"', function() {
+    it('should return ["aaa"]', done => {
+      expect(permNoDups('aaa')).to.deep.equal(["aaa"]);
+      done();
+    })
+  })
+
+  describe('Input: "abc"', function() {
+    it('should return ["abc", "acb", "bac", "bca", "cab", "cba"]', done => {
+      expect(permNoDups('abc')).to.deep.equal(['abc', 'acb', 'bac', 'bca', 'cab', 'cba']);
+      done();
+    })
+  })
+
+  describe('Input: "aba"', function() {
+    it('should return ["aba", "aab", "baa"]', done => {
+      expect(permNoDups('aba')).to.deep.equal(['aba', 'aab', 'baa']);
+      done();
+    })
+  })
+})
