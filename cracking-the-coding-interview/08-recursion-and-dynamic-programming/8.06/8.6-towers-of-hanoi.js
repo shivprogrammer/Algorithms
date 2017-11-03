@@ -41,6 +41,20 @@ TowersOfHanoi.prototype.move = function(start, mid, dest, depth) {
       placePiece = mid;
     }
     var shortTowerDepth = 0;
-    
+    shortTower.push(start.pop());
+    shortTowerDepth++;
+    currDepth--;
+    var towerSwap1;
+    var towerSwap2;
+    while (currDepth > 0) {
+      placePiece.push(start.pop());
+      currDepth--;
+      this.move(shortTower, start, placePiece, shortTowerDepth);
+      shortTowerDepth++;
+      towerSwap1 = shortTower;
+      towerSwap2 = placePiece;
+      shortTower = towerSwap2;
+      placePiece = towerSwap1;
+    }
   }
 }
