@@ -20,3 +20,27 @@ var TowersOfHanoi = function() {
     this.first.push();
   }
 }
+
+TowersOfHanoi.prototype.move = function(start, mid, dest, depth) {
+  if (depth === 0) {
+    return;
+  }
+  else if (depth === 1){
+    dest.push(start.pop());
+  }
+  else {
+    var currDepth = depth;
+    var shortTower;
+    var placePiece;
+    if (depth % 2 === 0) {
+      shortTower = mid;
+      placePiece = dest;
+    }
+    else {
+      shortTower = dest;
+      placePiece = mid;
+    }
+    var shortTowerDepth = 0;
+    
+  }
+}
