@@ -22,4 +22,15 @@ void printPerms(HashMap<Character, Integer> map, String prefix, int remaining, A
     result.add(prefix);
     return;
   }
+
+  /*Check out the remaining characters for the next char; generate remaining permutations*/
+
+  for (character c : map.keySet()) {
+    int count = map.get(c);
+    if (count > 0) {
+      map.put(c, count - 1);
+      printPerms(map, prefix + c, remaining - 1, result);
+      map.put(c, count);
+    }
+  }
 }
