@@ -82,4 +82,25 @@ describe('8.6 - Towers of Hanoi | Cracking the Coding Interview | Chapter 8 - Re
       done();
     })
   })
+
+  describe('tower1 | BEFORE THE MOVE', function() {
+    var tower2 = new TowersOfHanoi(6);
+    it('should return tower2.first === [6, 5, 4, 3, 2, 1], tower2.second && tower2.third === []', done => {
+      expect(tower2.first).to.deep.equal([6, 5, 4, 3, 2, 1]);
+      expect(tower2.second).to.deep.equal([]);
+      expect(tower2.third).to.deep.equal([]);
+      done();
+    })
+  })
+
+  describe('tower2 AFTER THE MOVE', function() {
+    var tower2 = new TowersOfHanoi(6);
+    tower2.move(tower2.first, tower2.second, tower2.third, tower2.first.length);
+    it('should return tower2.first && tower2.second === [], tower2.third === [6, 5, 4, 3, 2, 1]', done => {
+      expect(tower2.first).to.deep.equal([]);
+      expect(tower2.second).to.deep.equal([]);
+      expect(tower2.third).to.deep.equal([6, 5, 4, 3, 2, 1]);
+      done();
+    })
+  })
 })
