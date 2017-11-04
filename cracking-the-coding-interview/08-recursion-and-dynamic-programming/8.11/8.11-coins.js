@@ -51,4 +51,46 @@ describe('8.11 - Coins | Cracking the Coding Interview | Chapter 8 - Recursion &
       done();
     })
   })
+
+  describe('Input: 1', function() {
+    it('should return 1', done => {
+      expect(coins(1)).to.equal(1);
+      done();
+    })
+  })
+
+  describe('Input: 2', function() {
+    it('should return 1', done => {
+      expect(coins(2)).to.equal(1);
+      done();
+    })
+  })
+
+  describe('Input: 3', function() {
+    it('should return 1', done => {
+      expect(coins(3)).to.equal(1);
+      done();
+    })
+  })
+
+  describe('Input: 5', function() {
+    it('should return 2', done => {
+      expect(coins(5)).to.equal(2);
+      done();
+    })
+  })
+
+  describe('Input: 17', function() {
+    it('should return 6', done => {
+      expect(coins(17)).to.equal(6);
+      done();
+    })
+  })
+
+  describe('Input: 100', function() {
+    it('should return 242', done => {
+      expect(coins(100)).to.equal(242);
+      done();
+    })
+  })
 })
