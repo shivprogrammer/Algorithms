@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 8.6 - Towers of Hanoi
 
@@ -12,12 +14,12 @@ In the classic problem of the towers of Hanoi, you have 3 towers and N disks of 
 Write a program to move the disks from the first tower to the last using stacks.
 */
 
-var TowersOfHanoi = function() {
+var TowersOfHanoi = function(n) {
   this.first = [];
   this.second = [];
   this.third = [];
   for (var i = n; i >= 1; i--) {
-    this.first.push();
+    this.first.push(i);
   }
 }
 
@@ -25,7 +27,7 @@ TowersOfHanoi.prototype.move = function(start, mid, dest, depth) {
   if (depth === 0) {
     return;
   }
-  else if (depth === 1){
+  else if (depth === 1) {
     dest.push(start.pop());
   }
   else {
@@ -58,3 +60,26 @@ TowersOfHanoi.prototype.move = function(start, mid, dest, depth) {
     }
   }
 }
+
+describe('8.6 - Towers of Hanoi | Cracking the Coding Interview | Chapter 8 - Recursion & Dynamic Programming', function() {
+  describe('tower1 | BEFORE THE MOVE', function() {
+    var tower1 = new TowersOfHanoi(5);
+    it('should return tower1.first === [5, 4, 3, 2, 1], tower1.second && tower1.third === []', done => {
+      expect(tower1.first).to.deep.equal([5, 4, 3, 2, 1]);
+      expect(tower1.second).to.deep.equal([]);
+      expect(tower1.third).to.deep.equal([]);
+      done();
+    })
+  })
+
+  describe('tower1 AFTER THE MOVE', function() {
+    var tower1 = new TowersOfHanoi(5);
+    tower1.move(tower1.first, tower1.second, tower1.third, tower1.first.length);
+    it('should return tower1.first && tower1.second === [], tower1.third === [5, 4, 3, 2, 1]', done => {
+      expect(tower1.first).to.deep.equal([]);
+      expect(tower1.second).to.deep.equal([]);
+      expect(tower1.third).to.deep.equal([5, 4, 3, 2, 1]);
+      done();
+    })
+  })
+})
