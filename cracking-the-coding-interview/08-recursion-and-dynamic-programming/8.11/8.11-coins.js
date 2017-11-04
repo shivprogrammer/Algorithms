@@ -1,7 +1,9 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
-8.1 - Coins
+8.11 - Coins
 
 Given an infinite number of quarters (25 cents), dimes (10 cents), nickels (5 cents), and pennies (1 cent), write code to calculate the number of ways representing n cents.
 */
@@ -41,3 +43,12 @@ var coins = function(value, currCoin) {
     return dp[key];
   }
 }
+
+describe('8.11 - Coins | Cracking the Coding Interview | Chapter 8 - Recursion & Dynamic Programming', function() {
+  describe('Input: 0', function() {
+    it('should return 1', done => {
+      expect(coins(0)).to.equal(1);
+      done();
+    })
+  })
+})
