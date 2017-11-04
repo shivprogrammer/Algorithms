@@ -61,6 +61,9 @@ TowersOfHanoi.prototype.move = function(start, mid, dest, depth) {
   }
 }
 
+// Time Complexity === O(2^N)
+// Space Complexity === O(N)
+
 describe('8.6 - Towers of Hanoi | Cracking the Coding Interview | Chapter 8 - Recursion & Dynamic Programming', function() {
   describe('tower1 | BEFORE THE MOVE', function() {
     var tower1 = new TowersOfHanoi(5);
