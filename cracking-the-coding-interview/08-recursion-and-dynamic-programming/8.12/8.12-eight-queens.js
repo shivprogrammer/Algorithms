@@ -27,3 +27,11 @@ var bitwiseOp = function(binaryString, n, callback) {
     return base2.slice(base2.length - n);
   }
 }
+
+var leftShift = function(binaryString, n) {
+  return bitwiseOp(binaryString, n, (number) => number << 1);
+}
+
+vr rightShift = function(binaryString, n) {
+  return bitwiseOp(binaryString, n, (number) => number >>> 1);
+}
