@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 8.12 - Eight Queens
 
@@ -32,7 +34,7 @@ var leftShift = function(binaryString, n) {
   return bitwiseOp(binaryString, n, (number) => number << 1);
 }
 
-vr rightShift = function(binaryString, n) {
+var rightShift = function(binaryString, n) {
   return bitwiseOp(binaryString, n, (number) => number >>> 1);
 }
 
@@ -43,7 +45,7 @@ var nqueens = function(n) {
 
   for (var i = 0; i < n; i++) {
     board.push(-1);
-    check += '0';
+    checker += '0';
   }
 
   var recurse = function(currentBoard, center, leftDiag, rightDiag, currRow) {
@@ -60,3 +62,12 @@ var nqueens = function(n) {
   recurse(board, checker, checker, checker, 0);
   return answers;
 }
+
+describe('8.12 - Eight Queens | Cracking the Coding Interview | Chapter 12 - Recursion & Dynamic Programming', function() {
+  describe('How many different ways are there to place 8 queens on an 8x8 chess board without vertical, horizontal, and diagonal intersections among the paths?', function() {
+    it('should be 92 ways', done => {
+      expect(nqueens(8).length).to.equal(92);
+      done();
+    })
+  })
+})
