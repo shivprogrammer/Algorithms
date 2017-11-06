@@ -35,3 +35,28 @@ var leftShift = function(binaryString, n) {
 vr rightShift = function(binaryString, n) {
   return bitwiseOp(binaryString, n, (number) => number >>> 1);
 }
+
+var nqueens = function(n) {
+  var board = [];
+  var checker = '';
+  var answers = [];
+
+  for (var i = 0; i < n; i++) {
+    board.push(-1);
+    check += '0';
+  }
+
+  var recurse = function(currentBoard, center, leftDiag, rightDiag, currRow) {
+    if (currRow === n) {
+      answers.push(currentBoard);
+    }
+    for (var i = 0; i < n; i++) {
+      if (center.charAt(i) === '0' && leftDiag.charAt(i) === '0' && rightDiag.charAt(i) === '0') {
+        currentBoard[i] = currRow;
+        recurse(currentBoard, changeChar(center, i, '1'), leftShift(changeChar(leftDiag, i, '1'), n), rightShift(changeChar(rightDiag, i, '1'), n), currRow + 1);
+      }
+    }
+  }
+  recurse(board, checker, checker, checker, 0);
+  return answers;
+}
