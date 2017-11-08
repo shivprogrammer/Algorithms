@@ -1,5 +1,7 @@
 'use strict';
 
+const expect = require('chai').expect;
+
 /*
 8.13 - Stack of Boxes
 
@@ -39,3 +41,21 @@ var stackBoxes = function(boxes) {
   }
   return dp[key];
 }
+
+var Box(width, height, depth) {
+  this.width = width;
+  this.height = height;
+  this.depth = depth;
+}
+
+var box1 = new Box(1, 1, 1);
+var box2 = new Box(2, 2, 2);
+var box3 = new Box(3, 3, 3);
+
+describe('8.13 - Stack of Boxes | Cracking the Coding Interview | Chapter 8 - Recursion & Dynamic Programming', function() {
+  describe('Input: box1, box2, box3', function() {
+    it('should return a total height of 6', done => {
+      expect(stackBoxes(box1, box2, box3)).to.equal(6);
+    })
+  })
+})
