@@ -50,3 +50,19 @@ public class Playlist {
     queue.add(s);
   }
 }
+
+public class CD { /* data for id, artist, songs, etc /*/ }
+
+public class Song { /* data for id, CD (could be null), title, length, etc */}
+
+public class User {
+  private String name;
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
+  public long getID() { return ID; }
+  public void setID(long iD) { ID = iD; }
+  private long ID;
+  public User(String name, long iD) { ... }
+  public User getUser() { return this; }
+  public static User addUser(String name, long iD) { ... }
+}
