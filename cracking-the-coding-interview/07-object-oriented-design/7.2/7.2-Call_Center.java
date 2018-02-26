@@ -102,3 +102,22 @@ abstract class Employee {
 
   public Rank getRank() { return rank; }
 }
+
+// The Respondent, Director, and Manager classes are now just simple extensions of the Employee class
+class Director extends Employee {
+  public Director() {
+    rank = Rank.Director;
+  }
+}
+
+class Manager extends Employee {
+  public Manager() {
+    rank = Rank.Manager;
+  }
+}
+
+class Respondent extends Employee {
+  public Respondent() {
+    rank = Rank.Respondent;
+  }
+}
