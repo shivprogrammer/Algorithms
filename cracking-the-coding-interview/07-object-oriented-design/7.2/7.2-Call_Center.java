@@ -51,3 +51,29 @@ public class CallHandler {
   // An employee became free, so look for a waiting call that employee can serve. Return true if we assigned a call, false otherwise.
   public boolean assignCall(Employee emp) { ... }
 }
+
+// Call represents a call from a user. A call has a minimum rank and is assigned to the first employee who can handle it.
+public class Call {
+  // Minimal rank of employee who can handle this call
+  private Rank rank;
+
+  // The person who is calling
+  private Caller caller;
+
+  // employee that is handling the call
+  private Employee handler;
+
+  public Call(Caller c) {
+    rank = Rank.Responder;
+    caller = c;
+  }
+
+   // Set employee who is handling the call
+   public void setHandler(Employee e) { handler = e; }
+
+   public void reply(String message) { ... }
+   public Rank getRank() { return rank; }
+   public void setRank(Rank r) { rank = r; }
+   public void incrementRank() { ... }
+   public void disconnect() { ... }
+}
