@@ -9,3 +9,15 @@ Write a function feast that takes the animal's name and dish as arguments and re
 
 Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
 */
+
+describe('The Feast of Many Beasts | Codewars | 8kyu', function() {
+  describe('Input: ', function() {
+    it('Output: true', done => {
+      expect()
+    })
+  })
+})
+
+Test.assertEquals(feast("great blue heron", "garlic naan"), true)
+Test.assertEquals(feast("chickadee", "chocolate cake"), true)
+Test.assertEquals(feast("brown bear", "bear claw"), false)
