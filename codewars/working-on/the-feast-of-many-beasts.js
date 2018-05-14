@@ -1,6 +1,6 @@
 'use strict';
 
-const expect = require('chai')expect;
+const expect = require('chai').expect;
 
 /*
 All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
@@ -11,7 +11,10 @@ Assume that beast and dish are always lowercase strings, and that each has at le
 */
 
 function feast(beast, dish) {
-
+  if (beast.charAt(0) === dish.charAt(0) && beast.charAt(beast.length - 1) === dish.charAt(dish.length - 1)) {
+    return true;
+  }
+  return false;
 }
 
 describe('The Feast of Many Beasts | Codewars | 8kyu', function() {
@@ -31,7 +34,7 @@ describe('The Feast of Many Beasts | Codewars | 8kyu', function() {
 
   describe('Input: "brown bear", "bear claw"', function() {
     it('Output: true', done => {
-      expect(feast("brown bear", "bear claw")).to.equal(true);
+      expect(feast("brown bear", "bear claw")).to.equal(false);
       done();
     })
   })
