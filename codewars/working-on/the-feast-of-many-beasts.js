@@ -17,6 +17,9 @@ function feast(beast, dish) {
   return false;
 }
 
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
 describe('The Feast of Many Beasts | Codewars | 8kyu', function() {
   describe('Input: "great blue heron", "garlic naan"', function() {
     it('Output: true', done => {
