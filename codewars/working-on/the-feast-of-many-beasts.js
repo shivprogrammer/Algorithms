@@ -10,10 +10,22 @@ Write a function feast that takes the animal's name and dish as arguments and re
 Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
 */
 
+function feast(beast, dish) {
+
+}
+
 describe('The Feast of Many Beasts | Codewars | 8kyu', function() {
-  describe('Input: ', function() {
+  describe('Input: "great blue heron", "garlic naan"', function() {
     it('Output: true', done => {
-      expect()
+      expect(feast("great blue heron", "garlic naan")).to.equal(true);
+      done();
+    })
+  })
+
+  describe('Input: "chickadee", "chocolate cake"', function() {
+    it('Output: true', done => {
+      expect(feast("chickadee", "chocolate cake")).to.equal(true);
+      done();
     })
   })
 })
