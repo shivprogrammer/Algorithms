@@ -28,8 +28,11 @@ describe('The Feast of Many Beasts | Codewars | 8kyu', function() {
       done();
     })
   })
-})
 
-Test.assertEquals(feast("great blue heron", "garlic naan"), true)
-Test.assertEquals(feast("chickadee", "chocolate cake"), true)
-Test.assertEquals(feast("brown bear", "bear claw"), false)
+  describe('Input: "brown bear", "bear claw"', function() {
+    it('Output: true', done => {
+      expect(feast("brown bear", "bear claw")).to.equal(true);
+      done();
+    })
+  })
+})
