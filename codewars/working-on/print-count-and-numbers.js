@@ -26,15 +26,21 @@ function countMe(str) {
     return "";
   }
 
+  var strArray = [];
   var strRemoveDups = '';
   var output = '';
 
-  for (var x = 0; x < str.length; x++) {
-    if (isNaN(str.charAt(x))) {
+  for (var i = 0; i < str.length; i++) {
+    if (isNaN(str.charAt(i))) {
       return "";
     }
+    strArray.push(str.charAt(i));
+  }
 
-    if (str.charAt(x) != str.charAt(x + 1)) {
+  strArray.sort();
+
+  for (var x = 0; x < strArray.length; x++) {
+    if (strArray[x] != strArray[x + 1]) {
       strRemoveDups += str.charAt(x);
     }
   }
@@ -56,7 +62,7 @@ function countMe(str) {
     output += strRemoveDups.charAt(y);
   }
 
-  // console.log(output);
+  console.log(output);
   return output;
 }
 
@@ -92,10 +98,10 @@ describe('Print Count and Numbers | 7kyu', function() {
     })
   })
 
-  // describe('Input: "211213"', function() {
-  //   it('should return "1221121113"', done => {
-  //     expect(countMe('211213')).to.equal('1221121113'); // currently returning 323131
-  //     done();
-  //   })
-  // })
+  describe('Input: "211213"', function() {
+    it('should return "1221121113"', done => {
+      expect(countMe('211213')).to.equal('1221121113'); // currently returning 313113
+      done();
+    })
+  })
 })
