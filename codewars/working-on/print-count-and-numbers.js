@@ -22,40 +22,51 @@ Return "" for empty, nil or non numeric strings
 */
 
 function countMe(str) {
-  var temp = '';
-  var count = 0;
-  var output = '';
+  var strArray = [];
 
-  for (let i = 0; i < str.length; i++) {
-    count++;
-    if (!temp) {
-      temp = str.charAt(i);
-    }
-    if (temp === str.charAt(i)) {
-      count++;
-    }
-    else {
-      output += count;
-      output += temp;
-      count = 0;
-      temp = '';
-    }
-  }
-  return output;
+  var output = '';
+  var splitString = str.split(' ');
+
+  console.log(splitString);
 }
 
 describe('Print Count and Numbers | 7kyu', function() {
   describe('Input: "1123"', function() {
     it('should return "211213"', done => {
-      expect(countMe('1123')).to.equal('211213');
+      expect(countMe('1123')).to.equal('211213');   // currently returning 51
       done();
     })
   })
 
   describe('Input: "211213"', function() {
     it('should return "1221121113"', done => {
-      expect(countMe('211213')).to.equal('1221121113');
+      expect(countMe('211213')).to.equal('1221121113'); // currently returning 323131
       done();
     })
   })
 })
+
+///// PREVIOUS SOLUTION
+// function countMe(str) {
+//   var temp = '';
+//   var count = 0;
+//   var output = '';
+//
+//   for (let i = 0; i < str.length; i++) {
+//     count++;
+//     if (!temp) {
+//       temp = str.charAt(i);
+//     }
+//     if (temp === str.charAt(i)) {
+//       count++;
+//     }
+//     else {
+//       output += count;
+//       output += temp;
+//       count = 0;
+//       temp = '';
+//     }
+//   }
+//   console.log(output);
+//   return output;
+// }
