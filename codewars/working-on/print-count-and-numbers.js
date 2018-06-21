@@ -32,6 +32,9 @@ function countMe(str) {
   var stringOutput = '';
 
   for (var i = 0; i < str.length; i++) {
+    if (isNaN(str.charAt(i))) {
+      return "";
+    }
     strArray.push(str.charAt(i));
   }
 
@@ -80,9 +83,16 @@ describe('Print Count and Numbers | 7kyu', function() {
     })
   })
 
-  describe('str iput is empty', function() {
+  describe('str input is empty', function() {
     it('should return ""', done => {
       expect(countMe("")).to.equal("");
+      done();
+    })
+  })
+
+  describe('input string is not all numbers -> Input: "12A34"', function() {
+    it('should return ""', done => {
+      expect(countMe("12A34")).to.equal("");
       done();
     })
   })
