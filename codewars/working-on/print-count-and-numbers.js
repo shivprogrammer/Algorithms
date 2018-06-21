@@ -25,6 +25,7 @@ function countMe(str) {
   var strArray = [];
   var strArrayNoRepeat = [];
   var output = [];
+  var stringOutput = '';
 
   for (var i = 0; i < str.length; i++) {
     strArray.push(str.charAt(i));
@@ -42,11 +43,11 @@ function countMe(str) {
 
   var characterMap = new Map();
   for (var j = 0; j < strArray.length; j++) {
-    if (!characterMap.has(strArray[i])) {
-      characterMap.set(strArray[j], 1);
-    }
-    else if (characterMap.has(strArray[j])) {
+    if (characterMap.has(strArray[j])) {
       characterMap.set(strArray[j], characterMap.get(strArray[j]) + 1);
+    }
+    else {
+      characterMap.set(strArray[j], 1);
     }
   }
 
@@ -58,6 +59,12 @@ function countMe(str) {
   }
 
   console.log(output);
+
+  for (var z = 0; z < output.length; z++) {
+    stringOutput += output[z].toString();
+  }
+
+  return stringOutput;
 }
 
 describe('Print Count and Numbers | 7kyu', function() {
