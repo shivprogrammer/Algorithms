@@ -26,26 +26,14 @@ function countMe(str) {
     return "";
   }
 
-  var strArray = [];
   var strArrayNoRepeat = [];
   var stringOutput = '';
 
-  for (var i = 0; i < str.length; i++) {
-    if (isNaN(str.charAt(i))) {
+  for (var x = 0; x < str.length; x++) {
+    if (isNaN(str.charAt(x))) {
       return "";
     }
-    strArray.push(str.charAt(i));
-  }
 
-  // console.log(strArray);
-
-  // for (var x = 0; x < strArray.length; x++) {
-  //   if (strArray[x] != strArray[x + 1]) {
-  //     strArrayNoRepeat.push(x);
-  //   }
-  // }
-
-  for (var x = 0; x < str.length; x++) {
     if (str.charAt(x) != str.charAt(x + 1)) {
       strArrayNoRepeat.push(x);
     }
@@ -54,12 +42,12 @@ function countMe(str) {
   // console.log(strArrayNoRepeat);
 
   var characterMap = new Map();
-  for (var j = 0; j < strArray.length; j++) {
-    if (characterMap.has(strArray[j])) {
-      characterMap.set(strArray[j], characterMap.get(strArray[j]) + 1);
+  for (var j = 0; j < str.length; j++) {
+    if (characterMap.has(str.charAt(j))) {
+      characterMap.set(str.charAt(j), characterMap.get(str.charAt(j)) + 1);
     }
     else {
-      characterMap.set(strArray[j], 1);
+      characterMap.set(str.charAt(j), 1);
     }
   }
 
@@ -73,7 +61,7 @@ function countMe(str) {
 }
 
 // Time Complexity: O(N) [HOLY SHIT!! YESS] // Only singular for loops
-// Space Complexity: O(N) [strArray] + O(N) [strArrayNoRepeat] + O(N) [characterMap] === 3 * O(N)
+// Space Complexity: O(N) [strArrayNoRepeat] + O(N) [characterMap] === 2 * O(N)
 
 describe('Print Count and Numbers | 7kyu', function() {
   describe('there is no str input', function() {
