@@ -67,10 +67,13 @@ function countMe(str) {
   return stringOutput;
 }
 
+// Time Complexity: O(N) [HOLY SHIT!! YESS] // There's a lot of for loops, but there are only singular for loops, there is never a double for loop
+// Space Complexity: O(N) [strArray] + O(N) [strArrayNoRepeat] + O(N) [output] + O(N) [characterMap] === 4 * O(N) [Horrible Time Complexity though]
+
 describe('Print Count and Numbers | 7kyu', function() {
   describe('Input: "1123"', function() {
     it('should return "211213"', done => {
-      expect(countMe('1123')).to.equal('211213');   // currently returning 51
+      expect(countMe('1123')).to.equal('211213');
       done();
     })
   })
