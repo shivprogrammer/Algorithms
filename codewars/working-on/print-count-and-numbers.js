@@ -26,8 +26,8 @@ function countMe(str) {
     return "";
   }
 
-  var strArrayNoRepeat = [];
-  var stringOutput = '';
+  var strRemoveDups = '';
+  var output = '';
 
   for (var x = 0; x < str.length; x++) {
     if (isNaN(str.charAt(x))) {
@@ -35,11 +35,11 @@ function countMe(str) {
     }
 
     if (str.charAt(x) != str.charAt(x + 1)) {
-      strArrayNoRepeat.push(x);
+      strRemoveDups += str.charAt(x);
     }
   }
 
-  // console.log(strArrayNoRepeat);
+  // console.log(strRemoveDups);
 
   var characterMap = new Map();
   for (var j = 0; j < str.length; j++) {
@@ -51,17 +51,17 @@ function countMe(str) {
     }
   }
 
-  for (var y = 0; y < strArrayNoRepeat.length; y++) {
-    stringOutput += characterMap.get(strArrayNoRepeat[y].toString());
-    stringOutput += strArrayNoRepeat[y];
+  for (var y = 0; y < strRemoveDups.length; y++) {
+    output += characterMap.get(strRemoveDups.charAt(y));
+    output += strRemoveDups.charAt(y);
   }
 
-  // console.log(stringOutput);
-  return stringOutput;
+  // console.log(output);
+  return output;
 }
 
-// Time Complexity: O(N) [HOLY SHIT!! YESS] // Only singular for loops
-// Space Complexity: O(N) [strArrayNoRepeat] + O(N) [characterMap] === 2 * O(N)
+// Time Complexity: O(N) [for loop]
+// Space Complexity: O(N) [characterMap]
 
 describe('Print Count and Numbers | 7kyu', function() {
   describe('there is no str input', function() {
