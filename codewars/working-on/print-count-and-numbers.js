@@ -24,10 +24,27 @@ Return "" for empty, nil or non numeric strings
 function countMe(str) {
   var strArray = [];
 
-  var output = '';
-  var splitString = str.split(' ');
+  for (var i = 0; i < str.length; i++) {
+    strArray.push(str.charAt(i));
+  }
 
-  console.log(splitString);
+  console.log(strArray);
+
+  var characterMap = new Map();
+
+  for (var j = 0; j < strArray.length; j++) {
+    if (characterMap.has(strArray[i])) {
+      characterMap.set(strArray[i], characterMap.get(strArray[i]) + 1);
+    }
+    else {
+      characterMap.set(strArray[i], 1);
+    }
+  }
+
+  // var output = '';
+  // var splitString = str.split(' ');
+
+  // console.log(splitString);
 }
 
 describe('Print Count and Numbers | 7kyu', function() {
