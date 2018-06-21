@@ -22,6 +22,10 @@ Return "" for empty, nil or non numeric strings
 */
 
 function countMe(str) {
+  if (!str) {
+    return "";
+  }
+
   var strArray = [];
   var strArrayNoRepeat = [];
   var output = [];
@@ -79,10 +83,10 @@ describe('Print Count and Numbers | 7kyu', function() {
   })
 })
 
-//   describe('Input: "211213"', function() {
-//     it('should return "1221121113"', done => {
-//       expect(countMe('211213')).to.equal('1221121113'); // currently returning 323131
-//       done();
-//     })
-//   })
-// })
+  describe('Input: "211213"', function() {
+    it('should return "1221121113"', done => {
+      expect(countMe('211213')).to.equal('1221121113'); // currently returning 323131
+      done();
+    })
+  })
+})

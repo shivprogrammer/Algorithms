@@ -21,14 +21,20 @@ array = [[1,2,3],
 snail(array) #=> [1,2,3,4,5,6,7,8,9]
 */
 
+// AYOOOO POSSIBLE SOLUTION: YOU MIGHT BE ABLE TO DO A BOOLEAN TRIGGER FOR WHETHER OR NOT YOU ARE TOWARDS THE BEGINNING VALUES OF THE MATRIX, OR YOU ARE TOWARDS THE FINAL VALUES OF THE MATRIX
+
 function snail(matrix) {
   var output = [];
-  var xPointer;
-  var yPointer;
+  var xPointer = 0;
+  var yPointer = matrix[matrix[0].length];
 
   for (var i = 0; i < matrix[0].length; i++) {
     output.push(matrix[0][i]);
   }
+  xPointer++;
+
+  for (var x = matrix[matrix.length -1])
+    for (var y = 0; y < )
 
   console.log(output);
   return output;
