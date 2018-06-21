@@ -80,6 +80,13 @@ describe('Print Count and Numbers | 7kyu', function() {
     })
   })
 
+  describe('str iput is empty', function() {
+    it('should return ""', done => {
+      expect(countMe("")).to.equal("");
+      done();
+    })
+  })
+
   describe('Input: "1123"', function() {
     it('should return "211213"', done => {
       expect(countMe('1123')).to.equal('211213');
