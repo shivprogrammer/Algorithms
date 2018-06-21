@@ -44,8 +44,8 @@ var matrix3B = [
 
 // describe('Snail | Code Wars | 4kyu', function() {
   describe('Input: matrix2A', function() {
-    it('should return [1,2,3,4,5,6,7,8,9]', done => {
-      expect(snail(matrix2)).to.deep.equal([1,2,3,4,5,6,7,8,9]);
+    it('should return [7, 4, 2, 3]', done => {
+      expect(snail(matrix2)).to.deep.equal([7, 4, 2, 3]);
       done();
     })
   })
