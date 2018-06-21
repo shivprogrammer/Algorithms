@@ -28,7 +28,6 @@ function countMe(str) {
 
   var strArray = [];
   var strArrayNoRepeat = [];
-  var output = [];
   var stringOutput = '';
 
   for (var i = 0; i < str.length; i++) {
@@ -40,8 +39,14 @@ function countMe(str) {
 
   // console.log(strArray);
 
-  for (var x = 0; x < strArray.length; x++) {
-    if (strArray[x] != strArray[x + 1]) {
+  // for (var x = 0; x < strArray.length; x++) {
+  //   if (strArray[x] != strArray[x + 1]) {
+  //     strArrayNoRepeat.push(x);
+  //   }
+  // }
+
+  for (var x = 0; x < str.length; x++) {
+    if (str.charAt(x) != str.charAt(x + 1)) {
       strArrayNoRepeat.push(x);
     }
   }
@@ -59,21 +64,16 @@ function countMe(str) {
   }
 
   for (var y = 0; y < strArrayNoRepeat.length; y++) {
-    output.push(characterMap.get(strArrayNoRepeat[y].toString()));
-    output.push(strArrayNoRepeat[y]);
+    stringOutput += characterMap.get(strArrayNoRepeat[y].toString());
+    stringOutput += strArrayNoRepeat[y];
   }
 
-  // console.log(output);
-
-  for (var z = 0; z < output.length; z++) {
-    stringOutput += output[z].toString();
-  }
-
+  // console.log(stringOutput);
   return stringOutput;
 }
 
-// Time Complexity: O(N) [HOLY SHIT!! YESS] // There's a lot of for loops, but there are only singular for loops, there is never a double for loop
-// Space Complexity: O(N) [strArray] + O(N) [strArrayNoRepeat] + O(N) [output] + O(N) [characterMap] === 4 * O(N) [Horrible Time Complexity though]
+// Time Complexity: O(N) [HOLY SHIT!! YESS] // Only singular for loops
+// Space Complexity: O(N) [strArray] + O(N) [strArrayNoRepeat] + O(N) [characterMap] === 3 * O(N)
 
 describe('Print Count and Numbers | 7kyu', function() {
   describe('there is no str input', function() {
