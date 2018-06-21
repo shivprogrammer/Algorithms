@@ -45,16 +45,16 @@ function countMe(str) {
     if (!characterMap.has(strArray[i])) {
       characterMap.set(strArray[j], 1);
     }
-    else {
+    else if (characterMap.has(strArray[j])) {
       characterMap.set(strArray[j], characterMap.get(strArray[j]) + 1);
     }
   }
 
-  // console.log(characterMap.get('1'));
+  console.log(characterMap.get('1'));
 
   for (var y = 0; y < strArrayNoRepeat.length; y++) {
-    output.push(strArrayNoRepeat[characterMap.get(strArrayNoRepeat[y].toString())]);
-    output.push(strArrayNoRepeat[y].toString());
+    output.push(characterMap.get(strArrayNoRepeat[y].toString()));
+    output.push(strArrayNoRepeat[y]);
   }
 
   console.log(output);
