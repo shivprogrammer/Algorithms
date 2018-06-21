@@ -29,7 +29,7 @@ function countMe(str) {
   for (var i = 0; i < str.length; i++) {
     strArray.push(str.charAt(i));
   }
-  
+
   console.log(strArray);
 
   for (var x = 0; x < strArray.length; x++) {
@@ -50,9 +50,15 @@ function countMe(str) {
     }
   }
 
+  var something = strArrayNoRepeat[0].toString();
+  console.log(something === '1');
+
   // for (var y = 0; y < strArrayNoRepeat.length; y++) {
-  //
+  //   output.push(strArrayNoRepeat[i].toString());
+  //   output.push(strArrayNoRepeat[characterMap.get(strArrayNoRepeat[i].toString())]);
   // }
+  //
+  // console.log(output);
 }
 
 describe('Print Count and Numbers | 7kyu', function() {
