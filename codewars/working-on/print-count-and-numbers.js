@@ -24,6 +24,7 @@ Return "" for empty, nil or non numeric strings
 function countMe(str) {
   var strArray = [];
   var strArrayNoRepeat = [];
+  var output = [];
 
   for (var i = 0; i < str.length; i++) {
     strArray.push(str.charAt(i));
@@ -32,8 +33,15 @@ function countMe(str) {
       strArrayNoRepeat.push()
     }
   }
-
   console.log(strArray);
+
+  for (var x = 0; x < strArray.length; x++) {
+    if (strArray[x] != strArray[x + 1]) {
+      strArrayNoRepeat.push(x);
+    }
+  }
+
+  console.log(strArrayNoRepeat);
 
   var characterMap = new Map();
 
@@ -45,13 +53,6 @@ function countMe(str) {
       characterMap.set(strArray[i], 1);
     }
   }
-
-  for ()
-
-  // var output = '';
-  // var splitString = str.split(' ');
-
-  // console.log(splitString);
 }
 
 describe('Print Count and Numbers | 7kyu', function() {
