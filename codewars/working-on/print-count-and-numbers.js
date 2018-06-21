@@ -28,11 +28,8 @@ function countMe(str) {
 
   for (var i = 0; i < str.length; i++) {
     strArray.push(str.charAt(i));
-
-    if (i === 0) {
-      strArrayNoRepeat.push()
-    }
   }
+  
   console.log(strArray);
 
   for (var x = 0; x < strArray.length; x++) {
@@ -44,7 +41,6 @@ function countMe(str) {
   console.log(strArrayNoRepeat);
 
   var characterMap = new Map();
-
   for (var j = 0; j < strArray.length; j++) {
     if (characterMap.has(strArray[i])) {
       characterMap.set(strArray[i], characterMap.get(strArray[i]) + 1);
@@ -53,6 +49,10 @@ function countMe(str) {
       characterMap.set(strArray[i], 1);
     }
   }
+
+  // for (var y = 0; y < strArrayNoRepeat.length; y++) {
+  //
+  // }
 }
 
 describe('Print Count and Numbers | 7kyu', function() {
@@ -62,36 +62,12 @@ describe('Print Count and Numbers | 7kyu', function() {
       done();
     })
   })
-
-  describe('Input: "211213"', function() {
-    it('should return "1221121113"', done => {
-      expect(countMe('211213')).to.equal('1221121113'); // currently returning 323131
-      done();
-    })
-  })
 })
 
-///// PREVIOUS SOLUTION
-// function countMe(str) {
-//   var temp = '';
-//   var count = 0;
-//   var output = '';
-//
-//   for (let i = 0; i < str.length; i++) {
-//     count++;
-//     if (!temp) {
-//       temp = str.charAt(i);
-//     }
-//     if (temp === str.charAt(i)) {
-//       count++;
-//     }
-//     else {
-//       output += count;
-//       output += temp;
-//       count = 0;
-//       temp = '';
-//     }
-//   }
-//   console.log(output);
-//   return output;
-// }
+//   describe('Input: "211213"', function() {
+//     it('should return "1221121113"', done => {
+//       expect(countMe('211213')).to.equal('1221121113'); // currently returning 323131
+//       done();
+//     })
+//   })
+// })
