@@ -23,9 +23,14 @@ Return "" for empty, nil or non numeric strings
 
 function countMe(str) {
   var strArray = [];
+  var strArrayNoRepeat = [];
 
   for (var i = 0; i < str.length; i++) {
     strArray.push(str.charAt(i));
+
+    if (i === 0) {
+      strArrayNoRepeat.push()
+    }
   }
 
   console.log(strArray);
@@ -40,6 +45,8 @@ function countMe(str) {
       characterMap.set(strArray[i], 1);
     }
   }
+
+  for ()
 
   // var output = '';
   // var splitString = str.split(' ');
