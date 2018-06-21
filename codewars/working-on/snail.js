@@ -22,7 +22,16 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 */
 
 function snail(matrix) {
+  var output = [];
+  var xPointer;
+  var yPointer;
 
+  for (var i = 0; i < matrix[0].length; i++) {
+    output.push(matrix[0][i]);
+  }
+
+  console.log(output);
+  return output;
 }
 
 var matrix2A = [
@@ -42,27 +51,27 @@ var matrix3B = [
   [7,6,5]
 ];
 
-// describe('Snail | Code Wars | 4kyu', function() {
+describe('Snail', function() {
   describe('Input: matrix2A', function() {
     it('should return [7, 4, 2, 3]', done => {
-      expect(snail(matrix2)).to.deep.equal([7, 4, 2, 3]);
+      expect(snail(matrix2A)).to.deep.equal([7, 4, 2, 3]);
       done();
     })
   })
 
-  describe('Input: matrix3A', function() {
-    it('should return [1,2,3,6,9,8,7,4,5]', done => {
-      expect(snail(matrix1)).to.deep.equal([1,2,3,6,9,8,7,4,5]);
-      done();
-    })
-  })
-
-  describe('Input: matrix3B', function() {
-    it('should return [1,2,3,4,5,6,7,8,9]', done => {
-      expect(snail(matrix2)).to.deep.equal([1,2,3,4,5,6,7,8,9]);
-      done();
-    })
-  })
+  // describe('Input: matrix3A', function() {
+  //   it('should return [1,2,3,6,9,8,7,4,5]', done => {
+  //     expect(snail(matrix1)).to.deep.equal([1,2,3,6,9,8,7,4,5]);
+  //     done();
+  //   })
+  // })
+  //
+  // describe('Input: matrix3B', function() {
+  //   it('should return [1,2,3,4,5,6,7,8,9]', done => {
+  //     expect(snail(matrix2)).to.deep.equal([1,2,3,4,5,6,7,8,9]);
+  //     done();
+  //   })
+  // })
 })
 
 ////////// PREVIOUS SOLUTION
