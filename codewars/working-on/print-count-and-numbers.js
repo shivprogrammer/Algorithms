@@ -42,23 +42,22 @@ function countMe(str) {
 
   var characterMap = new Map();
   for (var j = 0; j < strArray.length; j++) {
-    if (characterMap.has(strArray[i])) {
-      characterMap.set(strArray[i], characterMap.get(strArray[i]) + 1);
+    if (!characterMap.has(strArray[i])) {
+      characterMap.set(strArray[j], 1);
     }
     else {
-      characterMap.set(strArray[i], 1);
+      characterMap.set(strArray[j], characterMap.get(strArray[j]) + 1);
     }
   }
 
-  var something = strArrayNoRepeat[0].toString();
-  console.log(something === '1');
+  // console.log(characterMap.get('1'));
 
-  // for (var y = 0; y < strArrayNoRepeat.length; y++) {
-  //   output.push(strArrayNoRepeat[i].toString());
-  //   output.push(strArrayNoRepeat[characterMap.get(strArrayNoRepeat[i].toString())]);
-  // }
-  //
-  // console.log(output);
+  for (var y = 0; y < strArrayNoRepeat.length; y++) {
+    output.push(strArrayNoRepeat[characterMap.get(strArrayNoRepeat[y].toString())]);
+    output.push(strArrayNoRepeat[y].toString());
+  }
+
+  console.log(output);
 }
 
 describe('Print Count and Numbers | 7kyu', function() {
