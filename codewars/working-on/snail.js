@@ -37,7 +37,7 @@ function snail(matrix) {
 
   // This loop begins the y descent, should capture the value 2
   for (var y = yPointer; y >= 0; y--) {
-    output.push(matrix[y][yPointer])
+    output.push(matrix[yPointer][y])
     console.log(output);
   }
   yPointer--;
