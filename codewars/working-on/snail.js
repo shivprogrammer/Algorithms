@@ -31,17 +31,19 @@ function snail(matrix) {
   // This loop will make the first horizontal move (x row left -> right)
   for (var x = 0; x < matrix[0].length; x++) {
     output.push(matrix[0][x]);
+    console.log(output);
   }
   xPointer++;
 
   // This loop begins the y descent, should capture the value 2
   for (var y = yPointer; y >= 0; y--) {
-    output.push(matrix[yPointer][])
+    output.push(matrix[y][yPointer])
+    console.log(output);
   }
   yPointer--;
 
-  console.log(output);
-  // return output;
+  // console.log(output);
+  return output;
 }
 
 var matrix2A = [
