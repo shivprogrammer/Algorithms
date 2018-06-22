@@ -34,14 +34,16 @@ function countMe(str) {
       return "";
     }
 
-    if (str.charAt(i) != charAt(i + 1)) {
-      output += count;
-      output += str.charAt(i);
+    while (str.charAt(i) != str.charAt(i + 1)) {
+      count++;
     }
-    
+
+    output += count;
+    output += str.charAt(i);
     count = 1;
   }
 
+  console.log(output);
   return output;
 }
 
