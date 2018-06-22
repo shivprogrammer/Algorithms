@@ -82,48 +82,8 @@ describe('Print Count and Numbers | 7kyu', function() {
 
   describe('Input: "211213"', function() {
     it('should return "1221121113"', done => {
-      expect(countMe('211213')).to.equal('1221121113'); // currently returning 313113
+      expect(countMe('211213')).to.equal('1221121113');
       done();
     })
   })
 })
-
-//////////// PREVIOUS SOLUTION
-// var strArray = [];
-// var strRemoveDups = '';
-// var output = '';
-//
-// for (var i = 0; i < str.length; i++) {
-//   if (isNaN(str.charAt(i))) {
-//     return "";
-//   }
-//   strArray.push(str.charAt(i));
-// }
-//
-// strArray.sort();
-//
-// for (var x = 0; x < strArray.length; x++) {
-//   if (strArray[x] != strArray[x + 1]) {
-//     strRemoveDups += str.charAt(x);
-//   }
-// }
-//
-// // console.log(strRemoveDups);
-//
-// var characterMap = new Map();
-// for (var j = 0; j < str.length; j++) {
-//   if (characterMap.has(str.charAt(j))) {
-//     characterMap.set(str.charAt(j), characterMap.get(str.charAt(j)) + 1);
-//   }
-//   else {
-//     characterMap.set(str.charAt(j), 1);
-//   }
-// }
-//
-// for (var y = 0; y < strRemoveDups.length; y++) {
-//   output += characterMap.get(strRemoveDups.charAt(y));
-//   output += strRemoveDups.charAt(y);
-// }
-//
-// console.log(output);
-// return output;
