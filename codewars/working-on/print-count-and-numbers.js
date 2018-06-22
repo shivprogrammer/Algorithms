@@ -34,8 +34,9 @@ function countMe(str) {
       return "";
     }
 
-    while (str.charAt(i) != str.charAt(i + 1)) {
+    while (str.charAt(i) === str.charAt(i + 1)) {
       count++;
+      i++;
     }
 
     output += count;
