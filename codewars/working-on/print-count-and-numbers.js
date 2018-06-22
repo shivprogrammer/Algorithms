@@ -48,7 +48,7 @@ function countMe(str) {
   return output;
 }
 
-// Time Complexity: O(N) [for loop]
+// Time Complexity: O(N) [the while loop is still progressing the variable i, there are not two concurrent loops]
 // Space Complexity: O(N) [characterMap]
 
 describe('Print Count and Numbers | 7kyu', function() {
