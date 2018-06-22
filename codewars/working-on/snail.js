@@ -26,12 +26,11 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 function snail(matrix) {
   var output = [];
   var xPointer = 0;
-  var yPointer = matrix.length;
-  // console.log(yPointer);
+  var yPointer = matrix.length; // console.log(yPointer);
 
   // This loop will make the first horizontal move (x row left -> right)
   for (var x = 0; x < matrix[0].length; x++) {
-    output.push(matrix[0][x]); //console.log(output);
+    output.push(matrix[xPointer][x]); //console.log(output);
   }
   xPointer++;
 
@@ -41,22 +40,26 @@ function snail(matrix) {
   }
   yPointer--;
 
-  // console.log(output);
+  // This loop goes back to x axis on the last row going right -> left
+  for (var i = xPointer; i >= 0; i--) {
+    output.push(matrix[yPointer][i]);
+  }
+  // xPointer++;
+
+  console.log(output);
   return output;
 }
 
 var matrix2A = [
   [7, 4],
   [3, 2]
-];
-// console.log(matrix2A[1][1] === 2);
+]; // console.log(matrix2A[1][1] === 2);
 
 var matrix2x3 = [
   [7, 4],
   [3, 2],
   [5, 8]
-];
-// console.log(matrix2x3[2][1] === 8);
+]; // console.log(matrix2x3[2][1] === 8);
 
 // var matrix3A = [
 //   [1,2,3],
