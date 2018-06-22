@@ -30,15 +30,13 @@ function snail(matrix) {
 
   // This loop will make the first horizontal move (x row left -> right)
   for (var x = 0; x < matrix[0].length; x++) {
-    output.push(matrix[0][x]);
-    console.log(output);
+    output.push(matrix[0][x]); //console.log(output);
   }
   xPointer++;
 
   // This loop begins the y descent, should capture the value 2
   for (var y = yPointer; y >= 0; y--) {
-    output.push(matrix[yPointer][y])
-    console.log(output);
+    output.push(matrix[yPointer][y]) // console.log(output);
   }
   yPointer--;
 
@@ -73,6 +71,13 @@ describe('Snail', function() {
   describe('Input: matrix2A', function() {
     it('should return [7, 4, 2, 3]', done => {
       expect(snail(matrix2A)).to.deep.equal([7, 4, 2, 3]);
+      done();
+    })
+  })
+
+  describe('Input: matrix2x3', function() {
+    it('should return [7, 4, 2, 8, 5, 3]', done => {
+      expect(snail(matrix2x3)).to.deep.equal([7, 4, 2, 3]);
       done();
     })
   })
