@@ -44,12 +44,12 @@ function countMe(str) {
     count = 1;
   }
 
-  console.log(output);
+  // console.log(output);
   return output;
 }
 
 // Time Complexity: O(N) [the while loop is still progressing the variable i, there are not two concurrent loops]
-// Space Complexity: O(N) [characterMap]
+// Space Complexity: O(1)
 
 describe('Print Count and Numbers | 7kyu', function() {
   describe('there is no str input', function() {
