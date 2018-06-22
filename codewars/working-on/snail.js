@@ -39,12 +39,13 @@ function snail(matrix) {
     output.push(matrix[y][xPointer]) // console.log(output);
   }
   yPointer--;
+  console.log(yPointer);
+  xPointer--;
 
   // This loop goes back to x axis on the last row going right -> left
   for (var i = xPointer; i >= 0; i--) {
-    output.push(matrix[yPointer][i]);
+      output.push(matrix[yPointer][i]);
   }
-  // xPointer++;
 
   console.log(output);
   return output;
@@ -61,12 +62,12 @@ var matrix2x3 = [
   [5, 8]
 ]; // console.log(matrix2x3[2][1] === 8);
 
-// var matrix3A = [
-//   [1,2,3],
-//   [4,5,6],
-//   [7,8,9]
-// ];
-//
+var matrix3A = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+];
+
 // var matrix3B = [
 //   [1,2,3],
 //   [8,9,4],
@@ -88,12 +89,12 @@ describe('Snail', function() {
     })
   })
 
-  // describe('Input: matrix3A', function() {
-  //   it('should return [1,2,3,6,9,8,7,4,5]', done => {
-  //     expect(snail(matrix1)).to.deep.equal([1,2,3,6,9,8,7,4,5]);
-  //     done();
-  //   })
-  // })
+  describe('Input: matrix3A', function() {
+    it('should return [1,2,3,6,9,8,7,4,5]', done => {
+      expect(snail(matrix3A)).to.deep.equal([1,2,3,6,9,8,7,4,5]);
+      done();
+    })
+  })
 
   // describe('Input: matrix3B', function() {
   //   it('should return [1,2,3,4,5,6,7,8,9]', done => {
