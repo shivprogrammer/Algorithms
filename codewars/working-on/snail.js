@@ -26,18 +26,22 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 function snail(matrix) {
   var output = [];
   var xPointer = 0;
-  var yPointer = matrix[matrix[0].length];
+  var yPointer = matrix[0].length - 1;
+
+  // console.log(yPointer);
 
   for (var i = 0; i < matrix[0].length; i++) {
     output.push(matrix[0][i]);
   }
   xPointer++;
 
-  for (var x = matrix[matrix.length -1])
+  
+  for (var x = matrix[matrix.length -1].length; x++)
     for (var y = 0; y < )
 
+
   console.log(output);
-  return output;
+  // return output;
 }
 
 var matrix2A = [
