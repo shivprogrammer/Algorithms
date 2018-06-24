@@ -59,6 +59,7 @@ function snail(matrix) {
   for (var j = yPointer; j > xPointer; j--) {
     output.push(matrix[j][xPointer]);
   }
+  // TODO: Add operation to change up the values for xPointer and yPointer accordingly for the following loop
 
   console.log(output);
   return output;
@@ -81,11 +82,19 @@ var matrix3A = [
   [7,8,9]
 ];
 
-// var matrix3B = [
-//   [1,2,3],
-//   [8,9,4],
-//   [7,6,5]
-// ];
+var matrix3B = [
+  [1,2,3],
+  [8,9,4],
+  [7,6,5]
+];
+
+var matrix4 = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+  [13, 14, 15, 16]
+];
+
 
 describe('Snail', function() {
   describe('Input: matrix2A', function() {
@@ -103,16 +112,25 @@ describe('Snail', function() {
   })
 
   describe('Input: matrix3A', function() {
-    it('should return [1,2,3,6,9,8,7,4,5]', done => {
-      expect(snail(matrix3A)).to.deep.equal([1,2,3,6,9,8,7,4,5]);
+    it('should return [1, 2, 3, 6, 9, 8, 7, 4, 5]', done => {
+      expect(snail(matrix3A)).to.deep.equal([1, 2, 3, 6, 9, 8, 7, 4, 5]);
       done();
     })
   })
+  // NOTE* Right now, I am returning [1, 2, 3, 5, 8, 7, 4], meaning only the values of 6 & 9 [the values after first one on the first y motion from up -> down]
 
-  // describe('Input: matrix3B', function() {
-  //   it('should return [1,2,3,4,5,6,7,8,9]', done => {
-  //     expect(snail(matrix2)).to.deep.equal([1,2,3,4,5,6,7,8,9]);
-  //     done();
-  //   })
-  // })
+  describe('Input: matrix3B', function() {
+    it('should return [1, 2, 3, 4, 5, 6, 7, 8, 9]', done => {
+      expect(snail(matrix3B)).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+      done();
+    })
+  })
+  // NOTE* Right now, I am returning [1, 2, 3, 5, 8, 7, 4], meaning only the values of 6 & 9 [the values after first one on the first y motion from up -> down]
+  
+  describe('Input: matrix4', function() {
+    it('should return [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]', done => {
+      expect(snail(matrix4)).to.deep.equal([1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]);
+      done();
+    })
+  })
 })
