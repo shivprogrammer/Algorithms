@@ -56,8 +56,8 @@ function snail(matrix) {
   yPointer--;
 
   // The following loop is going to be to move back in the y direction from down -> up
-  for (var j = yPointer; y > xPointer; y--) {
-    output.push(matrix[yPointer][xPointer]);
+  for (var j = yPointer; j > xPointer; j--) {
+    output.push(matrix[j][xPointer]);
   }
 
   console.log(output);
@@ -73,7 +73,7 @@ var matrix2x3 = [
   [7, 4],
   [3, 2],
   [5, 8]
-]; // 3 === matrix[1][0]
+];
 
 var matrix3A = [
   [1,2,3],
