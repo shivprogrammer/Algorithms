@@ -23,20 +23,27 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 
 // AYOOOO POSSIBLE SOLUTION: YOU MIGHT BE ABLE TO DO A BOOLEAN TRIGGER FOR WHETHER OR NOT YOU ARE TOWARDS THE BEGINNING VALUES OF THE MATRIX, OR YOU ARE TOWARDS THE FINAL VALUES OF THE MATRIX
 
+// YOOOOOOOOOO you can look at the relationship BETWEEN all of the numbers, for example when moving in the x direction everything is incremented just by one, BUT when moving in the y direction, you are actually the amount of the dimensions in the matrix [when considering a square matrix]
+// The previous dimension theory will work, every single motion in the y direction will move in the increment of the dimensions of the matrix [considering square matrices],whereas all of the movement of x direction will only increment by 1;
+
 function snail(matrix) {
   var output = [];
   var xPointer = 0;
   var yPointer = matrix.length;
-  console.log(xPointer);
-  console.log(yPointer);
+  var xAscent = true;
+  var yAscent = false;
+  var totalXMoves;
+  var totalYMoves;
+  // console.log(xPointer);
+  // console.log(yPointer);
 
   // This loop will make the first horizontal move (x row left -> right)
   for (var x = 0; x < matrix[0].length; x++) {
     output.push(matrix[xPointer][x]);
   }
   xPointer++;
-  console.log(xPointer);
-  console.log(yPointer);
+  // console.log(xPointer);
+  // console.log(yPointer);
 
   // This loop begins the y descent, should capture the value 2
   for (var y = xPointer; y < yPointer; y++) {
@@ -44,15 +51,15 @@ function snail(matrix) {
   }
   yPointer--;
   xPointer--;
-  console.log(xPointer);
-  console.log(yPointer);
+  // console.log(xPointer);
+  // console.log(yPointer);
 
   // This loop goes back to x axis on the last row going right -> left
   for (var i = xPointer; i >= 0; i--) {
       output.push(matrix[yPointer][i]);
   }
-  console.log(xPointer);
-  console.log(yPointer);
+  // console.log(xPointer);
+  // console.log(yPointer);
   yPointer--;
 
   // The following loop is going to be to move back in the y direction from down -> up
@@ -61,14 +68,14 @@ function snail(matrix) {
   }
   // TODO: Add operation to change up the values for xPointer and yPointer accordingly for the following loop
 
-  console.log(output);
+  // console.log(output);
   return output;
 }
 
 var matrix2A = [
   [7, 4],
   [3, 2]
-]; // console.log(matrix2A[1][1] === 2);
+];
 
 var matrix2x3 = [
   [7, 4],
@@ -94,6 +101,16 @@ var matrix4 = [
   [9, 10, 11, 12],
   [13, 14, 15, 16]
 ];
+// returns [1, 2, 3, 4, 6, 10, 14, 13, 9, 5]
+
+var matrix5 = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+  [11, 12, 13, 14, 15],
+  [16, 17, 18, 19, 20],
+  [21, 22, 23, 24, 25]
+];
+// [1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]
 
 
 describe('Snail', function() {
@@ -126,10 +143,17 @@ describe('Snail', function() {
     })
   })
   // NOTE* Right now, I am returning [1, 2, 3, 5, 8, 7, 4], meaning only the values of 6 & 9 [the values after first one on the first y motion from up -> down]
-  
+
   describe('Input: matrix4', function() {
     it('should return [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]', done => {
       expect(snail(matrix4)).to.deep.equal([1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]);
+      done();
+    })
+  })
+
+  describe('Input: matrix5', function() {
+    it('should return [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]', done => {
+      expect(snail(matrix5)).to.deep.equal([1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]);
       done();
     })
   })
