@@ -47,6 +47,8 @@ function snail(matrix) {
       output.push(matrix[yPointer][i]);
   }
 
+  // The following loop is going to be to move back in the y direction from down -> up
+
   console.log(output);
   return output;
 }
