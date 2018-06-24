@@ -28,12 +28,12 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 
 function snail(matrix) {
   var output = [];
-  var xPointer = 0;
-  var yPointer = matrix.length;
-  var xAscent = true;
-  var yAscent = false;
-  var totalXMoves;
-  var totalYMoves;
+  // var xPointer = 0;
+  // var yPointer = matrix.length;
+  // var xAscent = true;
+  // var yAscent = false;
+  // var totalXMoves;
+  // var totalYMoves;
   // console.log(xPointer);
   // console.log(yPointer);
 
@@ -103,6 +103,14 @@ var matrix4 = [
 ];
 // returns [1, 2, 3, 4, 6, 10, 14, 13, 9, 5]
 
+var matrix4B = [
+  [44, 11, 2, 8],
+  [30, 1, 6, 15],
+  [17, 12, 0, 25],
+  [19, 7, 2, 8]
+];
+// [44, 11, 2, 8, 15, 25, 8, 2, 19, 17, 30, 1, 6, 0, 12]
+
 var matrix5 = [
   [1, 2, 3, 4, 5],
   [6, 7, 8, 9, 10],
@@ -145,6 +153,13 @@ describe('Snail', function() {
   describe('Input: matrix4', function() {
     it('should return [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]', done => {
       expect(snail(matrix4)).to.deep.equal([1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]);
+      done();
+    })
+  })
+
+  describe('Input: matrix4', function() {
+    it('should return [44, 11, 2, 8, 15, 25, 8, 2, 19, 17, 30, 1, 6, 0, 12]', done => {
+      expect(snail(matrix4)).to.deep.equal([44, 11, 2, 8, 15, 25, 8, 2, 19, 17, 30, 1, 6, 0, 12]);
       done();
     })
   })
