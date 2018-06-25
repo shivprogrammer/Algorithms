@@ -41,12 +41,12 @@ function snail(matrix) {
   }
   xPointer++;
   xTotalMoves--;
-  console.log('AFTER 1ST LOOP');
-  console.log('xPointer:' +xPointer);
-  console.log('yPointer:' + yPointer);
-  console.log('xTotalMoves:' + xTotalMoves);
-  console.log('yTotalMoves:' + yTotalMoves);
-  console.log('-------------------');
+  // console.log('AFTER 1ST LOOP');
+  // console.log('xPointer:' +xPointer);
+  // console.log('yPointer:' + yPointer);
+  // console.log('xTotalMoves:' + xTotalMoves);
+  // console.log('yTotalMoves:' + yTotalMoves);
+  // console.log('-------------------');
 
   // 2ND LOOP: This loop is the first y traversal, incrementing up in the y values because you're going from matrix[0] to matrix.length
   for (var y = xPointer; y < yTotalMoves; y++) {
@@ -54,12 +54,12 @@ function snail(matrix) {
   }
   yTotalMoves--;
   yPointer--;
-  console.log('AFTER 2ND LOOP');
-  console.log('xPointer:' +xPointer);
-  console.log('yPointer:' + yPointer);
-  console.log('xTotalMoves:' + xTotalMoves);
-  console.log('yTotalMoves:' + yTotalMoves);
-  console.log('-------------------');
+  // console.log('AFTER 2ND LOOP');
+  // console.log('xPointer:' +xPointer);
+  // console.log('yPointer:' + yPointer);
+  // console.log('xTotalMoves:' + xTotalMoves);
+  // console.log('yTotalMoves:' + yTotalMoves);
+  // console.log('-------------------');
 
   // 3RD LOOP: This loop goes back to x axis on the last row going right -> left
   for (var i = xTotalMoves - 1; i >= 0; i--) {
@@ -67,27 +67,37 @@ function snail(matrix) {
   }
   xPointer++;
   xTotalMoves--;
-  console.log('AFTER 3RD LOOP');
-  console.log('xPointer:' +xPointer);
-  console.log('yPointer:' + yPointer);
-  console.log('xTotalMoves:' + xTotalMoves);
-  console.log('yTotalMoves:' + yTotalMoves);
-  console.log('-------------------');
+  // console.log('AFTER 3RD LOOP');
+  // console.log('xPointer:' +xPointer);
+  // console.log('yPointer:' + yPointer);
+  // console.log('xTotalMoves:' + xTotalMoves);
+  // console.log('yTotalMoves:' + yTotalMoves);
+  // console.log('-------------------');
 
   // 4TH LOOP: The following loop is going to be to move back in the y direction from down -> up
-  // for (var j = yTotalMoves; y >= yPointer; y--) {
-    output.push(matrix[1][0]);
-  // }
+  for (var j = yTotalMoves; j <= xTotalMoves; j++) {
+    console.log('we in this bitch');
+    output.push(matrix[j][0]);
+  }
   yTotalMoves--;
+  // console.log('AFTER 4TH LOOP');
+  // console.log('xPointer:' +xPointer);
+  // console.log('yPointer:' + yPointer);
+  // console.log('xTotalMoves:' + xTotalMoves);
+  // console.log('yTotalMoves:' + yTotalMoves);
+  // console.log('-------------------');
 
   // 5TH LOOP: The following loop is to grab the last piece of the 3x3 matrix, the center piece
-  // for {
-    output.push(matrix[1][1]);
-  // }
-  xTotalMoves;
+  for (var a = xTotalMoves; a >= yTotalMoves; a--) {
+    // console.log(a);
+    // console.log('xTotalMoves:' + xTotalMoves);
+    // console.log(matrix[a][xTotalMoves]);
+    output.push(matrix[a][xTotalMoves]);
+  }
+  xTotalMoves--;
 
-  // console.log('-------------------');
-  // console.log('output:' +  output);
+  console.log('-------------------');
+  console.log('output:' +  output);
   return output;
 }
 
