@@ -41,6 +41,11 @@ function snail(matrix) {
   }
   xPointer++;
   xTotalMoves--;
+  console.log('xPointer:' +xPointer);
+  console.log('yPointer:' + yPointer);
+  console.log('xTotalMoves:' + xTotalMoves);
+  console.log('yTotalMoves:' + yTotalMoves);
+  console.log('-------------------');
 
   // 2ND LOOP: This loop is the first y traversal, incrementing up in the y values because you're going from matrix[0] to matrix.length
   for (var y = xPointer; y < yTotalMoves; y++) {
@@ -48,6 +53,11 @@ function snail(matrix) {
   }
   yTotalMoves--;
   yPointer--;
+  console.log('xPointer:' +xPointer);
+  console.log('yPointer:' + yPointer);
+  console.log('xTotalMoves:' + xTotalMoves);
+  console.log('yTotalMoves:' + yTotalMoves);
+  console.log('-------------------');
 
   // 3RD LOOP: This loop goes back to x axis on the last row going right -> left
   for (var i = xTotalMoves - 1; i >= 0; i--) {
@@ -55,21 +65,24 @@ function snail(matrix) {
   }
   xPointer++;
   xTotalMoves--;
-  // console.log('xPointer:' +xPointer);
-  // console.log('yPointer:' + yPointer);
-  // console.log('-------------------');
-  // console.log('xTotalMoves:' + xTotalMoves);
-  // console.log('yTotalMoves:' + yTotalMoves);
-
+  console.log('xPointer:' +xPointer);
+  console.log('yPointer:' + yPointer);
+  console.log('xTotalMoves:' + xTotalMoves);
+  console.log('yTotalMoves:' + yTotalMoves);
+  console.log('-------------------');
 
   // 4TH LOOP: The following loop is going to be to move back in the y direction from down -> up
   // for (var j = yTotalMoves; y >= yPointer; y--) {
-  //   output.push(matrix[2][0]);
-  //   output.push(matrix[1][0]);
+    output.push(matrix[1][0]);
   // }
 
-  console.log('-------------------');
-  console.log('output:' +  output);
+  // 5TH LOOP: The following loop is to grab the last piece of the 3x3 matrix, the center piece
+  // for {
+    output.push(matrix[1][1]);
+  // }
+
+  // console.log('-------------------');
+  // console.log('output:' +  output);
   return output;
 }
 
