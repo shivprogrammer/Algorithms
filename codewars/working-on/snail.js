@@ -46,20 +46,30 @@ function snail(matrix) {
   for (var y = xPointer; y < yTotalMoves; y++) {
     output.push(matrix[y][xTotalMoves]);
   }
-  // yPointer--;
-  // xPointer--;
   yTotalMoves--;
-  yPointer++;
-  console.log(xTotalMoves);
+  yPointer--;
 
   // 3RD LOOP: This loop goes back to x axis on the last row going right -> left
   for (var i = xTotalMoves - 1; i >= 0; i--) {
     output.push(matrix[xTotalMoves][i]);
   }
+  xPointer++;
+  xTotalMoves--;
+  // console.log('xPointer:' +xPointer);
+  // console.log('yPointer:' + yPointer);
+  // console.log('-------------------');
+  // console.log('xTotalMoves:' + xTotalMoves);
+  // console.log('yTotalMoves:' + yTotalMoves);
+
 
   // 4TH LOOP: The following loop is going to be to move back in the y direction from down -> up
+  // for (var j = yTotalMoves; y >= yPointer; y--) {
+  //   output.push(matrix[2][0]);
+  //   output.push(matrix[1][0]);
+  // }
 
-  console.log(output);
+  console.log('-------------------');
+  console.log('output:' +  output);
   return output;
 }
 
@@ -84,6 +94,8 @@ var matrix3A = [
   [4,5,6],
   [7,8,9]
 ];
+// matrix[2][0]
+// matrix[1][0]
 
 var matrix3B = [
   [1,2,3],
