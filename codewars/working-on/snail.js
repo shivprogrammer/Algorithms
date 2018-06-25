@@ -46,9 +46,9 @@ function snail(matrix) {
   // console.log(xPointer);
   // console.log(yPointer);
 
-  // 2ND LOOP: This loop is the first y traversal, from up -> down
-  for (var y = xPointer; y < yPointer; y++) {
-    output.push(matrix[y][xPointer]);
+  // 2ND LOOP: This loop is the first y traversal, incrementing up in the y values because you're going from matrix[0] to matrix.length
+  for (var y = xPointer; y < totalYMoves; y++) {
+    output.push(matrix[y][totalXMoves]);
   }
   yPointer--;
   xPointer--;
