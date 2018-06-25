@@ -35,12 +35,13 @@ function snail(matrix) {
   var xTotalMoves = matrix[0].length;
   var yTotalMoves = matrix.length;
 
-  // 1ST LOOOP: This loop will make the first horizontal move (x row left -> right)
+  // 1ST LOOP: This loop will make the first horizontal move (x row left -> right)
   for (var x = 0; x < matrix[0].length; x++) {
     output.push(matrix[xPointer][x]);
   }
   xPointer++;
   xTotalMoves--;
+  console.log('AFTER 1ST LOOP');
   console.log('xPointer:' +xPointer);
   console.log('yPointer:' + yPointer);
   console.log('xTotalMoves:' + xTotalMoves);
@@ -53,6 +54,7 @@ function snail(matrix) {
   }
   yTotalMoves--;
   yPointer--;
+  console.log('AFTER 2ND LOOP');
   console.log('xPointer:' +xPointer);
   console.log('yPointer:' + yPointer);
   console.log('xTotalMoves:' + xTotalMoves);
@@ -65,6 +67,7 @@ function snail(matrix) {
   }
   xPointer++;
   xTotalMoves--;
+  console.log('AFTER 3RD LOOP');
   console.log('xPointer:' +xPointer);
   console.log('yPointer:' + yPointer);
   console.log('xTotalMoves:' + xTotalMoves);
@@ -75,11 +78,13 @@ function snail(matrix) {
   // for (var j = yTotalMoves; y >= yPointer; y--) {
     output.push(matrix[1][0]);
   // }
+  yTotalMoves--;
 
   // 5TH LOOP: The following loop is to grab the last piece of the 3x3 matrix, the center piece
   // for {
     output.push(matrix[1][1]);
   // }
+  xTotalMoves;
 
   // console.log('-------------------');
   // console.log('output:' +  output);
@@ -160,12 +165,12 @@ describe('Snail', function() {
     })
   })
 
-  describe('Input: matrix3B', function() {
-    it('should return [1, 2, 3, 4, 5, 6, 7, 8, 9]', done => {
-      expect(snail(matrix3B)).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-      done();
-    })
-  })
+  // describe('Input: matrix3B', function() {
+  //   it('should return [1, 2, 3, 4, 5, 6, 7, 8, 9]', done => {
+  //     expect(snail(matrix3B)).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  //     done();
+  //   })
+  // })
 
   // describe('Input: matrix4', function() {
   //   it('should return [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]', done => {
