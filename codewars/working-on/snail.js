@@ -28,60 +28,69 @@ snail(array) #=> [1,2,3,4,5,6,7,8,9]
 
 function snail(matrix) {
   var output = [];
-  // var xPointer = 0;
-  // var yPointer = matrix.length;
+  var xPointer = 0;
+  var yPointer = matrix.length;
   // var xAscent = true;
   // var yAscent = false;
-  // var totalXMoves;
-  // var totalYMoves;
+  var totalXMoves = matrix[0].length;
+  var totalYMoves = matrix.length;
   // console.log(xPointer);
   // console.log(yPointer);
 
-  // This loop will make the first horizontal move (x row left -> right)
+  // 1ST LOOOP: This loop will make the first horizontal move (x row left -> right)
   for (var x = 0; x < matrix[0].length; x++) {
     output.push(matrix[xPointer][x]);
   }
   xPointer++;
+  totalXMoves--;
   // console.log(xPointer);
   // console.log(yPointer);
 
-  // This loop begins the y descent, should capture the value 2
+  // 2ND LOOP: This loop is the first y traversal, from up -> down
   for (var y = xPointer; y < yPointer; y++) {
     output.push(matrix[y][xPointer]);
   }
   yPointer--;
   xPointer--;
+  totalYMoves--;
   // console.log(xPointer);
   // console.log(yPointer);
 
-  // This loop goes back to x axis on the last row going right -> left
+  // 3RD LOOP: This loop goes back to x axis on the last row going right -> left
   for (var i = xPointer; i >= 0; i--) {
       output.push(matrix[yPointer][i]);
   }
   // console.log(xPointer);
   // console.log(yPointer);
   yPointer--;
+  totalXMoves--;
 
-  // The following loop is going to be to move back in the y direction from down -> up
+  // 4TH LOOP: The following loop is going to be to move back in the y direction from down -> up
   for (var j = yPointer; j > xPointer; j--) {
     output.push(matrix[j][xPointer]);
   }
+  totalYMoves--;
   // TODO: Add operation to change up the values for xPointer and yPointer accordingly for the following loop
 
-  // console.log(output);
+  console.log(output);
   return output;
 }
 
-var matrix2A = [
-  [7, 4],
-  [3, 2]
-];
+/*
+NOTE* THIS IS THE LOOP THAT ALL OF THE FOR LOOPS WILL BE WRAPPED WITHIN
+while (totalXMoves >= 1 && totalYMoves >= 1)
+*/
 
-var matrix2x3 = [
-  [7, 4],
-  [3, 2],
-  [5, 8]
-];
+// var matrix2A = [
+//   [7, 4],
+//   [3, 2]
+// ];
+//
+// var matrix2x3 = [
+//   [7, 4],
+//   [3, 2],
+//   [5, 8]
+// ];
 
 var matrix3A = [
   [1,2,3],
@@ -109,7 +118,6 @@ var matrix4B = [
   [17, 12, 0, 25],
   [19, 7, 2, 8]
 ];
-// [44, 11, 2, 8, 15, 25, 8, 2, 19, 17, 30, 1, 6, 0, 12]
 
 var matrix5 = [
   [1, 2, 3, 4, 5],
@@ -164,10 +172,10 @@ describe('Snail', function() {
     })
   })
 
-  describe('Input: matrix5', function() {
-    it('should return [[1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]', done => {
-      expect(snail(matrix5)).to.deep.equal([[1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]);
-      done();
-    })
-  })
+  // describe('Input: matrix5', function() {
+  //   it('should return [[1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]', done => {
+  //     expect(snail(matrix5)).to.deep.equal([[1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]);
+  //     done();
+  //   })
+  // })
 })
