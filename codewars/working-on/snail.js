@@ -54,7 +54,7 @@ function snail(matrix) {
 
   // 3RD LOOP: This loop goes back to x axis on the last row going right -> left
   for (var i = xTotalMoves - 1; i >= 0; i--) {
-    output.push(matrix[i][xTotalMoves]);
+    output.push(matrix[xTotalMoves][i]);
   }
 
   // 4TH LOOP: The following loop is going to be to move back in the y direction from down -> up
